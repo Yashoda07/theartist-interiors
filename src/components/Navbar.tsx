@@ -1,28 +1,35 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.jpg";
 
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Skills", href: "#skills" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#home", type: "hash" },
+  { label: "About", href: "#about", type: "hash" },
+  { label: "Experience", href: "#experience", type: "hash" },
+  { label: "Services", href: "#services", type: "hash" },
+  { label: "Portfolio", href: "/portfolio", type: "link" },
+  { label: "Skills", href: "#skills", type: "hash" },
+  { label: "Testimonials", href: "#testimonials", type: "hash" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const handleNavClick = (item: typeof navItems[0]) => {
+    if (item.type === "hash" && location.pathname !== "/") {
+      window.location.href = "/" + item.href;
+    }
+  };
 
   return (
     <>
@@ -34,29 +41,45 @@ const Navbar = () => {
           scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-background/80 backdrop-blur-sm"
         }`}
       >
-        <div className="section-padding flex items-center justify-between h-16">
-          <a href="#home" className="flex items-center">
-            <img src={logo} alt="The Artist Interiors" className="h-10 w-auto" />
-          </a>
+        <div className="section-padding flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="The Artist Interiors"
+              className="h-14 w-auto"
+              style={{ filter: "contrast(1.3) brightness(0.95)" }}
+            />
+          </Link>
 
-          <div className="hidden lg:flex items-center gap-5">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            ))}
+          <div className="hidden lg:flex items-center gap-7">
+            {navItems.map((item) =>
+              item.type === "link" ? (
+                <Link
+                  key={item.href}
+                  to={item.href}
+                  className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => handleNavClick(item)}
+                  className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
 
-          <a
-            href="#contact"
-            className="hidden lg:inline-flex px-5 py-2 bg-accent text-accent-foreground text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300"
+          <Link
+            to="/contact"
+            className="hidden lg:inline-flex px-6 py-2.5 bg-accent text-accent-foreground text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300"
           >
-            Get Consultation
-          </a>
+            Book Consultation
+          </Link>
 
           <button
             onClick={() => setMobileOpen(true)}
@@ -83,19 +106,40 @@ const Navbar = () => {
             >
               <X size={24} />
             </button>
-            {navItems.map((item, i) => (
-              <motion.a
-                key={item.href}
-                href={item.href}
+            {navItems.map((item, i) =>
+              item.type === "link" ? (
+                <motion.div key={item.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
+                  <Link
+                    to={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-display-md text-foreground hover:text-accent transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
+              ) : (
+                <motion.a
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => { setMobileOpen(false); handleNavClick(item); }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="text-display-md text-foreground hover:text-accent transition-colors"
+                >
+                  {item.label}
+                </motion.a>
+              )
+            )}
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: navItems.length * 0.05 }}>
+              <Link
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.05 }}
-                className="text-display-md text-foreground hover:text-accent transition-colors"
+                className="text-display-md text-accent hover:text-foreground transition-colors"
               >
-                {item.label}
-              </motion.a>
-            ))}
+                Contact
+              </Link>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
