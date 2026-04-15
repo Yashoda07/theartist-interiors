@@ -1,21 +1,38 @@
 import { motion } from "framer-motion";
+import { Palette, Box, HardHat, LayoutGrid, Lightbulb, MessageSquare, Wrench, Users, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
 
-const coreSkills = [
-  { name: "Interior Designing", level: 95 },
-  { name: "3D Visualization", level: 90 },
-  { name: "Site Execution", level: 85 },
+const primarySkills = [
+  {
+    icon: Palette,
+    name: "Interior Designing",
+    desc: "End-to-end residential design with a personalized approach",
+    gradient: "from-[hsl(28,45%,45%)] to-[hsl(38,60%,55%)]",
+  },
+  {
+    icon: Box,
+    name: "3D Visualization",
+    desc: "Photorealistic renders to visualize your dream space",
+    gradient: "from-[hsl(25,30%,35%)] to-[hsl(30,25%,50%)]",
+  },
+  {
+    icon: HardHat,
+    name: "Site Execution",
+    desc: "Complete project management and on-site delivery in Mumbai",
+    gradient: "from-[hsl(32,20%,40%)] to-[hsl(35,30%,55%)]",
+  },
 ];
 
 const expertise = [
-  "Space Planning",
-  "Creative Thinking",
-  "Strategic Communication",
-  "Problem Solving",
-  "Material Selection",
-  "Client Management",
-  "Project Coordination",
-  "Trend Forecasting",
+  { icon: LayoutGrid, name: "Space Planning" },
+  { icon: Lightbulb, name: "Creative Thinking" },
+  { icon: MessageSquare, name: "Strategic Communication" },
+  { icon: Wrench, name: "Problem Solving" },
+  { icon: Palette, name: "Material Selection" },
+  { icon: Users, name: "Client Management" },
+  { icon: TrendingUp, name: "Project Coordination" },
+  { icon: Lightbulb, name: "Trend Forecasting" },
 ];
 
 const SkillsSection = () => (
@@ -29,45 +46,47 @@ const SkillsSection = () => (
         </h2>
       </AnimatedSection>
 
-      <div className="grid lg:grid-cols-2 gap-16">
-        {/* Progress bars */}
-        <div className="space-y-10">
-          {coreSkills.map((skill, i) => (
-            <AnimatedSection key={skill.name} delay={i * 0.15}>
-              <div className="flex justify-between mb-3">
-                <span className="font-display text-xl text-foreground">{skill.name}</span>
-                <span className="text-label text-accent">{skill.level}%</span>
-              </div>
-              <div className="h-1 bg-border overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: false }}
-                  transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
-                  className="h-full bg-accent"
-                />
-              </div>
-            </AnimatedSection>
+      {/* Primary skill cards linking to portfolio */}
+      <div className="grid md:grid-cols-3 gap-6 mb-16">
+        {primarySkills.map((skill, i) => (
+          <AnimatedSection key={skill.name} delay={i * 0.15}>
+            <Link to="/portfolio">
+              <motion.div
+                whileHover={{ y: -8, scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+                className="relative bg-card border border-border rounded-xl p-8 hover:border-accent/40 transition-all duration-500 group overflow-hidden cursor-pointer h-full"
+              >
+                <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${skill.gradient} opacity-70 group-hover:opacity-100 transition-opacity`} />
+                <skill.icon className="w-10 h-10 text-accent mb-5 group-hover:scale-110 transition-transform duration-300" />
+                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+                  {skill.name}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{skill.desc}</p>
+                <span className="text-accent text-xs font-medium uppercase tracking-wider group-hover:text-foreground transition-colors">
+                  View Projects →
+                </span>
+              </motion.div>
+            </Link>
+          </AnimatedSection>
+        ))}
+      </div>
+
+      {/* Expertise grid */}
+      <AnimatedSection delay={0.3}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {expertise.map((e, i) => (
+            <motion.div
+              key={e.name}
+              whileHover={{ scale: 1.03, x: 4 }}
+              transition={{ duration: 0.3 }}
+              className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300 rounded-lg"
+            >
+              <e.icon className="w-4 h-4 text-accent shrink-0" />
+              <span className="text-body text-foreground text-sm">{e.name}</span>
+            </motion.div>
           ))}
         </div>
-
-        {/* Expertise grid */}
-        <AnimatedSection delay={0.3}>
-          <div className="grid grid-cols-2 gap-4">
-            {expertise.map((e, i) => (
-              <motion.div
-                key={e}
-                whileHover={{ scale: 1.03, x: 4 }}
-                transition={{ duration: 0.3 }}
-                className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300"
-              >
-                <span className="w-2 h-2 rounded-full bg-accent shrink-0" />
-                <span className="text-body text-foreground text-sm">{e}</span>
-              </motion.div>
-            ))}
-          </div>
-        </AnimatedSection>
-      </div>
+      </AnimatedSection>
     </div>
   </section>
 );

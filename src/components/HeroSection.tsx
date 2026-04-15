@@ -56,7 +56,7 @@ const HeroSection = () => (
           href="#contact"
           className="px-8 py-3.5 bg-accent text-accent-foreground text-label hover:bg-accent/90 transition-all duration-300 hover-lift"
         >
-          Get Consultation
+          Book Consultation
         </a>
         <a
           href="#portfolio"
