@@ -10,20 +10,20 @@ const AboutSection = () => (
       </AnimatedSection>
 
       <div className="grid lg:grid-cols-2 gap-16 items-start">
-        {/* Image */}
-        <AnimatedSection className="image-reveal">
+        {/* Image - centered on mobile/tablet, left on desktop */}
+        <AnimatedSection className="image-reveal flex justify-center lg:justify-start order-2 lg:order-1">
           <img
             src={profileImage}
             alt="Aadarsh Chaubey, Founder of The Artist Interiors"
             width={800}
             height={1024}
             loading="lazy"
-            className="w-full max-w-md object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            className="w-full max-w-sm md:max-w-md object-cover grayscale hover:grayscale-0 transition-all duration-700"
           />
         </AnimatedSection>
 
-        {/* Story */}
-        <div>
+        {/* Story - comes first on mobile so text is above image */}
+        <div className="order-1 lg:order-2 lg:-mt-2">
           <AnimatedSection delay={0.2}>
             <h2 className="text-display-lg text-foreground mb-8">
               Crafting Spaces,
