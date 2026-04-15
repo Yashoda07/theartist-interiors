@@ -66,7 +66,7 @@ const ServicesSection = () => (
               <p className="text-label text-accent mb-6">{s.tagline}</p>
               <ul className="space-y-3 flex-1">
                 {s.points.map((p, j) => (
-                  <li key={j} className="text-body text-muted-foreground flex items-start gap-3 text-sm">
+                  <li key={j} className="text-foreground/70 flex items-start gap-3 text-sm leading-relaxed">
                     <span className="w-1 h-1 rounded-full bg-accent mt-2 shrink-0" />
                     {p}
                   </li>

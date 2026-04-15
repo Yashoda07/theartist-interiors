@@ -140,7 +140,7 @@ const ExperienceSection = () => (
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: false }}
                           transition={{ delay: 0.2 + j * 0.06 }}
-                          className="text-xs text-muted-foreground flex items-start gap-2 leading-relaxed"
+                          className="text-sm text-foreground/70 flex items-start gap-2 leading-relaxed"
                         >
                           <span className={`w-1 h-1 rounded-full ${color.dot} mt-1.5 shrink-0 opacity-60`} />
                           {r}
