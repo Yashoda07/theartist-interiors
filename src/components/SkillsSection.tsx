@@ -61,7 +61,7 @@ const SkillsSection = () => (
                 <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
                   {skill.name}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{skill.desc}</p>
+                <p className="text-sm text-foreground/70 leading-relaxed mb-4">{skill.desc}</p>
                 <span className="text-accent text-xs font-medium uppercase tracking-wider group-hover:text-foreground transition-colors">
                   View Projects →
                 </span>
@@ -82,7 +82,7 @@ const SkillsSection = () => (
               className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300 rounded-lg"
             >
               <e.icon className="w-4 h-4 text-accent shrink-0" />
-              <span className="text-body text-foreground text-sm">{e.name}</span>
+              <span className="text-foreground text-sm font-medium">{e.name}</span>
             </motion.div>
           ))}
         </div>

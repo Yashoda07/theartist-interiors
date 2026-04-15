@@ -7,22 +7,22 @@
 @layer base {
   :root {
     --background: 30 25% 96%;
-    --foreground: 25 20% 15%;
+    --foreground: 25 20% 12%;
 
     --card: 30 20% 93%;
-    --card-foreground: 25 20% 15%;
+    --card-foreground: 25 20% 12%;
 
     --popover: 30 25% 96%;
-    --popover-foreground: 25 20% 15%;
+    --popover-foreground: 25 20% 12%;
 
     --primary: 25 35% 30%;
     --primary-foreground: 30 25% 96%;
 
     --secondary: 30 15% 88%;
-    --secondary-foreground: 25 20% 20%;
+    --secondary-foreground: 25 20% 18%;
 
     --muted: 30 12% 90%;
-    --muted-foreground: 25 12% 38%;
+    --muted-foreground: 25 15% 32%;
 
     --accent: 28 45% 45%;
     --accent-foreground: 30 25% 96%;
@@ -93,15 +93,15 @@
   }
 
   .text-body-lg {
-    @apply text-lg md:text-xl font-body font-light leading-relaxed;
+    @apply text-lg md:text-xl font-body font-normal leading-relaxed;
   }
 
   .text-body {
-    @apply text-base font-body font-light leading-relaxed;
+    @apply text-base font-body font-normal leading-relaxed;
   }
 
   .text-label {
-    @apply text-xs md:text-sm font-body font-medium uppercase tracking-[0.2em] text-muted-foreground;
+    @apply text-sm md:text-base font-body font-semibold uppercase tracking-[0.15em] text-muted-foreground;
   }
 
   .gold-line {

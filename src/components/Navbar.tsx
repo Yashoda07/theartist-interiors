@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "#home", type: "hash" },
@@ -46,8 +46,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="The Artist Interiors"
-              className="h-14 w-auto"
-              style={{ filter: "contrast(1.3) brightness(0.95)" }}
+              className="h-16 w-auto"
             />
           </Link>
 
@@ -57,7 +56,7 @@ const Navbar = () => {
                 <Link
                   key={item.href}
                   to={item.href}
-                  className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
+                  className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
                 >
                   {item.label}
                 </Link>
@@ -66,7 +65,7 @@ const Navbar = () => {
                   key={item.href}
                   href={item.href}
                   onClick={() => handleNavClick(item)}
-                  className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
+                  className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
                 >
                   {item.label}
                 </a>
@@ -76,7 +75,7 @@ const Navbar = () => {
 
           <Link
             to="/contact"
-            className="hidden lg:inline-flex px-6 py-2.5 bg-accent text-accent-foreground text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300"
+            className="hidden lg:inline-flex px-6 py-2.5 bg-accent text-accent-foreground text-sm font-medium uppercase tracking-[0.12em] hover:bg-accent/90 transition-all duration-300"
           >
             Book Consultation
           </Link>
