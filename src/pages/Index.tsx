@@ -8,6 +8,7 @@ import SkillsSection from "@/components/SkillsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import FloatingContactIcons from "@/components/FloatingContactIcons";
 
 const Index = () => (
   <main className="overflow-x-hidden">
@@ -21,6 +22,7 @@ const Index = () => (
     <TestimonialsSection />
     <ContactSection />
     <Footer />
+    <FloatingContactIcons />
   </main>
 );
 

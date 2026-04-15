@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -30,20 +31,20 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-background/90 backdrop-blur-md shadow-sm" : "bg-transparent"
+          scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-background/80 backdrop-blur-sm"
         }`}
       >
-        <div className="section-padding flex items-center justify-between h-20">
-          <a href="#home" className="font-display text-2xl font-light tracking-wide text-foreground">
-            The Artist <span className="font-medium">Interiors</span>
+        <div className="section-padding flex items-center justify-between h-16">
+          <a href="#home" className="flex items-center">
+            <img src={logo} alt="The Artist Interiors" className="h-10 w-auto" />
           </a>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-5">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-label hover:text-foreground transition-colors duration-300"
+                className="text-xs font-medium uppercase tracking-[0.15em] text-foreground/70 hover:text-foreground transition-colors duration-300"
               >
                 {item.label}
               </a>
@@ -52,7 +53,7 @@ const Navbar = () => {
 
           <a
             href="#contact"
-            className="hidden lg:inline-flex px-6 py-2.5 border border-foreground text-foreground text-label hover:bg-foreground hover:text-background transition-all duration-300"
+            className="hidden lg:inline-flex px-5 py-2 bg-accent text-accent-foreground text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300"
           >
             Get Consultation
           </a>
