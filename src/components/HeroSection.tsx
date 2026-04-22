@@ -23,18 +23,18 @@ const HeroSection = () => (
           type="video/mp4"
         />
       </video>
-      {/* Stronger overlay so all text stays readable */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/65 to-black/45" />
-      <div className="absolute inset-0 bg-black/25" />
+      {/* Lighter overlay so the video remains visible while keeping text readable */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/15" />
+      <div className="absolute inset-0 bg-black/10" />
     </div>
 
     {/* Content */}
-    <div className="relative z-10 section-padding pb-20 md:pb-28 w-full">
+    <div className="relative z-10 section-padding pb-32 md:pb-28 w-full">
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-sm md:text-base font-medium uppercase tracking-[0.2em] text-white/90 mb-6 drop-shadow-lg"
+        className="text-base md:text-lg font-medium uppercase tracking-[0.2em] text-white mb-6 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]"
       >
         Aadarsh Chaubey — Founder | The Artist Interiors
       </motion.p>
@@ -43,7 +43,7 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="text-6xl md:text-8xl lg:text-9xl font-display font-light tracking-tight leading-[0.9] text-white max-w-4xl mb-10 drop-shadow-2xl"
+        className="text-6xl md:text-8xl lg:text-9xl font-display font-light tracking-tight leading-[0.9] text-white max-w-4xl mb-10 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
       >
         We Design
         <br />
@@ -58,13 +58,13 @@ const HeroSection = () => (
       >
         <a
           href="/contact"
-          className="px-8 py-4 bg-accent text-white text-sm font-semibold uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 hover-lift active:scale-95"
+          className="px-8 py-4 bg-accent text-white text-sm md:text-base font-semibold uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 hover-lift active:scale-95 shadow-lg"
         >
           Book Consultation
         </a>
         <a
           href="#portfolio"
-          className="px-8 py-4 border-2 border-white/70 text-white text-sm font-semibold uppercase tracking-[0.15em] hover:bg-white/15 transition-all duration-300 active:scale-95"
+          className="px-8 py-4 border-2 border-white text-white text-sm md:text-base font-semibold uppercase tracking-[0.15em] hover:bg-white/15 transition-all duration-300 active:scale-95 backdrop-blur-sm"
         >
           View Projects
         </a>
@@ -75,7 +75,7 @@ const HeroSection = () => (
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="flex gap-12 md:gap-20"
+        className="flex gap-10 md:gap-20"
       >
         {[
           { num: "30+", label: "Projects Delivered" },
@@ -83,22 +83,22 @@ const HeroSection = () => (
           { num: "3", label: "Core Services" },
         ].map((s) => (
           <div key={s.label}>
-            <div className="text-3xl md:text-4xl font-display font-light text-white drop-shadow-lg">{s.num}</div>
-            <div className="text-xs uppercase tracking-widest text-white/75 mt-1">{s.label}</div>
+            <div className="text-4xl md:text-5xl font-display font-light text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">{s.num}</div>
+            <div className="text-xs md:text-sm uppercase tracking-widest text-white/90 mt-1 drop-shadow-md">{s.label}</div>
           </div>
         ))}
       </motion.div>
-
-      {/* Description bottom-right */}
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute bottom-6 right-6 md:bottom-10 md:right-12 lg:right-20 text-xs md:text-sm text-white/75 max-w-xs text-right leading-relaxed drop-shadow-lg"
-      >
-        5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai.
-      </motion.p>
     </div>
+
+    {/* Description bottom-right — small, structured on every screen */}
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 1.2, duration: 0.8 }}
+      className="absolute bottom-4 right-4 md:bottom-8 md:right-12 lg:right-20 z-10 text-[11px] md:text-xs lg:text-sm text-white/85 max-w-[200px] md:max-w-xs text-right leading-snug md:leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
+    >
+      5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai.
+    </motion.p>
   </section>
 );
 

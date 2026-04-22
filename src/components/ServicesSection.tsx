@@ -117,8 +117,8 @@ const ServicesSection = () => {
                       </motion.div>
                     </div>
 
-                    <h3 className="font-display text-2xl text-foreground mb-1">{s.title}</h3>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-accent mb-4">
+                    <h3 className="font-display text-2xl md:text-3xl text-foreground mb-1">{s.title}</h3>
+                    <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-accent mb-4">
                       {s.tagline}
                     </p>
 
@@ -139,9 +139,9 @@ const ServicesSection = () => {
                                 initial={{ opacity: 0, x: -8 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: j * 0.06 }}
-                                className="text-sm text-foreground/80 flex items-start gap-2.5 leading-relaxed"
+                                className="text-base text-foreground/85 flex items-start gap-2.5 leading-relaxed"
                               >
-                                <span className={`mt-1.5 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${s.accent} shrink-0`} />
+                                <span className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${s.accent} shrink-0`} />
                                 {p}
                               </motion.li>
                             ))}
@@ -149,7 +149,7 @@ const ServicesSection = () => {
                           <Link
                             to="/portfolio"
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-accent hover:text-foreground transition-colors"
+                            className="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-accent hover:text-foreground transition-colors"
                           >
                             See it in our work →
                           </Link>
@@ -159,7 +159,7 @@ const ServicesSection = () => {
                           key="closed"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          className="text-sm text-foreground/65 leading-relaxed"
+                          className="text-base text-foreground/75 leading-relaxed"
                         >
                           {s.points[0]}.{" "}
                           <span className="text-accent font-medium">Tap to explore →</span>

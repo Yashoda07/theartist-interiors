@@ -88,7 +88,7 @@ const ContactSection = () => {
                 whileTap={{ scale: 0.98 }}
                 className="w-full py-4 bg-foreground text-background text-label hover:bg-accent transition-all duration-300"
               >
-                Send Inquiry via WhatsApp
+                Send Message
               </motion.button>
             </form>
           </AnimatedSection>
