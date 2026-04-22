@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Linkedin, Download } from "lucide-react";
+import { Instagram, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
@@ -30,9 +30,9 @@ const PortfolioPage = () => {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <div className="pt-24" />
+      <div className="pt-20" />
 
-      <section className="section-padding section-spacing">
+      <section className="section-padding pt-6 pb-20 md:pt-10 md:pb-28">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
             <p className="text-label mb-4">Portfolio</p>
@@ -105,39 +105,29 @@ const PortfolioPage = () => {
             href="https://in.pinterest.com/TheArtist_Interiors/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-colors text-sm font-medium uppercase tracking-wider active:scale-95"
+            className="flex items-center gap-2 text-foreground/85 hover:text-accent transition-colors text-sm md:text-base font-medium uppercase tracking-wider active:scale-95"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.993 3.995-.282 1.193.599 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.084.345-.091.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.163-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
             Pinterest
           </a>
 
           <a
-            href="https://www.instagram.com/the__artisttt/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-colors text-sm font-medium uppercase tracking-wider active:scale-95"
-          >
-            <Instagram className="w-5 h-5" />
-            Instagram
-          </a>
-
-          <a
             href="/portfolio.pdf"
             download
-            className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
           >
             <Download className="w-4 h-4" />
             Download Portfolio
           </a>
 
           <a
-            href="https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/"
+            href="https://www.instagram.com/the__artisttt/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-colors text-sm font-medium uppercase tracking-wider active:scale-95"
+            className="flex items-center gap-2 text-foreground/85 hover:text-accent transition-colors text-sm md:text-base font-medium uppercase tracking-wider active:scale-95"
           >
-            <Linkedin className="w-5 h-5" />
-            LinkedIn
+            <Instagram className="w-5 h-5" />
+            Instagram
           </a>
         </div>
       </div>

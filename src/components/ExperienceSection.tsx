@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
+import { Palette, Ruler, Home, Award } from "lucide-react";
+
 const experiences = [
   {
     period: "Jan 2021 – Sep 2022",
@@ -13,7 +15,7 @@ const experiences = [
       "Collaborated with designers to translate concepts into visuals",
       "Mastered industry-standard visualization tools",
     ],
-    icon: "🎨",
+    Icon: Palette,
   },
   {
     period: "Sep 2022 – Dec 2022",
@@ -24,7 +26,7 @@ const experiences = [
       "Prepared design presentations and mood boards",
       "Coordinated with procurement teams",
     ],
-    icon: "📐",
+    Icon: Ruler,
   },
   {
     period: "Jan 2023 – Dec 2024",
@@ -35,7 +37,7 @@ const experiences = [
       "Collaborated with vendors and contractors",
       "Material selection and space planning",
     ],
-    icon: "🏠",
+    Icon: Home,
   },
   {
     period: "Sep 2022 – Present",
@@ -47,15 +49,15 @@ const experiences = [
       "Site execution and project management in Mumbai",
       "Client relationship & business development",
     ],
-    icon: "🏆",
+    Icon: Award,
   },
 ];
 
 const cardTints = [
-  "from-[hsl(38,55%,92%)] to-[hsl(38,40%,86%)] border-[hsl(38,55%,60%)]",
-  "from-[hsl(28,45%,91%)] to-[hsl(28,35%,84%)] border-[hsl(28,50%,52%)]",
-  "from-[hsl(20,40%,90%)] to-[hsl(20,32%,83%)] border-[hsl(20,45%,48%)]",
-  "from-[hsl(25,50%,89%)] to-[hsl(25,38%,82%)] border-[hsl(25,55%,45%)]",
+  "from-[hsl(38,55%,97%)] to-[hsl(38,45%,93%)] border-[hsl(38,55%,55%)]",
+  "from-[hsl(30,40%,96%)] to-[hsl(28,35%,92%)] border-[hsl(28,50%,50%)]",
+  "from-[hsl(25,40%,96%)] to-[hsl(20,32%,91%)] border-[hsl(20,45%,45%)]",
+  "from-[hsl(28,50%,95%)] to-[hsl(25,40%,90%)] border-[hsl(25,55%,42%)]",
 ];
 
 const ExperienceSection = () => {
@@ -88,25 +90,25 @@ const ExperienceSection = () => {
 
         {/* Curved roadmap */}
         <div className="relative">
-          {/* SVG curve - desktop */}
+          {/* SVG curve - desktop, much more visible */}
           <svg
-            className="hidden md:block absolute left-0 right-0 top-8 w-full h-24 pointer-events-none"
+            className="hidden md:block absolute left-0 right-0 top-10 w-full h-28 pointer-events-none"
             viewBox="0 0 1000 100"
             preserveAspectRatio="none"
           >
             <defs>
               <linearGradient id="roadGrad" x1="0" x2="1">
-                <stop offset="0%" stopColor="hsl(38,60%,55%)" stopOpacity="0.25" />
-                <stop offset="50%" stopColor="hsl(28,45%,45%)" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="hsl(25,55%,45%)" stopOpacity="0.25" />
+                <stop offset="0%" stopColor="hsl(38,70%,50%)" stopOpacity="0.9" />
+                <stop offset="50%" stopColor="hsl(28,55%,40%)" stopOpacity="1" />
+                <stop offset="100%" stopColor="hsl(25,60%,38%)" stopOpacity="0.9" />
               </linearGradient>
             </defs>
             <path
               d="M 20 60 Q 250 0 500 50 T 980 40"
               fill="none"
               stroke="url(#roadGrad)"
-              strokeWidth="3"
-              strokeDasharray="6 8"
+              strokeWidth="5"
+              strokeDasharray="10 8"
               strokeLinecap="round"
             />
           </svg>
@@ -132,17 +134,17 @@ const ExperienceSection = () => {
                   aria-pressed={isActive}
                 >
                   <div className="flex items-center gap-2 mb-2">
-                    <span className={`text-2xl md:text-3xl transition-transform duration-300 ${isActive ? "scale-110" : ""}`}>
-                      {exp.icon}
-                    </span>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-foreground/60">
+                    <div className={`w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-br from-accent to-[hsl(28,55%,40%)] flex items-center justify-center shadow-md transition-transform duration-300 ${isActive ? "scale-110" : ""}`}>
+                      <exp.Icon className="w-5 h-5 md:w-5 md:h-5 text-white" />
+                    </div>
+                    <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-foreground/70">
                       Phase {i + 1}
                     </span>
                   </div>
-                  <p className="text-[10px] md:text-[11px] font-semibold uppercase tracking-wide text-foreground/70 leading-tight mb-1">
+                  <p className="text-[11px] md:text-xs font-semibold uppercase tracking-wide text-foreground/75 leading-tight mb-1">
                     {exp.period}
                   </p>
-                  <h3 className="font-display text-sm md:text-base text-foreground leading-tight">
+                  <h3 className="font-display text-base md:text-lg text-foreground leading-tight">
                     {exp.title}
                   </h3>
                   {isActive && (
@@ -169,17 +171,24 @@ const ExperienceSection = () => {
               >
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                   <div>
-                    <span className="inline-block px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-accent text-accent-foreground mb-2">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-accent text-accent-foreground mb-2">
                       {experiences[active].period}
                     </span>
-                    <h3 className="font-display text-xl md:text-2xl text-foreground leading-tight">
+                    <h3 className="font-display text-2xl md:text-3xl text-foreground leading-tight">
                       {experiences[active].title}
                     </h3>
-                    <p className="text-sm font-medium text-accent mt-0.5">
+                    <p className="text-base font-medium text-accent mt-1">
                       {experiences[active].company}
                     </p>
                   </div>
-                  <span className="text-4xl md:text-5xl">{experiences[active].icon}</span>
+                  {(() => {
+                    const ActiveIcon = experiences[active].Icon;
+                    return (
+                      <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-accent to-[hsl(28,55%,40%)] flex items-center justify-center shadow-lg">
+                        <ActiveIcon className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                      </div>
+                    );
+                  })()}
                 </div>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
                   {experiences[active].responsibilities.map((r, j) => (
@@ -188,9 +197,9 @@ const ExperienceSection = () => {
                       initial={{ opacity: 0, x: 10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + j * 0.06 }}
-                      className="text-sm text-foreground/80 flex items-start gap-2 leading-relaxed"
+                      className="text-base text-foreground/85 flex items-start gap-2 leading-relaxed"
                     >
-                      <ChevronRight className="w-3.5 h-3.5 text-accent mt-1 shrink-0" />
+                      <ChevronRight className="w-4 h-4 text-accent mt-1 shrink-0" />
                       <span>{r}</span>
                     </motion.li>
                   ))}
