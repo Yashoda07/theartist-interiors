@@ -61,7 +61,7 @@ const FAQSection = () => {
                     onClick={() => setOpenIndex(isOpen ? null : i)}
                     className="w-full flex items-center justify-between p-5 md:p-6 text-left gap-4"
                   >
-                    <span className="text-base md:text-lg font-display font-medium text-foreground leading-snug">
+                    <span className="text-lg md:text-xl font-display font-medium text-foreground leading-snug">
                       {faq.question}
                     </span>
                     <motion.div
@@ -69,7 +69,7 @@ const FAQSection = () => {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className="shrink-0"
                     >
-                      <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${isOpen ? "text-accent" : "text-muted-foreground"}`} />
+                      <ChevronDown className={`w-5 h-5 transition-colors duration-300 ${isOpen ? "text-accent" : "text-foreground/60"}`} />
                     </motion.div>
                   </button>
 
@@ -84,7 +84,7 @@ const FAQSection = () => {
                       >
                         <div className="px-5 md:px-6 pb-5 md:pb-6">
                           <div className="w-full h-px bg-border mb-4" />
-                          <p className="text-base text-foreground/75 leading-relaxed">
+                          <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
                             {faq.answer}
                           </p>
                         </div>

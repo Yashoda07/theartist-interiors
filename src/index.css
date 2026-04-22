@@ -97,11 +97,11 @@
   }
 
   .text-body {
-    @apply text-base font-body font-normal leading-relaxed;
+    @apply text-base md:text-lg font-body font-normal leading-relaxed;
   }
 
   .text-label {
-    @apply text-sm md:text-base font-body font-semibold uppercase tracking-[0.15em] text-muted-foreground;
+    @apply text-sm md:text-base font-body font-semibold uppercase tracking-[0.15em] text-foreground/70;
   }
 
   .gold-line {

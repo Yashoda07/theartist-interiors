@@ -58,11 +58,11 @@ const SkillsSection = () => (
               >
                 <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${skill.gradient} opacity-70 group-hover:opacity-100 transition-opacity`} />
                 <skill.icon className="w-10 h-10 text-accent mb-5 group-hover:scale-110 transition-transform duration-300" />
-                <h3 className="font-display text-2xl text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
+                <h3 className="font-display text-2xl md:text-3xl text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
                   {skill.name}
                 </h3>
-                <p className="text-sm text-foreground/70 leading-relaxed mb-4">{skill.desc}</p>
-                <span className="text-accent text-xs font-medium uppercase tracking-wider group-hover:text-foreground transition-colors">
+                <p className="text-base text-foreground/75 leading-relaxed mb-4">{skill.desc}</p>
+                <span className="text-accent text-sm font-semibold uppercase tracking-wider group-hover:text-foreground transition-colors">
                   View Projects →
                 </span>
               </motion.div>
@@ -81,8 +81,8 @@ const SkillsSection = () => (
               transition={{ duration: 0.3 }}
               className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300 rounded-lg"
             >
-              <e.icon className="w-4 h-4 text-accent shrink-0" />
-              <span className="text-foreground text-sm font-medium">{e.name}</span>
+              <e.icon className="w-5 h-5 text-accent shrink-0" />
+              <span className="text-foreground text-sm md:text-base font-medium">{e.name}</span>
             </motion.div>
           ))}
         </div>

@@ -47,10 +47,10 @@ const TestimonialsSection = () => (
                   <Star key={j} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              <p className="text-base text-foreground/75 italic flex-1 mb-8 leading-relaxed">"{t.quote}"</p>
+              <p className="text-base md:text-lg text-foreground/80 italic flex-1 mb-8 leading-relaxed">"{t.quote}"</p>
               <div>
-                <p className="font-display text-lg text-foreground">{t.name}</p>
-                <p className="text-label text-accent text-[10px]">{t.project}</p>
+                <p className="font-display text-lg md:text-xl text-foreground">{t.name}</p>
+                <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.12em] text-accent mt-1">{t.project}</p>
               </div>
             </motion.div>
           </AnimatedSection>
