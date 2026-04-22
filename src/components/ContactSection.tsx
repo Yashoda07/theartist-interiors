@@ -6,9 +6,9 @@ import AnimatedSection from "./AnimatedSection";
 const socials = [
   { icon: Phone, label: "Call Now", href: "tel:+919999999999", color: "hover:text-accent" },
   { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919999999999", color: "hover:text-green-600" },
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/theartistinteriors", color: "hover:text-pink-500" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/the__artisttt/", color: "hover:text-pink-500" },
   { icon: Mail, label: "Email", href: "mailto:theartistinteriors@gmail.com", color: "hover:text-accent" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/in/aadarshchaubey", color: "hover:text-blue-600" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/", color: "hover:text-blue-600" },
 ];
 
 const ContactSection = () => {
@@ -29,7 +29,7 @@ const ContactSection = () => {
           <h2 className="text-display-lg text-foreground mb-4">
             Let's <span className="italic text-accent">Connect</span>
           </h2>
-          <p className="text-body-lg text-muted-foreground max-w-xl mb-16">
+          <p className="text-body-lg text-foreground/70 max-w-xl mb-16">
             Ready to transform your space? Get in touch for a free consultation.
           </p>
         </AnimatedSection>
@@ -42,11 +42,12 @@ const ContactSection = () => {
                 <motion.a
                   key={i}
                   href={s.href}
-                  target="_blank"
+                  target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   whileHover={{ x: 8 }}
+                  whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className={`flex items-center gap-4 py-4 border-b border-border text-muted-foreground ${s.color} transition-colors duration-300 group`}
+                  className={`flex items-center gap-4 py-4 border-b border-border text-foreground/80 ${s.color} transition-colors duration-300 group`}
                 >
                   <s.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
                   <span className="text-body text-foreground">{s.label}</span>
@@ -70,7 +71,7 @@ const ContactSection = () => {
                   required
                   value={form[f.key as keyof typeof form]}
                   onChange={(e) => setForm({ ...form, [f.key]: e.target.value })}
-                  className="w-full bg-transparent border-b border-border py-3 text-body text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-border py-3 text-body text-foreground placeholder:text-foreground/50 focus:border-accent focus:outline-none transition-colors duration-300"
                 />
               ))}
               <textarea
@@ -79,7 +80,7 @@ const ContactSection = () => {
                 required
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="w-full bg-transparent border-b border-border py-3 text-body text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
+                className="w-full bg-transparent border-b border-border py-3 text-body text-foreground placeholder:text-foreground/50 focus:border-accent focus:outline-none transition-colors duration-300 resize-none"
               />
               <motion.button
                 type="submit"
