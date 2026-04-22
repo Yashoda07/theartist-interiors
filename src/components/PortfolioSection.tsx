@@ -42,18 +42,27 @@ const PortfolioSection = () => (
           <AnimatedSection key={p.title} delay={i * 0.15}>
             <motion.div
               whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.4 }}
               className="group cursor-pointer"
             >
-              <div className="image-reveal aspect-[4/3] mb-4">
-                <img src={p.image} alt={p.title} loading="lazy" className="w-full h-full object-cover" />
+              <div className="image-reveal aspect-[4/3] mb-4 bg-muted">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  loading={i === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={i === 0 ? "high" : "auto"}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="relative">
                 <p className="text-label text-accent mb-1">{p.category}</p>
                 <h3 className="font-display text-xl text-foreground group-hover:text-accent transition-colors duration-300">
                   {p.title}
                 </h3>
-                <p className="text-body text-muted-foreground text-sm mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                {/* Description always visible on touch; revealed on hover on desktop */}
+                <p className="text-sm text-foreground/70 mt-1 leading-relaxed md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300">
                   {p.desc}
                 </p>
               </div>
@@ -65,7 +74,7 @@ const PortfolioSection = () => (
       <AnimatedSection delay={0.4} className="text-center mt-12">
         <Link
           to="/portfolio"
-          className="inline-flex px-10 py-4 bg-foreground text-background text-label hover:bg-accent transition-all duration-300 hover-lift"
+          className="inline-flex px-10 py-4 bg-foreground text-background text-label hover:bg-accent transition-all duration-300 hover-lift active:scale-95"
         >
           Click Here to See More
         </Link>
