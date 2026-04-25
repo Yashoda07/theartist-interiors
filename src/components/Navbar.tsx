@@ -1,33 +1,51 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Home", href: "#home", type: "hash" },
-  { label: "About", href: "#about", type: "hash" },
-  { label: "Experience", href: "#experience", type: "hash" },
-  { label: "Services", href: "#services", type: "hash" },
-  { label: "Portfolio", href: "/portfolio", type: "link" },
-  { label: "Skills", href: "#skills", type: "hash" },
-  { label: "Testimonials", href: "#testimonials", type: "hash" },
+  { label: "Home", href: "#home", type: "hash" as const },
+  { label: "About", href: "#about", type: "hash" as const },
+  { label: "Experience", href: "#experience", type: "hash" as const },
+  { label: "Services", href: "#services", type: "hash" as const },
+  { label: "Portfolio", href: "/portfolio", type: "link" as const },
+  { label: "Skills", href: "#skills", type: "hash" as const },
+  { label: "Testimonials", href: "#testimonials", type: "hash" as const },
+  { label: "FAQ", href: "#faq", type: "hash" as const },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleNavClick = (item: typeof navItems[0]) => {
-    if (item.type === "hash" && location.pathname !== "/") {
-      window.location.href = "/" + item.href;
+  const goToHash = (hash: string) => {
+    // hash like "#about"
+    if (location.pathname !== "/") {
+      // navigate to home with hash; Index page will handle scroll
+      navigate("/" + hash);
+    } else {
+      const id = hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      else window.location.hash = hash;
+    }
+  };
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/#home");
     }
   };
 
@@ -42,15 +60,15 @@ const Navbar = () => {
         }`}
       >
         <div className="section-padding flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center">
+          <a href="/" onClick={handleLogoClick} className="flex items-center cursor-pointer" aria-label="The Artist Interiors — back to top">
             <img
               src={logo}
               alt="The Artist Interiors"
               className="h-16 w-auto"
             />
-          </Link>
+          </a>
 
-          <div className="hidden lg:flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) =>
               item.type === "link" ? (
                 <Link
@@ -61,14 +79,13 @@ const Navbar = () => {
                   {item.label}
                 </Link>
               ) : (
-                <a
+                <button
                   key={item.href}
-                  href={item.href}
-                  onClick={() => handleNavClick(item)}
+                  onClick={() => goToHash(item.href)}
                   className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
                 >
                   {item.label}
-                </a>
+                </button>
               )
             )}
           </div>
@@ -96,7 +113,7 @@ const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-[60] bg-background flex flex-col items-center justify-center gap-7 overflow-y-auto py-20"
           >
             <button
               onClick={() => setMobileOpen(false)}
@@ -117,17 +134,16 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ) : (
-                <motion.a
+                <motion.button
                   key={item.href}
-                  href={item.href}
-                  onClick={() => { setMobileOpen(false); handleNavClick(item); }}
+                  onClick={() => { setMobileOpen(false); setTimeout(() => goToHash(item.href), 50); }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
                   className="text-display-md text-foreground hover:text-accent transition-colors"
                 >
                   {item.label}
-                </motion.a>
+                </motion.button>
               )
             )}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: navItems.length * 0.05 }}>

@@ -1,18 +1,30 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-interior.jpg";
 
-const HeroSection = () => (
+const HeroSection = () => {
+  const [videoReady, setVideoReady] = useState(false);
+
+  return (
   <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
-    {/* Background video */}
+    {/* Instant LQIP/poster background — visible immediately, no grey flash */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url(${heroImage})` }}
+      aria-hidden="true"
+    />
+
+    {/* Background video — lazy fades in once it can play */}
     <div className="absolute inset-0">
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster={heroImage}
-        className="w-full h-full object-cover"
+        onCanPlay={() => setVideoReady(true)}
+        className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
       >
         <source
           src="https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4"
@@ -45,9 +57,9 @@ const HeroSection = () => (
         transition={{ delay: 0.5, duration: 1 }}
         className="text-6xl md:text-8xl lg:text-9xl font-display font-light tracking-tight leading-[0.9] text-white max-w-4xl mb-10 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
       >
-        We Design
+        <span className="text-white/60">We</span> Design
         <br />
-        <span className="italic font-light">your Desires</span>
+        <span className="italic font-light"><span className="text-white/60">your</span> Desires</span>
       </motion.h1>
 
       <motion.div
@@ -100,6 +112,7 @@ const HeroSection = () => (
       5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai.
     </motion.p>
   </section>
-);
+  );
+};
 
 export default HeroSection;
