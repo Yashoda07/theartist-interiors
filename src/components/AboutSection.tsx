@@ -60,8 +60,8 @@ const AboutSection = () => {
               </AnimatePresence>
 
               {/* Tap hint pill */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-foreground/85 text-background text-[11px] uppercase tracking-wider font-medium opacity-90 group-active:scale-95 transition-transform pointer-events-none">
-                Tap to {showPhoto ? "see logo" : "meet the founder"}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-foreground/70 text-background text-[11px] uppercase tracking-wider font-medium opacity-80 group-hover:opacity-100 group-active:scale-95 transition-all pointer-events-none">
+                Click Me
               </div>
             </button>
           </AnimatedSection>
@@ -78,13 +78,13 @@ const AboutSection = () => {
 
             <AnimatedSection delay={0.3}>
               <p className="text-lg text-foreground/85 mb-6 leading-relaxed">
-                From a passionate junior designer to the founder of The Artist Interiors, Aadarsh Chaubey's journey is fueled by an unwavering love for transforming spaces into experiences.
+                From a passionate junior designer to the founder of The Artist Interiors, my journey has been fueled by an unwavering love for transforming spaces into experiences.
               </p>
               <p className="text-base text-foreground/75 mb-6 leading-relaxed">
-                With expertise spanning interior design, 3D visualization, and end-to-end site execution, Aadarsh bridges the gap between creative vision and flawless delivery. His strength lies in clear communication — ensuring every client's desire is understood and every contractor is aligned.
+                With expertise spanning interior design, 3D visualization, and end-to-end site execution, I bridge the gap between creative vision and flawless delivery. My strength lies in clear communication — making sure every client's desire is understood and every contractor stays aligned.
               </p>
               <p className="text-base text-foreground/75 mb-8 leading-relaxed">
-                A quick learner with deep adaptability, he continues to push boundaries in residential design across Mumbai and beyond.
+                I'm a quick learner with deep adaptability, and I continue to push boundaries in residential design across Mumbai and beyond.
               </p>
               <p className="text-sm font-semibold uppercase tracking-widest text-accent">
                 BSc in Interior Designing — Maharashtra Open University
