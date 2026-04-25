@@ -79,22 +79,24 @@ const ServicesSection = () => {
                 <motion.button
                   onClick={() => setActive(isOpen ? null : i)}
                   whileTap={{ scale: 0.985 }}
-                  className={`relative w-full text-left bg-card border border-border rounded-2xl overflow-hidden group transition-all duration-500 ${
-                    isOpen ? "shadow-2xl border-accent/50" : "shadow-sm md:hover:-translate-y-2 md:hover:shadow-xl md:hover:border-accent/40"
+                  className={`relative w-full text-left border rounded-2xl overflow-hidden group transition-all duration-500 ${
+                    isOpen
+                      ? "shadow-2xl border-accent/50 bg-[hsl(35,30%,96%)]"
+                      : "shadow-sm bg-card border-border md:hover:-translate-y-2 md:hover:shadow-xl md:hover:border-accent/40"
                   }`}
                   aria-expanded={isOpen}
                 >
                   {/* Gradient header band */}
                   <div className={`h-2 bg-gradient-to-r ${s.accent}`} />
 
-                  {/* Glow on active */}
+                  {/* Subtle warm tint on active */}
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className={`absolute inset-0 bg-gradient-to-br ${s.accent} opacity-[0.05] pointer-events-none`}
+                        className={`absolute inset-0 bg-gradient-to-br ${s.accent} opacity-[0.03] pointer-events-none`}
                       />
                     )}
                   </AnimatePresence>
