@@ -4,11 +4,11 @@ import { Phone, MessageCircle, Instagram, Mail, Linkedin } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 
 const socials = [
-  { icon: Phone, label: "Call Now", href: "tel:+919999999999", color: "hover:text-accent" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919999999999", color: "hover:text-green-600" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/the__artisttt/", color: "hover:text-pink-500" },
-  { icon: Mail, label: "Email", href: "mailto:theartistinteriors@gmail.com", color: "hover:text-accent" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/", color: "hover:text-blue-600" },
+  { icon: Phone, label: "+91 99879 67465", href: "tel:+919987967465", color: "hover:text-accent" },
+  { icon: MessageCircle, label: "WhatsApp Chat", href: "https://wa.me/919987967465", color: "hover:text-green-600" },
+  { icon: Instagram, label: "@the__artisttt", href: "https://www.instagram.com/the__artisttt/", color: "hover:text-pink-500" },
+  { icon: Mail, label: "theartist.interiors@gmail.com", href: "mailto:theartist.interiors@gmail.com", color: "hover:text-accent" },
+  { icon: Linkedin, label: "Aadarsh Chaubey", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/", color: "hover:text-blue-600" },
 ];
 
 const ContactSection = () => {
@@ -17,7 +17,7 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const msg = encodeURIComponent(`Hi Aadarsh! I'm ${form.name}. ${form.message}`);
-    window.open(`https://wa.me/919999999999?text=${msg}`, "_blank");
+    window.open(`https://wa.me/919987967465?text=${msg}`, "_blank");
   };
 
   return (
