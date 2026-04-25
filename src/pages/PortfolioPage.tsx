@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Instagram, Download } from "lucide-react";
+import { Instagram, Linkedin, Youtube } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
@@ -30,7 +30,7 @@ const PortfolioPage = () => {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <div className="pt-20" />
+      <div className="pt-14 md:pt-20" />
 
       <section className="section-padding pt-6 pb-20 md:pt-10 md:pb-28">
         <div className="max-w-7xl mx-auto">
@@ -112,12 +112,13 @@ const PortfolioPage = () => {
           </a>
 
           <a
-            href="/portfolio.pdf"
-            download
+            href="https://www.youtube.com/@aadarsh.chaubeyy"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
           >
-            <Download className="w-4 h-4" />
-            Download Portfolio
+            <Youtube className="w-4 h-4" />
+            Watch Projects
           </a>
 
           <a

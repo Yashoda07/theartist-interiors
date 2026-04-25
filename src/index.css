@@ -68,12 +68,24 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 6rem;
+    /* mobile compact, tablet+, desktop progressively larger to clear shrunken navbar */
+    scroll-padding-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    html { scroll-padding-top: 5rem; }
   }
 
   section[id] {
-    scroll-margin-top: 6rem;
+    scroll-margin-top: 4rem;
   }
+
+  @media (min-width: 768px) {
+    section[id] { scroll-margin-top: 5rem; }
+  }
+
+  /* Hero is the page top — no offset needed */
+  section#home { scroll-margin-top: 0; }
 }
 
 @layer components {

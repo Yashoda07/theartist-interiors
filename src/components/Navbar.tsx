@@ -28,12 +28,17 @@ const Navbar = () => {
   }, []);
 
   const goToHash = (hash: string) => {
-    // hash like "#about"
+    // hash like "#about" or "#home"
+    const id = hash.replace("#", "");
     if (location.pathname !== "/") {
       // navigate to home with hash; Index page will handle scroll
       navigate("/" + hash);
     } else {
-      const id = hash.replace("#", "");
+      if (id === "home") {
+        // Always scroll to very top for Home — never rely on section anchor
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        return;
+      }
       const el = document.getElementById(id);
       if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
       else window.location.hash = hash;
@@ -59,12 +64,12 @@ const Navbar = () => {
           scrolled ? "bg-background/95 backdrop-blur-md shadow-sm" : "bg-background/80 backdrop-blur-sm"
         }`}
       >
-        <div className="section-padding flex items-center justify-between h-20">
+        <div className="section-padding flex items-center justify-between h-14 md:h-20">
           <a href="/" onClick={handleLogoClick} className="flex items-center cursor-pointer" aria-label="The Artist Interiors — back to top">
             <img
               src={logo}
               alt="The Artist Interiors"
-              className="h-16 w-auto"
+              className="h-10 md:h-16 w-auto"
             />
           </a>
 

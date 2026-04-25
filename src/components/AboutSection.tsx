@@ -24,6 +24,15 @@ const AboutSection = () => {
               className="relative w-full max-w-sm md:max-w-md aspect-[4/5] rounded-lg shadow-xl overflow-hidden bg-card group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4"
               style={{ perspective: "1200px" }}
             >
+              {/* Blur-up LQIP — instant paint, prevents grey */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl"
+                style={{
+                  backgroundImage:
+                    "url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAYABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBgGTipPJPqKaqk8ilw3rXrs88YRg4opzKepopgIHxS+Z7UUUWC4F8jGKKKKBH/2Q==')",
+                }}
+              />
               <AnimatePresence mode="wait">
                 {showPhoto ? (
                   <motion.img
@@ -34,8 +43,7 @@ const AboutSection = () => {
                     animate={{ rotateY: 0, opacity: 1 }}
                     exit={{ rotateY: 90, opacity: 0 }}
                     transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-                    loading="eager"
-                    fetchPriority="high"
+                    loading="lazy"
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
@@ -59,8 +67,8 @@ const AboutSection = () => {
                 )}
               </AnimatePresence>
 
-              {/* Tap hint pill */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-foreground/70 text-background text-[11px] uppercase tracking-wider font-medium opacity-80 group-hover:opacity-100 group-active:scale-95 transition-all pointer-events-none">
+              {/* Click Me hint — no background, subtle but discoverable */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-background text-xs md:text-sm uppercase tracking-[0.25em] font-semibold opacity-70 group-hover:opacity-100 group-hover:underline underline-offset-4 transition-all pointer-events-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
                 Click Me
               </div>
             </button>
