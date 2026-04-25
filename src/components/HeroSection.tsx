@@ -45,9 +45,9 @@ const HeroSection = () => (
         transition={{ delay: 0.5, duration: 1 }}
         className="text-6xl md:text-8xl lg:text-9xl font-display font-light tracking-tight leading-[0.9] text-white max-w-4xl mb-10 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
       >
-        We Design
+        <span className="text-white/60">We</span> Design
         <br />
-        <span className="italic font-light">your Desires</span>
+        <span className="italic font-light"><span className="text-white/60">your</span> Desires</span>
       </motion.h1>
 
       <motion.div
