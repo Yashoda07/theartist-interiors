@@ -141,7 +141,7 @@ const ServicesSection = () => {
                                 initial={{ opacity: 0, x: -8 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: j * 0.06 }}
-                                className="text-base text-foreground/85 flex items-start gap-2.5 leading-relaxed"
+                                className="text-base text-foreground flex items-start gap-2.5 leading-relaxed"
                               >
                                 <span className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${s.accent} shrink-0`} />
                                 {p}
