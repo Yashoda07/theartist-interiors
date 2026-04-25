@@ -112,6 +112,7 @@ const HeroSection = () => {
       5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai.
     </motion.p>
   </section>
-);
+  );
+};
 
 export default HeroSection;
