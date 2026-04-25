@@ -30,7 +30,7 @@ const PortfolioPage = () => {
   return (
     <main className="overflow-x-hidden">
       <Navbar />
-      <div className="pt-20" />
+      <div className="pt-14 md:pt-20" />
 
       <section className="section-padding pt-6 pb-20 md:pt-10 md:pb-28">
         <div className="max-w-7xl mx-auto">
