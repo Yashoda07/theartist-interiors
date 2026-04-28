@@ -2,56 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageSquare, X, Send } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { autoReply } from "@/lib/autoReply";
 
 type Msg = { role: "bot" | "user"; text: string };
 
 const INITIAL: Msg[] = [
   { role: "bot", text: "Hi! I'm here to help with services, pricing, or booking a consultation. What would you like to know?" },
 ];
-
-// Lightweight keyword-based auto reply — no network call, instant.
-const SERVICE_LOCATIONS = [
-  "mumbai", "thane", "dombivli", "ambernath", "santacruz", "vashi", "navi mumbai",
-];
-
-const autoReply = (input: string): string => {
-  const t = input.toLowerCase();
-
-  // Location intent — check first so "do you serve in thane" is handled cleanly
-  if (/(serve|service|available|provide|cover|work in|operate|come to|visit|located|location|area|where)/.test(t)) {
-    const matched = SERVICE_LOCATIONS.find((loc) => t.includes(loc));
-    if (matched) {
-      const pretty = matched.replace(/\b\w/g, (c) => c.toUpperCase());
-      return `Yes — absolutely! We actively deliver projects across ${pretty} and offer end-to-end interior design, 3D visualization, and on-site execution there. With strong vendor & contractor networks in the region, you can expect timely site visits, transparent updates, and refined craftsmanship throughout your project.`;
-    }
-    // City was asked but not in our list (or no city named) — list service area
-    const cityLike = t.match(/\b(in|at|to)\s+([a-z\s]{3,30})/);
-    if (cityLike) {
-      return `We currently provide on-site services across Mumbai, Thane, Dombivli, Ambernath, Santacruz, Vashi, and Navi Mumbai. For locations outside this region, we offer remote 3D visualization & complete design consultation packages worldwide — you'll get the same quality without the travel.`;
-    }
-    return "Site execution: Mumbai, Thane, Dombivli, Ambernath, Santacruz, Vashi & Navi Mumbai. Design & 3D visualization: globally — fully remote.";
-  }
-
-  if (/(price|cost|charge|fee|budget|rate)/.test(t)) {
-    return "Our projects are scoped to your space and vision. Interior design starts from ₹150/sqft, and 3D visualization from ₹3,000 per render. Share your floor plan via the contact page for an exact quote!";
-  }
-  if (/(3d|render|visual)/.test(t)) {
-    return "We create photorealistic 3D renders for clients worldwide — just send a floor plan + your preferences. Typical delivery: 5–10 days with unlimited revisions until you love it.";
-  }
-  if (/(book|consult|appoint|schedule|meet)/.test(t)) {
-    return "Wonderful! Head to the Contact page to pick a date & time on the live calendar (Mon–Sat, 10am–7pm). I'll confirm via WhatsApp.";
-  }
-  if (/(time|how long|duration|deliver)/.test(t)) {
-    return "A full residential project usually takes 45–90 days end-to-end. 3D visualization alone: 5–10 days.";
-  }
-  if (/(service|offer|do you|what)/.test(t)) {
-    return "Three core services: (1) Interior Design, (2) 3D Visualization, (3) Site Execution. Tap 'Services' in the menu to explore.";
-  }
-  if (/(hi|hello|hey|namaste)/.test(t)) {
-    return "Hi there! Ask me about services, pricing, locations we serve, or how to book a consultation.";
-  }
-  return "Thanks for your message! For a detailed answer, please book a free consultation via the Contact page or WhatsApp us at +91 99879 67465.";
-};
 
 const FloatingChat = () => {
   const [open, setOpen] = useState(false);
