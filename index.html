@@ -8,22 +8,53 @@
     <meta name="keywords" content="interior designer Mumbai, 3D visualization, site execution, residential interior design, The Artist Interiors" />
     <meta name="author" content="Aadarsh Chaubey" />
 
-    
-    
-    <meta property="og:type" content="website" />
+    <!-- Preconnect to font CDN — eliminates render-blocking delay -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta property="og:title" content="The Artist Interiors">
-  <meta name="twitter:title" content="The Artist Interiors">
-  <meta property="og:description" content="Aadarsh Chaubey, The  Artist Interiors — Interior Design Studio specialized in Interior Designing  &amp;  3D Visualization">
-  <meta name="twitter:description" content="Aadarsh Chaubey, The  Artist Interiors — Interior Design Studio specialized in Interior Designing  &amp;  3D Visualization">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7671947d-f04d-46b1-9a20-f9cd189ef003/id-preview-275cbc51--aa838223-02da-4a0e-89ae-fb10fe0e717f.lovable.app-1776886800879.png">
-  <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7671947d-f04d-46b1-9a20-f9cd189ef003/id-preview-275cbc51--aa838223-02da-4a0e-89ae-fb10fe0e717f.lovable.app-1776886800879.png">
-</head>
+    <meta name="twitter:title" content="The Artist Interiors">
+    <meta property="og:description" content="Aadarsh Chaubey, The  Artist Interiors — Interior Design Studio specialized in Interior Designing  &amp;  3D Visualization">
+    <meta name="twitter:description" content="Aadarsh Chaubey, The  Artist Interiors — Interior Design Studio specialized in Interior Designing  &amp;  3D Visualization">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7671947d-f04d-46b1-9a20-f9cd189ef003/id-preview-275cbc51--aa838223-02da-4a0e-89ae-fb10fe0e717f.lovable.app-1776886800879.png">
+    <meta name="twitter:image" content="https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/7671947d-f04d-46b1-9a20-f9cd189ef003/id-preview-275cbc51--aa838223-02da-4a0e-89ae-fb10fe0e717f.lovable.app-1776886800879.png">
+
+    <!-- Inline boot styles + loader: shown instantly, prevents grey flash on refresh -->
+    <style>
+      html, body { background: hsl(30, 25%, 96%); margin: 0; }
+      #app-boot {
+        position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+        background: hsl(30, 25%, 96%); z-index: 9999; transition: opacity .35s ease;
+      }
+      #app-boot .ring {
+        width: 38px; height: 38px; border-radius: 50%;
+        border: 2px solid hsl(28, 45%, 45%); border-top-color: transparent;
+        animation: app-spin .8s linear infinite;
+      }
+      @keyframes app-spin { to { transform: rotate(360deg); } }
+      #root:not(:empty) + #app-boot { opacity: 0; pointer-events: none; }
+    </style>
+  </head>
 
   <body>
     <div id="root"></div>
+    <div id="app-boot" aria-hidden="true"><div class="ring"></div></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Remove the boot loader once React has mounted content
+      const obs = new MutationObserver(() => {
+        const root = document.getElementById('root');
+        if (root && root.childElementCount > 0) {
+          const boot = document.getElementById('app-boot');
+          if (boot) { boot.style.opacity = '0'; setTimeout(() => boot.remove(), 350); }
+          obs.disconnect();
+        }
+      });
+      obs.observe(document.getElementById('root'), { childList: true });
+      setTimeout(() => { const b = document.getElementById('app-boot'); if (b) b.remove(); }, 5000);
+    </script>
   </body>
 </html>
