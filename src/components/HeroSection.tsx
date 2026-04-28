@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-interior.jpg";
 
 const HeroSection = () => {
   const [videoReady, setVideoReady] = useState(false);
+  const [enableVideo, setEnableVideo] = useState(false);
+
+  // Skip the heavy video on mobile/tablet — poster image only.
+  // Saves bandwidth and eliminates jank on lower-power devices.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const slowConnection =
+      typeof navigator !== "undefined" &&
+      (navigator as any).connection?.saveData === true;
+    if (isLargeScreen && !reducedMotion && !slowConnection) {
+      setEnableVideo(true);
+    }
+  }, []);
 
   return (
   <section id="home" className="relative min-h-screen flex items-end overflow-hidden">
@@ -14,31 +29,35 @@ const HeroSection = () => {
       aria-hidden="true"
     />
 
-    {/* Background video — lazy fades in once it can play */}
-    <div className="absolute inset-0">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster={heroImage}
-        onCanPlay={() => setVideoReady(true)}
-        className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
-      >
-        <source
-          src="https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://videos.pexels.com/video-files/7578544/7578544-uhd_2560_1440_30fps.mp4"
-          type="video/mp4"
-        />
-      </video>
-      {/* Lighter overlay so the video remains visible while keeping text readable */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/15" />
-      <div className="absolute inset-0 bg-black/10" />
-    </div>
+    {/* Background video — desktop only; lazy fades in once it can play */}
+    {enableVideo && (
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={heroImage}
+          onCanPlay={() => setVideoReady(true)}
+          className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+        >
+          <source
+            src="https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://videos.pexels.com/video-files/7578544/7578544-uhd_2560_1440_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    )}
+
+    {/* Lighter overlay so the video remains visible while keeping text readable */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-black/15" />
+    <div className="absolute inset-0 bg-black/10" />
+
 
     {/* Content */}
     <div className="relative z-10 section-padding pb-32 md:pb-28 w-full">
