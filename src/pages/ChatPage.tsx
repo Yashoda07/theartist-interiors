@@ -3,38 +3,13 @@ import { ArrowLeft, Send, MessageSquare } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { autoReply } from "@/lib/autoReply";
 
 type Msg = { role: "bot" | "user"; text: string };
 
 const INITIAL: Msg[] = [
   { role: "bot", text: "Hi! I'm here to help with services, pricing, or booking a consultation. What would you like to know?" },
 ];
-
-const autoReply = (input: string): string => {
-  const t = input.toLowerCase();
-  if (/(price|cost|charge|fee|budget|rate)/.test(t)) {
-    return "Our projects are scoped to your space and vision. Interior design starts from ₹150/sqft, and 3D visualization from ₹3,000 per render. Share your floor plan via the contact page for an exact quote!";
-  }
-  if (/(3d|render|visual)/.test(t)) {
-    return "We create photorealistic 3D renders for clients worldwide — just send a floor plan + your preferences. Typical delivery: 5–10 days with unlimited revisions until you love it.";
-  }
-  if (/(book|consult|appoint|schedule|meet)/.test(t)) {
-    return "Wonderful! Head to the Contact page to pick a date & time on the live calendar (Mon–Sat, 10am–7pm). I'll confirm via WhatsApp.";
-  }
-  if (/(time|how long|duration|deliver)/.test(t)) {
-    return "A full residential project usually takes 45–90 days end-to-end. 3D visualization alone: 5–10 days.";
-  }
-  if (/(area|location|mumbai|where|serve)/.test(t)) {
-    return "Site execution: Mumbai & MMR. Design & 3D services: globally — all online.";
-  }
-  if (/(service|offer|do you|what)/.test(t)) {
-    return "Three core services: (1) Interior Design, (2) 3D Visualization, (3) Site Execution. Visit the Services section to explore.";
-  }
-  if (/(hi|hello|hey|namaste)/.test(t)) {
-    return "Hi there! 👋 Ask me about services, pricing, timelines, or how to book a consultation.";
-  }
-  return "Thanks for your message! For a detailed answer, please book a free consultation via the Contact page or WhatsApp us directly.";
-};
 
 const ChatPage = () => {
   const [messages, setMessages] = useState<Msg[]>(INITIAL);
