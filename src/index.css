@@ -86,8 +86,6 @@
   /* Sections snap flush to header on anchor jumps — no extra gap */
   section[id] {
     scroll-margin-top: 3.5rem;
-    /* Trim top padding when navigated-to so the heading sits just under header */
-    padding-top: 0;
   }
 
   @media (min-width: 768px) {
