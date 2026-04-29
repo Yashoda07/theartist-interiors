@@ -34,7 +34,7 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="section-padding section-spacing">
+    <section id="faq" className="section-padding section-spacing bg-card">
       <div className="max-w-3xl mx-auto">
         <AnimatedSection>
           <p className="text-label mb-4">FAQ</p>

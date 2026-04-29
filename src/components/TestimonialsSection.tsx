@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section id="testimonials" className="section-padding section-spacing bg-card">
+  <section id="testimonials" className="section-padding section-spacing">
     <div className="max-w-6xl mx-auto">
       <AnimatedSection>
         <p className="text-label mb-4">Testimonials</p>
