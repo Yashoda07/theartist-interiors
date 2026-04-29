@@ -21,32 +21,32 @@ const AboutSection = () => {
             <button
               onClick={() => setShowPhoto((s) => !s)}
               aria-label={showPhoto ? "Show logo" : "Show photo of Aadarsh"}
-              className="relative w-full max-w-sm md:max-w-md aspect-[4/5] rounded-lg shadow-xl overflow-hidden bg-card group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4"
+              className="relative w-full max-w-sm md:max-w-md aspect-[4/5] rounded-lg shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4"
               style={{ perspective: "1200px" }}
             >
-              {/* Blur-up LQIP — instant paint, prevents grey */}
+              {/* Themed warm backdrop — replaces blue LQIP flash */}
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-cover bg-center scale-110 blur-2xl"
-                style={{
-                  backgroundImage:
-                    "url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAYABgDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwBgGTipPJPqKaqk8ilw3rXrs88YRg4opzKepopgIHxS+Z7UUUWC4F8jGKKKKBH/2Q==')",
-                }}
+                className="absolute inset-0 bg-gradient-to-br from-secondary via-card to-background"
               />
               <AnimatePresence mode="wait">
                 {showPhoto ? (
-                  <motion.img
+                  <motion.div
                     key="photo"
-                    src={profileImage}
-                    alt="Aadarsh Chaubey, Founder of The Artist Interiors"
                     initial={{ rotateY: -90, opacity: 0 }}
                     animate={{ rotateY: 0, opacity: 1 }}
                     exit={{ rotateY: 90, opacity: 0 }}
                     transition={{ duration: 0.55, ease: [0.4, 0, 0.2, 1] }}
-                    loading="lazy"
-                    decoding="async"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    className="absolute inset-0 w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary via-card to-background p-4"
+                  >
+                    <img
+                      src={profileImage}
+                      alt="Aadarsh Chaubey, Founder of The Artist Interiors"
+                      loading="lazy"
+                      decoding="async"
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </motion.div>
                 ) : (
                   <motion.div
                     key="logo"
