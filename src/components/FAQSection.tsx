@@ -54,7 +54,7 @@ const FAQSection = () => {
               <AnimatedSection key={i} delay={i * 0.08}>
                 <motion.div
                   className={`border rounded-lg overflow-hidden transition-colors duration-300 ${
-                    isOpen ? "border-accent/50 bg-accent/5" : "border-border bg-card hover:border-accent/30"
+                    isOpen ? "border-accent/50 bg-accent/5" : "border-border bg-background hover:border-accent/30"
                   }`}
                 >
                   <button
