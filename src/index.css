@@ -126,8 +126,9 @@
   }
 
   .section-spacing {
-    /* Minimal top padding so anchored sections sit flush under the fixed header */
-    @apply pt-4 pb-20 md:pt-6 md:pb-32;
+    /* Match Experience section spacing for consistent breathing room across all sections.
+       scroll-padding-top already accounts for the fixed header so sections align just below it. */
+    @apply py-16 md:py-20;
   }
 
   .text-display-xl {
