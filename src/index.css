@@ -71,6 +71,12 @@
     /* Match navbar height exactly so sections stick right below header */
     scroll-padding-top: 3.5rem;
     -webkit-text-size-adjust: 100%;
+    /* Bump base font size for clearer readability across the site */
+    font-size: 17px;
+  }
+
+  @media (min-width: 768px) {
+    html { font-size: 18px; }
   }
 
   body {
