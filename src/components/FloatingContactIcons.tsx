@@ -16,11 +16,11 @@ const FloatingContactIcons = () => (
         target={item.href.startsWith("http") ? "_blank" : undefined}
         rel="noopener noreferrer"
         whileHover={{ x: -4, scale: 1.05 }}
-        className="bg-[hsl(35,30%,94%)]/95 backdrop-blur-md text-foreground p-1.5 sm:p-2 md:p-2.5 rounded-l-lg shadow-md flex flex-col items-center gap-0.5 transition-all duration-300 hover:shadow-xl hover:bg-[hsl(35,30%,97%)] border border-foreground/15"
+        className="bg-[hsl(35,30%,94%)]/95 backdrop-blur-md text-foreground p-2.5 sm:p-3 md:p-3.5 rounded-l-lg shadow-md flex flex-col items-center gap-1 transition-all duration-300 hover:shadow-xl hover:bg-[hsl(35,30%,97%)] border border-foreground/15"
         aria-label={item.label}
       >
-        <item.icon className={`w-3.5 h-3.5 sm:w-[15px] sm:h-[15px] md:w-[18px] md:h-[18px] ${item.iconColor}`} />
-        <span className="text-[9px] md:text-[10px] font-bold leading-tight hidden sm:block text-foreground uppercase tracking-wide">{item.label}</span>
+        <item.icon className={`w-5 h-5 sm:w-[22px] sm:h-[22px] md:w-6 md:h-6 ${item.iconColor}`} />
+        <span className="text-[10px] md:text-[11px] font-bold leading-tight hidden sm:block text-foreground uppercase tracking-wide">{item.label}</span>
       </motion.a>
     ))}
   </div>

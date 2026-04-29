@@ -126,7 +126,8 @@
   }
 
   .section-spacing {
-    @apply pt-10 pb-20 md:pt-16 md:pb-32;
+    /* Minimal top padding so anchored sections sit flush under the fixed header */
+    @apply pt-4 pb-20 md:pt-6 md:pb-32;
   }
 
   .text-display-xl {
