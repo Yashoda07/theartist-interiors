@@ -120,7 +120,7 @@
   }
 
   .section-spacing {
-    @apply py-20 md:py-32;
+    @apply pt-10 pb-20 md:pt-16 md:pb-32;
   }
 
   .text-display-xl {
