@@ -163,8 +163,8 @@ const ServicesSection = () => {
                           animate={{ opacity: 1 }}
                           className="text-base text-foreground/75 leading-relaxed"
                         >
-                          {s.points[0]}.{" "}
-                          <span className="text-accent font-medium">Tap to explore →</span>
+                          {s.points[0]}.
+                          <span className="block mt-2 text-accent font-medium">Tap to explore →</span>
                         </motion.p>
                       )}
                     </AnimatePresence>

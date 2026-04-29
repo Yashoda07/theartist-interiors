@@ -7,10 +7,10 @@ import logo from "@/assets/logo.png";
 const navItems = [
   { label: "Home", href: "#home", type: "hash" as const },
   { label: "About", href: "#about", type: "hash" as const },
+  { label: "Skills", href: "#skills", type: "hash" as const },
   { label: "Experience", href: "#experience", type: "hash" as const },
   { label: "Services", href: "#services", type: "hash" as const },
   { label: "Portfolio", href: "/portfolio", type: "link" as const },
-  { label: "Skills", href: "#skills", type: "hash" as const },
   { label: "Testimonials", href: "#testimonials", type: "hash" as const },
   { label: "FAQ", href: "#faq", type: "hash" as const },
 ];

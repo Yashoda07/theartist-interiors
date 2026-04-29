@@ -6,16 +6,14 @@ const HeroSection = () => {
   const [videoReady, setVideoReady] = useState(false);
   const [enableVideo, setEnableVideo] = useState(false);
 
-  // Skip the heavy video on mobile/tablet — poster image only.
-  // Saves bandwidth and eliminates jank on lower-power devices.
+  // Enable video on every screen — respect reduced motion & data-saver only.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const isLargeScreen = window.matchMedia("(min-width: 1024px)").matches;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const slowConnection =
       typeof navigator !== "undefined" &&
       (navigator as any).connection?.saveData === true;
-    if (isLargeScreen && !reducedMotion && !slowConnection) {
+    if (!reducedMotion && !slowConnection) {
       setEnableVideo(true);
     }
   }, []);

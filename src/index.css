@@ -68,7 +68,7 @@
 
   html {
     scroll-behavior: smooth;
-    /* Match navbar height exactly: 56px mobile, 80px desktop */
+    /* Match navbar height exactly so sections stick right below header */
     scroll-padding-top: 3.5rem;
     -webkit-text-size-adjust: 100%;
   }
@@ -83,6 +83,7 @@
     html { scroll-padding-top: 5rem; }
   }
 
+  /* Sections snap flush to header on anchor jumps — no extra gap */
   section[id] {
     scroll-margin-top: 3.5rem;
   }
@@ -119,7 +120,7 @@
   }
 
   .section-spacing {
-    @apply py-20 md:py-32;
+    @apply pt-10 pb-20 md:pt-16 md:pb-32;
   }
 
   .text-display-xl {
