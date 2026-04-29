@@ -10,8 +10,29 @@ import projectLiving1 from "@/assets/project-living1.jpg";
 import projectKitchen from "@/assets/project-kitchen.jpg";
 import projectFullhome from "@/assets/project-fullhome.jpg";
 import projectLiving2 from "@/assets/project-living2.jpg";
+import render1 from "@/assets/renders/render-1.jpg";
+import render2 from "@/assets/renders/render-2.jpg";
+import render3 from "@/assets/renders/render-3.jpg";
+import render4 from "@/assets/renders/render-4.jpg";
+import render5 from "@/assets/renders/render-5.jpg";
+import render6 from "@/assets/renders/render-6.jpg";
+import render7 from "@/assets/renders/render-7.jpg";
+import render8 from "@/assets/renders/render-8.jpg";
+import render9 from "@/assets/renders/render-9.jpg";
+import render10 from "@/assets/renders/render-10.jpg";
+import render11 from "@/assets/renders/render-11.jpg";
+import render12 from "@/assets/renders/render-12.jpg";
+import render13 from "@/assets/renders/render-13.jpg";
+import render14 from "@/assets/renders/render-14.jpg";
+import render15 from "@/assets/renders/render-15.jpg";
+import render16 from "@/assets/renders/render-16.jpg";
+import render17 from "@/assets/renders/render-17.jpg";
+import render18 from "@/assets/renders/render-18.jpg";
+import render19 from "@/assets/renders/render-19.jpg";
 
 const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Renders"];
+
+const renderImages = [render1, render2, render3, render4, render5, render6, render7, render8, render9, render10, render11, render12, render13, render14, render15, render16, render17, render18, render19];
 
 const projects = [
   { image: projectLiving1, title: "Lodha Crown — Living Room", category: "Living Room", desc: "Warm contemporary living space with custom furniture and layered lighting design." },
@@ -19,8 +40,12 @@ const projects = [
   { image: projectKitchen, title: "Lodha Crown — Kitchen", category: "Kitchen", desc: "Modern modular kitchen with marble countertops and integrated appliances." },
   { image: projectFullhome, title: "Raymond Realty — Full Home", category: "Full Home", desc: "Complete residential transformation — living, dining, and kitchen in open-plan harmony." },
   { image: projectLiving2, title: "Private Residence — Living Room", category: "Living Room", desc: "Luxury high-rise living with panoramic city views and dark wood accents." },
-  { image: projectBedroom, title: "Raymond Realty — 3D Visualization", category: "3D Renders", desc: "Photorealistic 3D render showcasing the bedroom design before execution." },
-  { image: projectKitchen, title: "Lodha Crown — 3D Kitchen Render", category: "3D Renders", desc: "3D visualization of kitchen layout for client approval before site work." },
+  ...renderImages.map((img, i) => ({
+    image: img,
+    title: `3D Visualization — Concept ${String(i + 1).padStart(2, "0")}`,
+    category: "3D Renders",
+    desc: "Photorealistic 3D render produced for client approval before site execution.",
+  })),
 ];
 
 const PortfolioPage = () => {
