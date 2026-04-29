@@ -40,7 +40,7 @@ const TestimonialsSection = () => (
             <motion.div
               whileHover={{ y: -6 }}
               transition={{ duration: 0.4 }}
-              className="bg-background border border-border p-8 hover:border-accent/40 transition-all duration-500 h-full flex flex-col"
+              className="bg-card border border-border p-8 hover:border-accent/40 transition-all duration-500 h-full flex flex-col"
             >
               <div className="flex gap-1 mb-6">
                 {Array.from({ length: t.rating }).map((_, j) => (
