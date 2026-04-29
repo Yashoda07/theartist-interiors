@@ -24,7 +24,7 @@ const testimonials = [
 ];
 
 const TestimonialsSection = () => (
-  <section id="testimonials" className="section-padding section-spacing bg-card">
+  <section id="testimonials" className="section-padding section-spacing">
     <div className="max-w-6xl mx-auto">
       <AnimatedSection>
         <p className="text-label mb-4">Testimonials</p>
@@ -40,7 +40,7 @@ const TestimonialsSection = () => (
             <motion.div
               whileHover={{ y: -6 }}
               transition={{ duration: 0.4 }}
-              className="bg-background border border-border p-8 hover:border-accent/40 transition-all duration-500 h-full flex flex-col"
+              className="bg-card border border-border p-8 hover:border-accent/40 transition-all duration-500 h-full flex flex-col"
             >
               <div className="flex gap-1 mb-6">
                 {Array.from({ length: t.rating }).map((_, j) => (
