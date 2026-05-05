@@ -86,16 +86,16 @@ const HeroSection = () => {
         className="flex flex-wrap gap-4 items-center mb-16"
       >
         <a
-          href="/contact"
+          href="#portfolio"
           className="px-8 py-4 bg-accent text-white text-sm md:text-base font-semibold uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 hover-lift active:scale-95 shadow-lg"
         >
-          Book Consultation
+          View Projects
         </a>
         <a
-          href="#portfolio"
+          href="#services"
           className="px-8 py-4 border-2 border-white text-white text-sm md:text-base font-semibold uppercase tracking-[0.15em] hover:bg-white/15 transition-all duration-300 active:scale-95 backdrop-blur-sm"
         >
-          View Projects
+          Explore Services
         </a>
       </motion.div>
 
