@@ -9,8 +9,6 @@ import Index from "./pages/Index.tsx";
 // Lazy-load secondary pages for snappier first paint AND quicker
 // navigation back to the main page.
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage.tsx"));
-const ContactPage = lazy(() => import("./pages/ContactPage.tsx"));
-const ChatPage = lazy(() => import("./pages/ChatPage.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient();
@@ -30,8 +28,6 @@ const Prefetcher = () => {
         : setTimeout(cb, 1500);
     idle(() => {
       import("./pages/PortfolioPage.tsx");
-      import("./pages/ContactPage.tsx");
-      import("./pages/ChatPage.tsx");
     });
   }, []);
   return null;
@@ -48,8 +44,8 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/chat" element={<ChatPage />} />
+            <Route path="/contact" element={<Index />} />
+            <Route path="/chat" element={<Index />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

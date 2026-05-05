@@ -6,12 +6,10 @@ import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
 import ServicesSection from "@/components/ServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
-import SkillsSection from "@/components/SkillsSection";
+import SkillsSection from "./../components/SkillsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
-import FloatingChat from "@/components/FloatingChat";
 
 const Index = () => {
   const location = useLocation();
@@ -41,10 +39,8 @@ const Index = () => {
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />
-      <FAQSection />
       <Footer />
       <FloatingContactIcons />
-      <FloatingChat />
     </main>
   );
 };

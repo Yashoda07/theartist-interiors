@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+
 import { Instagram, Youtube } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -85,41 +85,35 @@ const PortfolioPage = () => {
           </AnimatedSection>
 
           {/* Grid */}
-          <motion.div layout className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <AnimatePresence mode="popLayout">
-              {filtered.map((p, i) => (
-                <motion.div
-                  key={p.title}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.4 }}
-                  className="group cursor-pointer"
-                >
-                  <div className="image-reveal aspect-[4/3] mb-4 bg-muted">
-                    <img
-                      src={p.image}
-                      alt={p.title}
-                      loading={i < 3 ? "eager" : "lazy"}
-                      decoding="async"
-                      fetchPriority={i < 3 ? "high" : "auto"}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="relative">
-                    <p className="text-label text-accent mb-1">{p.category}</p>
-                    <h3 className="font-display text-xl text-foreground group-hover:text-accent transition-colors duration-300">
-                      {p.title}
-                    </h3>
-                    <p className="text-sm text-foreground/70 mt-1 leading-relaxed md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300">
-                      {p.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filtered.map((p, i) => (
+              <div
+                key={p.title}
+                className="group cursor-pointer animate-fade-in"
+                style={{ contentVisibility: "auto", containIntrinsicSize: "1px 360px" }}
+              >
+                <div className="image-reveal aspect-[4/3] mb-4 bg-muted">
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchPriority={i < 3 ? "high" : "auto"}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative">
+                  <p className="text-label text-accent mb-1">{p.category}</p>
+                  <h3 className="font-display text-xl text-foreground group-hover:text-accent transition-colors duration-300">
+                    {p.title}
+                  </h3>
+                  <p className="text-sm text-foreground/70 mt-1 leading-relaxed md:opacity-0 md:group-hover:opacity-100 md:transition-opacity md:duration-300">
+                    {p.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

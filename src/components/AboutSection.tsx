@@ -85,17 +85,17 @@ const AboutSection = () => {
             </AnimatedSection>
 
             <AnimatedSection delay={0.3}>
-              <p className="text-lg text-foreground/85 mb-6 leading-relaxed">
+              <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed">
                 From a passionate junior designer to the founder of The Artist Interiors, my journey has been fueled by an unwavering love for transforming spaces into experiences.
               </p>
-              <p className="text-base text-foreground/75 mb-6 leading-relaxed">
+              <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed">
                 With expertise spanning interior design, 3D visualization, and end-to-end site execution, I bridge the gap between creative vision and flawless delivery. My strength lies in clear communication — making sure every client's desire is understood and every contractor stays aligned.
               </p>
-              <p className="text-base text-foreground/75 mb-8 leading-relaxed">
+              <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
                 I'm a quick learner with deep adaptability, and I continue to push boundaries in residential design across Mumbai and beyond.
               </p>
               <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-                BSc in Interior Designing — Maharashtra Open University
+                BSc in Interior Designing
               </p>
             </AnimatedSection>
           </div>

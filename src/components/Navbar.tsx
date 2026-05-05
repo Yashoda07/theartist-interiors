@@ -12,7 +12,7 @@ const navItems = [
   { label: "Services", href: "#services", type: "hash" as const },
   { label: "Portfolio", href: "/portfolio", type: "link" as const },
   { label: "Testimonials", href: "#testimonials", type: "hash" as const },
-  { label: "FAQ", href: "#faq", type: "hash" as const },
+  { label: "Contact", href: "#contact-footer", type: "hash" as const },
 ];
 
 const Navbar = () => {
@@ -95,12 +95,6 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link
-            to="/contact"
-            className="hidden lg:inline-flex px-6 py-2.5 bg-accent text-accent-foreground text-sm font-medium uppercase tracking-[0.12em] hover:bg-accent/90 transition-all duration-300"
-          >
-            Book Consultation
-          </Link>
 
           <button
             onClick={() => setMobileOpen(true)}
@@ -151,15 +145,6 @@ const Navbar = () => {
                 </motion.button>
               )
             )}
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: navItems.length * 0.05 }}>
-              <Link
-                to="/contact"
-                onClick={() => setMobileOpen(false)}
-                className="text-display-md text-accent hover:text-foreground transition-colors"
-              >
-                Contact
-              </Link>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
