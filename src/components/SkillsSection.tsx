@@ -79,10 +79,10 @@ const SkillsSection = () => (
               key={e.name}
               whileHover={{ scale: 1.03, x: 4 }}
               transition={{ duration: 0.3 }}
-              className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300 rounded-lg"
+              className="flex items-center gap-3 p-4 border border-border hover:border-accent/40 transition-colors duration-300 rounded-lg min-w-0"
             >
               <e.icon className="w-5 h-5 text-accent shrink-0" />
-              <span className="text-foreground text-sm md:text-base font-medium">{e.name}</span>
+              <span className="text-foreground text-xs sm:text-sm md:text-base font-medium leading-tight break-words min-w-0">{e.name}</span>
             </motion.div>
           ))}
         </div>
