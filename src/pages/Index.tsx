@@ -39,10 +39,8 @@ const Index = () => {
       <ServicesSection />
       <PortfolioSection />
       <TestimonialsSection />
-      <FAQSection />
       <Footer />
       <FloatingContactIcons />
-      <FloatingChat />
     </main>
   );
 };
