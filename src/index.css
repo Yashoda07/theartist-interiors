@@ -170,4 +170,15 @@
   .image-reveal img {
     @apply transition-transform duration-700 ease-out hover:scale-105;
   }
+
+  .marquee-track {
+    animation: marquee 32s linear infinite;
+    will-change: transform;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
 }
