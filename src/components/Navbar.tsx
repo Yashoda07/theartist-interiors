@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Home", href: "#home", type: "hash" as const },
   { label: "About", href: "#about", type: "hash" as const },
-  { label: "Skills", href: "#skills", type: "hash" as const },
   { label: "Experience", href: "#experience", type: "hash" as const },
-  { label: "Services", href: "#services", type: "hash" as const },
-  { label: "Portfolio", href: "/portfolio", type: "link" as const },
+  { label: "Skills & Services", href: "#skills", type: "hash" as const },
+  { label: "Portfolio", href: "#portfolio", type: "hash" as const },
   { label: "Testimonials", href: "#testimonials", type: "hash" as const },
   { label: "Contact", href: "#contact-footer", type: "hash" as const },
 ];
@@ -74,25 +73,15 @@ const Navbar = () => {
           </a>
 
           <div className="hidden lg:flex items-center gap-6">
-            {navItems.map((item) =>
-              item.type === "link" ? (
-                <Link
-                  key={item.href}
-                  to={item.href}
-                  className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <button
-                  key={item.href}
-                  onClick={() => goToHash(item.href)}
-                  className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
-                >
-                  {item.label}
-                </button>
-              )
-            )}
+            {navItems.map((item) => (
+              <button
+                key={item.href}
+                onClick={() => goToHash(item.href)}
+                className="text-sm font-medium uppercase tracking-[0.12em] text-foreground/80 hover:text-accent transition-colors duration-300"
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
 
 
@@ -121,30 +110,18 @@ const Navbar = () => {
             >
               <X size={24} />
             </button>
-            {navItems.map((item, i) =>
-              item.type === "link" ? (
-                <motion.div key={item.href} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.05 }}>
-                  <Link
-                    to={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="text-display-md text-foreground hover:text-accent transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ) : (
-                <motion.button
-                  key={item.href}
-                  onClick={() => { setMobileOpen(false); setTimeout(() => goToHash(item.href), 50); }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="text-display-md text-foreground hover:text-accent transition-colors"
-                >
-                  {item.label}
-                </motion.button>
-              )
-            )}
+            {navItems.map((item, i) => (
+              <motion.button
+                key={item.href}
+                onClick={() => { setMobileOpen(false); setTimeout(() => goToHash(item.href), 50); }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="text-display-md text-foreground hover:text-accent transition-colors"
+              >
+                {item.label}
+              </motion.button>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>

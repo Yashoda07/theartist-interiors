@@ -1,45 +1,81 @@
-import { Phone, MessageCircle, Instagram, Mail, Linkedin, Youtube } from "lucide-react";
+import { Phone, MessageCircle, Instagram, Mail, Linkedin } from "lucide-react";
+
+// Pinterest icon (lucide doesn't ship one) — simple SVG component
+const Pinterest = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M12 2C6.48 2 2 6.48 2 12c0 4.09 2.46 7.6 5.97 9.13-.08-.78-.16-1.97.03-2.81.18-.76 1.13-4.84 1.13-4.84s-.29-.58-.29-1.43c0-1.34.78-2.34 1.74-2.34.82 0 1.22.62 1.22 1.36 0 .83-.53 2.07-.8 3.22-.23.96.48 1.74 1.43 1.74 1.71 0 3.03-1.81 3.03-4.42 0-2.31-1.66-3.93-4.03-3.93-2.75 0-4.36 2.06-4.36 4.19 0 .83.32 1.72.72 2.2.08.1.09.18.07.28-.07.31-.24.96-.27 1.09-.04.18-.14.22-.32.13-1.18-.55-1.92-2.27-1.92-3.65 0-2.97 2.16-5.7 6.22-5.7 3.27 0 5.81 2.33 5.81 5.44 0 3.25-2.05 5.86-4.89 5.86-.95 0-1.85-.5-2.16-1.08l-.59 2.24c-.21.83-.79 1.86-1.18 2.49.89.28 1.83.42 2.81.42 5.52 0 10-4.48 10-10S17.52 2 12 2z" />
+  </svg>
+);
 
 const contacts = [
   { icon: Phone, label: "+91 99879 67465", href: "tel:+919987967465" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919987967465" },
+  { icon: MessageCircle, label: "WhatsApp Chat", href: "https://wa.me/919987967465" },
   { icon: Mail, label: "theartist.interiors@gmail.com", href: "mailto:theartist.interiors@gmail.com" },
-  { icon: Instagram, label: "@theartistinteriors", href: "https://www.instagram.com/theartistinteriors/" },
-  { icon: Linkedin, label: "Aadarsh Chaubey", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/" },
-  { icon: Youtube, label: "@aadarsh.chaubeyy", href: "https://www.youtube.com/@aadarsh.chaubeyy" },
+];
+
+const socials = [
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/theartistinteriors/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/" },
+  { icon: Pinterest, label: "Pinterest", href: "https://www.pinterest.com/theartistinteriors/" },
 ];
 
 const Footer = () => (
-  <footer id="contact-footer" className="section-padding py-14 border-t border-border bg-card">
+  <footer id="contact-footer" className="section-padding pt-16 pb-10 border-t border-border bg-card">
     <div className="max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-2 gap-10 mb-10">
+      <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-10">
+        {/* Brand */}
         <div>
           <div className="font-display text-2xl text-foreground mb-3">
-            The Artist <span className="font-medium italic text-accent">Interiors</span>
+            The Artist <span className="font-medium text-accent">Interiors</span>
           </div>
-          <p className="text-base text-foreground/70 max-w-md leading-relaxed">
-            Interior Design, 3D Visualization & Site Execution — serving clients in Mumbai and globally.
+          <p className="text-base text-foreground/70 leading-relaxed max-w-xs">
+            Interior Design, 3D Visualization & Floor Planning — serving Mumbai and clients worldwide.
           </p>
         </div>
+
+        {/* Get in Touch */}
         <div>
           <p className="text-label mb-4">Get in Touch</p>
-          <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3">
+          <ul className="space-y-3">
             {contacts.map((c) => (
               <li key={c.label}>
                 <a
                   href={c.href}
                   target={c.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-foreground/80 hover:text-accent transition-colors text-sm md:text-base"
+                  className="flex items-start gap-3 text-foreground/80 hover:text-accent transition-colors text-sm md:text-base min-w-0"
                 >
-                  <c.icon className="w-4 h-4 shrink-0 text-accent" />
+                  <c.icon className="w-4 h-4 mt-1 shrink-0 text-accent" />
                   <span className="break-all">{c.label}</span>
                 </a>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* Social */}
+        <div>
+          <p className="text-label mb-4">Follow Along</p>
+          <div className="flex gap-3 mb-6">
+            {socials.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-11 h-11 rounded-full border border-border hover:border-accent hover:text-accent text-foreground/70 flex items-center justify-center transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <s.icon className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+          <p className="text-sm text-foreground/60">
+            Mumbai, India · Available for projects globally
+          </p>
+        </div>
       </div>
+
       <div className="pt-6 border-t border-border text-center text-sm text-muted-foreground">
         © {new Date().getFullYear()} The Artist Interiors. All rights reserved.
       </div>
