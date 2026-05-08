@@ -4,9 +4,8 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
-import ServicesSection from "@/components/ServicesSection";
+import SkillsServicesSection from "@/components/SkillsServicesSection";
 import PortfolioSection from "@/components/PortfolioSection";
-import SkillsSection from "./../components/SkillsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
@@ -17,7 +16,6 @@ const Index = () => {
   useEffect(() => {
     const hash = location.hash?.replace("#", "");
     if (!hash || hash === "home") return;
-    // wait briefly for sections to mount, then jump (no scroll animation to avoid hero flash)
     const tryScroll = (attempt = 0) => {
       const el = document.getElementById(hash);
       if (el) {
@@ -34,9 +32,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
       <ExperienceSection />
-      <ServicesSection />
+      <SkillsServicesSection />
       <PortfolioSection />
       <TestimonialsSection />
       <Footer />
