@@ -72,11 +72,11 @@ const HeroSection = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 1 }}
-        className="text-6xl md:text-8xl lg:text-9xl font-display font-light tracking-tight leading-[0.9] text-white max-w-4xl mb-10 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]"
+        className="font-display font-light tracking-tight leading-[0.95] text-white max-w-4xl mb-10 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] text-5xl md:text-7xl lg:text-8xl"
       >
-        <span className="text-white/60">We</span> Design
+        We Design
         <br />
-        <span className="italic font-light"><span className="text-white/60">your</span> Desires</span>
+        <span className="text-accent">your Desires</span>
       </motion.h1>
 
       <motion.div
