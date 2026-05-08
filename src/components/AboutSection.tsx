@@ -32,10 +32,7 @@ const AboutSection = () => {
               onClick={() => setShowLogo((s) => !s)}
               aria-label={showLogo ? "Show photo of Aadarsh" : "Show The Artist Interiors logo"}
               className="relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4 ring-4 ring-accent/20"
-              style={{
-                shapeOutside: "circle(50%)",
-                WebkitShapeOutside: "circle(50%)" as unknown as string,
-              }}
+              style={{ shapeOutside: "circle(50%)" }}
             >
               <div
                 aria-hidden="true"
