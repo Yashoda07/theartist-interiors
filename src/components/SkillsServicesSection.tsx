@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Palette, Box, LayoutGrid, ArrowUpRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
@@ -11,12 +10,7 @@ const services = [
     tagline: "Spaces tailored to your life",
     accent: "from-[hsl(38,60%,55%)] to-[hsl(28,45%,45%)]",
     category: "Living Room",
-    points: [
-      "End-to-end design solutions tailored to lifestyle",
-      "Space planning, concept & material selection",
-      "Balance of functionality & aesthetics",
-      "Residential specialization, personalized approach",
-    ],
+    summary: "End-to-end design solutions tailored to your lifestyle — space planning, concept, and material selection.",
   },
   {
     icon: Box,
@@ -24,25 +18,15 @@ const services = [
     tagline: "See it before it's built",
     accent: "from-[hsl(28,45%,45%)] to-[hsl(20,40%,42%)]",
     category: "3D Renders",
-    points: [
-      "High-quality photorealistic renders",
-      "Visualize spaces before execution",
-      "Remote services available globally",
-      "Fast turnaround, unlimited customization",
-    ],
+    summary: "High-quality photorealistic renders so you can visualize spaces before any execution begins.",
   },
   {
     icon: LayoutGrid,
     title: "Floor Planning",
     tagline: "Smart layouts, optimized flow",
     accent: "from-[hsl(25,55%,45%)] to-[hsl(20,40%,42%)]",
-    category: "Full Home",
-    points: [
-      "Functional zoning for every room",
-      "Optimized circulation and natural light",
-      "Detailed dimensioned layouts",
-      "Tailored to lifestyle and family needs",
-    ],
+    category: "2D Floor Planning",
+    summary: "Functional zoning, optimized circulation, and detailed dimensioned layouts tailored to your family.",
   },
 ];
 
@@ -58,12 +42,8 @@ const marqueeSkills = [
 ];
 
 const SkillsServicesSection = () => {
-  const [active, setActive] = useState<number | null>(null);
   const navigate = useNavigate();
-
-  const openCategory = (cat: string) => {
-    navigate(`/portfolio?category=${encodeURIComponent(cat)}`);
-  };
+  const openCategory = (cat: string) => navigate(`/portfolio?category=${encodeURIComponent(cat)}`);
 
   return (
     <section id="skills" className="relative section-padding section-spacing overflow-hidden">
@@ -83,88 +63,39 @@ const SkillsServicesSection = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
+        <div className="grid md:grid-cols-3 gap-6 mb-16 items-stretch">
           {services.map((s, i) => {
             const Icon = s.icon;
-            const isOpen = active === i;
             return (
-              <AnimatedSection key={i} delay={i * 0.12}>
+              <AnimatedSection key={i} delay={i * 0.1} className="h-full">
                 <motion.button
-                  onClick={() => (isOpen ? openCategory(s.category) : setActive(i))}
-                  whileTap={{ scale: 0.985 }}
-                  className={`relative w-full text-left border rounded-2xl overflow-hidden group transition-all duration-500 h-full ${
-                    isOpen
-                      ? "shadow-2xl border-accent/50 bg-[hsl(35,40%,98%)]"
-                      : "shadow-sm bg-card border-border md:hover:-translate-y-2 md:hover:shadow-xl md:hover:border-accent/40"
-                  }`}
-                  aria-expanded={isOpen}
+                  onClick={() => openCategory(s.category)}
+                  whileHover={{ y: -6 }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative w-full h-full text-left border rounded-2xl overflow-hidden group bg-card border-border shadow-sm hover:shadow-xl hover:border-accent/40 transition-all duration-300"
                 >
                   <div className={`h-2 bg-gradient-to-r ${s.accent}`} />
-                  <div className="relative p-7 md:p-8">
+                  <div className="relative p-7 md:p-8 flex flex-col h-full">
                     <div className="flex items-start justify-between mb-5">
-                      <div
-                        className={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.accent} flex items-center justify-center shadow-md transition-transform duration-500 ${
-                          isOpen ? "rotate-6 scale-110" : "group-hover:rotate-3 group-hover:scale-105"
-                        }`}
-                      >
+                      <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.accent} flex items-center justify-center shadow-md transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105`}>
                         <Icon className="w-7 h-7 text-white" />
                       </div>
-                      <motion.div
-                        animate={{ rotate: isOpen ? 45 : 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-accent"
-                      >
+                      <div className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-colors">
                         <ArrowUpRight className="w-4 h-4" />
-                      </motion.div>
+                      </div>
                     </div>
 
                     <h3 className="font-display text-2xl md:text-3xl text-foreground mb-1">{s.title}</h3>
                     <p className="text-sm md:text-base font-semibold uppercase tracking-wider text-accent mb-4">
                       {s.tagline}
                     </p>
-
-                    <AnimatePresence initial={false}>
-                      {isOpen ? (
-                        <motion.div
-                          key="open"
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                          className="overflow-hidden"
-                        >
-                          <ul className="space-y-2.5 pt-2 pb-4">
-                            {s.points.map((p, j) => (
-                              <motion.li
-                                key={j}
-                                initial={{ opacity: 0, x: -8 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: j * 0.06 }}
-                                className="text-base text-foreground flex items-start gap-2.5 leading-relaxed"
-                              >
-                                <span className={`mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-r ${s.accent} shrink-0`} />
-                                {p}
-                              </motion.li>
-                            ))}
-                          </ul>
-                          <span className="inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-accent">
-                            View {s.category} projects →
-                          </span>
-                        </motion.div>
-                      ) : (
-                        <motion.p
-                          key="closed"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          className="text-base text-foreground/75 leading-relaxed"
-                        >
-                          {s.points[0]}.
-                          <span className="block mt-2 text-accent font-medium">
-                            Tap to explore →
-                          </span>
-                        </motion.p>
-                      )}
-                    </AnimatePresence>
+                    <p className="text-base text-foreground/75 leading-relaxed flex-1">
+                      {s.summary}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-accent">
+                      Tap to See Projects →
+                    </span>
                   </div>
                 </motion.button>
               </AnimatedSection>
@@ -172,19 +103,23 @@ const SkillsServicesSection = () => {
           })}
         </div>
 
-        {/* Moving skills band */}
+        {/* Moving skills band — true infinite loop */}
         <AnimatedSection delay={0.2}>
           <div className="relative bg-card border-y border-border py-5 overflow-hidden">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10" />
-            <div className="flex gap-12 md:gap-16 marquee-track whitespace-nowrap">
-              {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
-                <span
-                  key={i}
-                  className="text-sm md:text-base font-semibold uppercase tracking-[0.2em] text-foreground/70"
-                >
-                  • {skill}
-                </span>
+            <div className="flex marquee-track w-max">
+              {[0, 1].map((dup) => (
+                <div key={dup} className="flex gap-12 md:gap-16 pr-12 md:pr-16 whitespace-nowrap" aria-hidden={dup === 1}>
+                  {marqueeSkills.map((skill, i) => (
+                    <span
+                      key={`${dup}-${i}`}
+                      className="text-sm md:text-base font-semibold uppercase tracking-[0.2em] text-foreground/70"
+                    >
+                      • {skill}
+                    </span>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
