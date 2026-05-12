@@ -3,11 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronRight, ChevronLeft, Volume2, VolumeX } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import projectLiving1 from "@/assets/project-living1.jpg";
-import projectLiving2 from "@/assets/project-living2.jpg";
-import projectBedroom from "@/assets/project-bedroom.jpg";
 import projectKitchen from "@/assets/project-kitchen.jpg";
-import projectFullhome from "@/assets/project-fullhome.jpg";
-import render1 from "@/assets/renders/render-1.jpg";
+
+// Raw "before" placeholders — generic stock shots of unfinished spaces
+const beforeLiving = "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=70";
+const beforeBedroom = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=70";
+const beforeKitchen = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=70";
+
+// Client-supplied "after" images
+const afterLiving = "https://i.postimg.cc/Ss2kHYd7/IMG-7452.avif";
+const afterBedroom = "https://i.postimg.cc/HLwzp6Ls/IMG-6275.avif";
+const afterKitchen = "https://i.postimg.cc/3wv62jxh/IMG-4366.avif";
 
 type Transformation = {
   name: string;
