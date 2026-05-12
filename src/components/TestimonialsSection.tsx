@@ -43,28 +43,28 @@ const transformations: Transformation[] = [
     highlight: "From dated to timeless in 8 weeks",
     feedback:
       "Aadarsh transformed our apartment into a dream home. His 3D visualization helped us see the final result before any work began. Absolutely professional and detail-oriented.",
-    before: render1,
-    after: projectLiving1,
+    before: beforeLiving,
+    after: afterLiving,
   },
   {
     name: "Rahul & Anjali Mehta",
     location: "Thane",
-    title: "Raymond Realty — 2BHK",
+    title: "Raymond Realty — Master Bedroom",
     highlight: "Every deadline met, quality exceeded",
     feedback:
       "The attention to detail and communication throughout the project was exceptional. Every deadline was met and the quality exceeded our expectations.",
-    before: projectBedroom,
-    after: projectFullhome,
+    before: beforeBedroom,
+    after: afterBedroom,
   },
   {
     name: "Aarti Kapoor",
     location: "Andheri",
-    title: "Private Residence — Living Suite",
+    title: "Modular Kitchen — Private Residence",
     highlight: "Personality in every corner",
     feedback:
       "They turned our blank canvas into a warm, layered home. The team was patient, creative, and remarkably efficient.",
-    before: projectKitchen,
-    after: projectLiving2,
+    before: beforeKitchen,
+    after: afterKitchen,
   },
 ];
 
