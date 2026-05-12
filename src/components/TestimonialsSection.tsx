@@ -3,11 +3,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronRight, ChevronLeft, Volume2, VolumeX } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import projectLiving1 from "@/assets/project-living1.jpg";
-import projectLiving2 from "@/assets/project-living2.jpg";
-import projectBedroom from "@/assets/project-bedroom.jpg";
 import projectKitchen from "@/assets/project-kitchen.jpg";
-import projectFullhome from "@/assets/project-fullhome.jpg";
-import render1 from "@/assets/renders/render-1.jpg";
+
+// Raw "before" placeholders — generic stock shots of unfinished spaces
+const beforeLiving = "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&q=70";
+const beforeBedroom = "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=70";
+const beforeKitchen = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=70";
+
+// Client-supplied "after" images
+const afterLiving = "https://i.postimg.cc/Ss2kHYd7/IMG-7452.avif";
+const afterBedroom = "https://i.postimg.cc/HLwzp6Ls/IMG-6275.avif";
+const afterKitchen = "https://i.postimg.cc/3wv62jxh/IMG-4366.avif";
 
 type Transformation = {
   name: string;
@@ -37,28 +43,28 @@ const transformations: Transformation[] = [
     highlight: "From dated to timeless in 8 weeks",
     feedback:
       "Aadarsh transformed our apartment into a dream home. His 3D visualization helped us see the final result before any work began. Absolutely professional and detail-oriented.",
-    before: render1,
-    after: projectLiving1,
+    before: beforeLiving,
+    after: afterLiving,
   },
   {
     name: "Rahul & Anjali Mehta",
     location: "Thane",
-    title: "Raymond Realty — 2BHK",
+    title: "Raymond Realty — Master Bedroom",
     highlight: "Every deadline met, quality exceeded",
     feedback:
       "The attention to detail and communication throughout the project was exceptional. Every deadline was met and the quality exceeded our expectations.",
-    before: projectBedroom,
-    after: projectFullhome,
+    before: beforeBedroom,
+    after: afterBedroom,
   },
   {
     name: "Aarti Kapoor",
     location: "Andheri",
-    title: "Private Residence — Living Suite",
+    title: "Modular Kitchen — Private Residence",
     highlight: "Personality in every corner",
     feedback:
       "They turned our blank canvas into a warm, layered home. The team was patient, creative, and remarkably efficient.",
-    before: projectKitchen,
-    after: projectLiving2,
+    before: beforeKitchen,
+    after: afterKitchen,
   },
 ];
 

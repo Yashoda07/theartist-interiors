@@ -92,7 +92,7 @@ const HeroSection = () => {
           View Projects
         </a>
         <a
-          href="#services"
+          href="#skills"
           className="px-8 py-4 border-2 border-white text-white text-sm md:text-base font-semibold uppercase tracking-[0.15em] hover:bg-white/15 transition-all duration-300 active:scale-95 backdrop-blur-sm"
         >
           Explore Services

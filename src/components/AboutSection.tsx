@@ -27,11 +27,11 @@ const AboutSection = () => {
 
         {/* Circular image floats right; text wraps around it on desktop */}
         <AnimatedSection delay={0.25}>
-          <div className="lg:float-right lg:ml-10 lg:mb-6 mb-8 flex justify-center lg:justify-end">
+          <div className="lg:float-right lg:ml-10 lg:-mt-6 lg:mb-6 mb-8 flex justify-center lg:justify-end">
             <button
               onClick={() => setShowLogo((s) => !s)}
               aria-label={showLogo ? "Show photo of Aadarsh" : "Show The Artist Interiors logo"}
-              className="relative w-60 h-60 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4 ring-4 ring-accent/20"
+              className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4 ring-4 ring-accent/20 transition-transform duration-300 active:scale-[0.98]"
               style={{ shapeOutside: "circle(50%)" }}
             >
               <div
