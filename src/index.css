@@ -172,13 +172,13 @@
   }
 
   .marquee-track {
-    animation: marquee 32s linear infinite;
+    animation: marquee 22s linear infinite;
     will-change: transform;
   }
   .marquee-track:hover { animation-play-state: paused; }
 
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+    from { transform: translate3d(0, 0, 0); }
+    to   { transform: translate3d(-50%, 0, 0); }
   }
 }
