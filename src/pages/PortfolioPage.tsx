@@ -81,8 +81,8 @@ const renders3d: Project[] = Array.from({ length: 19 }, (_, i) => ({
 const concepts3d: Project[] = [
   { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
   { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/1gz5rNzH/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/FfKsVJKM/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/9fdRVd5v/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
   { src: "https://i.postimg.cc/KkRjxgS4/living1.jpg", title: "Living Concept 01", category: "3D Concepts" },
   { src: "https://i.postimg.cc/XGpq4yS8/living2.jpg", title: "Living Concept 02", category: "3D Concepts" },
   { src: "https://i.postimg.cc/k6BGqt3p/living3.jpg", title: "Living Concept 03", category: "3D Concepts" },
@@ -97,30 +97,30 @@ const concepts3d: Project[] = [
 ];
 
 const floorPlans: Project[] = [
-  "https://i.postimg.cc/8fvMtvjG/1-FURNITURE-PLAN-1-pdf.png",
-  "https://i.postimg.cc/sGW7wWvW/2-FURNITURE-PLAN-LABELLING-1-pdf.png",
-  "https://i.postimg.cc/WtqG2BS8/3-PLAN-5-pdf.png",
-  "https://i.postimg.cc/H8MXBMVb/4-FURNITURE-LAYOUT-pdf.png",
-  "https://i.postimg.cc/V50qYx4K/5-PLAN-4-pdf.png",
-  "https://i.postimg.cc/14VG9kMd/6-FLOOR-PLAN-pdf.png",
-  "https://i.postimg.cc/SjY6yBVB/7-FURNITURE-PLAN-LABELLING-pdf.png",
-  "https://i.postimg.cc/F1ky9MGw/8-FURNITURE-PLAN-2-pdf.png",
-  "https://i.postimg.cc/z3HCJs01/9-PLAN-6-pdf.png",
-  "https://i.postimg.cc/kDRQn0fC/EXSITING-LAYOUT-pdf.png",
+  "https://i.postimg.cc/yNqyzDPg/1-FURNITURE-PLAN-1-png.png",
+  "https://i.postimg.cc/zDdwGt75/2-FURNITURE-PLAN-LABELLING-1-png.png",
+  "https://i.postimg.cc/XNDFbZNS/3-PLAN-5-png.png",
+  "https://i.postimg.cc/Kz8kXbd4/4-FURNITURE-LAYOUT.png",
+  "https://i.postimg.cc/Z5JyP6VV/5-PLAN-4.png",
+  "https://i.postimg.cc/GhwD2WDx/6-FLOOR-PLAN.png",
+  "https://i.postimg.cc/SR8zdrBg/7-FURNITURE-PLAN-LABELLING.png",
+  "https://i.postimg.cc/pd6ht4xK/8-FURNITURE-PLAN-2.png",
+  "https://i.postimg.cc/dQd7z5f3/9-PLAN-6.png",
+  "https://i.postimg.cc/3NHw8Hqp/EXSITING-LAYOUT.png",
 ].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Planning" }));
 
 const brandChartImages = [
-  "https://i.postimg.cc/Sj1Js4mw/1.png",
-  "https://i.postimg.cc/bdVsJPz8/2.png",
-  "https://i.postimg.cc/WtYh3V22/3.png",
-  "https://i.postimg.cc/pycpTv2v/4.png",
-  "https://i.postimg.cc/Z0sCRmTJ/5.png",
-  "https://i.postimg.cc/HjvVxmpW/6.png",
-  "https://i.postimg.cc/147ftS9g/7.png",
-  "https://i.postimg.cc/7btf64xG/8.png",
-  "https://i.postimg.cc/WtYh3V2q/9.png",
-  "https://i.postimg.cc/RqpNFmMn/10.png",
-  "https://i.postimg.cc/4n2mdGJc/11.png",
+  "https://i.postimg.cc/3JYptrVJ/1.png",
+  "https://i.postimg.cc/7Yw7KPdC/2.png",
+  "https://i.postimg.cc/J4MJp7vB/3.png",
+  "https://i.postimg.cc/ZK43wY2W/4.png",
+  "https://i.postimg.cc/SNk8gQ3Y/5.png",
+  "https://i.postimg.cc/RV4fgCyt/6.png",
+  "https://i.postimg.cc/FsNcTF8x/7.png",
+  "https://i.postimg.cc/J4MJp7vq/8.png",
+  "https://i.postimg.cc/c40YF12h/9.png",
+  "https://i.postimg.cc/SNk8gQ3V/10.png",
+  "https://i.postimg.cc/PrTZSf9S/11.png",
 ];
 
 const projects: Project[] = [
