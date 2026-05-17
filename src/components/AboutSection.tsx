@@ -27,11 +27,11 @@ const AboutSection = () => {
 
         {/* Circular image floats right; text wraps around it on desktop */}
         <AnimatedSection delay={0.25}>
-          <div className="lg:float-right lg:ml-10 lg:-mt-6 lg:mb-6 mb-8 flex justify-center lg:justify-end">
+          <div className="lg:float-right lg:ml-10 lg:-mt-28 lg:mb-6 mb-8 flex justify-center lg:justify-end">
             <button
               onClick={() => setShowLogo((s) => !s)}
               aria-label={showLogo ? "Show photo of Aadarsh" : "Show The Artist Interiors logo"}
-              className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4 ring-4 ring-accent/20 transition-transform duration-300 active:scale-[0.98]"
+              className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full shadow-xl overflow-hidden group focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-4 ring-4 ring-accent/20 hover:ring-accent/50 transition-all duration-500 active:scale-[0.98]"
               style={{ shapeOutside: "circle(50%)" }}
             >
               <div
@@ -75,9 +75,13 @@ const AboutSection = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-white text-[10px] md:text-xs uppercase tracking-[0.25em] font-semibold opacity-80 group-hover:opacity-100 transition-opacity pointer-events-none drop-shadow-[0_2px_6px_rgba(0,0,0,0.8)]">
-                Click Me
-              </div>
+              {/* Subtle interactive indicator — pulsing accent dot */}
+              <span
+                aria-hidden="true"
+                className="absolute bottom-3 right-3 w-3 h-3 rounded-full bg-accent ring-2 ring-background shadow-md"
+              >
+                <span className="absolute inset-0 rounded-full bg-accent animate-ping opacity-60" />
+              </span>
             </button>
           </div>
 
