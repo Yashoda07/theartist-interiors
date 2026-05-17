@@ -5,7 +5,7 @@ import AnimatedSection from "./AnimatedSection";
 
 const socials = [
   { icon: Phone, label: "+91 99879 67465", href: "tel:+919987967465", color: "hover:text-accent" },
-  { icon: MessageCircle, label: "WhatsApp Chat", href: "https://wa.me/919987967465", color: "hover:text-green-600" },
+  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/919987967465", color: "hover:text-green-600" },
   { icon: Instagram, label: "@theartistinteriors", href: "https://www.instagram.com/theartistinteriors/", color: "hover:text-pink-500" },
   { icon: Mail, label: "theartist.interiors@gmail.com", href: "mailto:theartist.interiors@gmail.com", color: "hover:text-accent" },
   { icon: Linkedin, label: "Aadarsh Chaubey", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/", color: "hover:text-blue-600" },
