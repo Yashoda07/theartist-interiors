@@ -16,9 +16,9 @@ const socials = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/theartistinteriors/" },
   { icon: Pinterest, label: "Pinterest", href: "https://www.pinterest.com/theartistinteriors/" },
   { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@aadarsh.chaubeyy" },
-  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/theartistinteriors" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/1EuNU4ngEP/" },
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/" },
-  { icon: AtSign, label: "Threads", href: "https://www.threads.net/@theartistinteriors" },
+  { icon: AtSign, label: "Threads", href: "https://www.threads.com/@theartistinteriors" },
 ];
 
 const Footer = () => (
