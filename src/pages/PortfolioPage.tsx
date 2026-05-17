@@ -9,8 +9,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 type Project = { src: string; title: string; category: string };
 
 const livingRoomBase = [
-  "https://i.postimg.cc/1gz5rNzH/entrance1.png",
-  "https://i.postimg.cc/FfKsVJKM/entrance2.jpg",
+  "https://i.postimg.cc/9fdRVd5v/entrance1.png",
+  "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
   "https://i.postimg.cc/qh4snVw1/IMG-7397.avif",
   "https://i.postimg.cc/fJ9Vwqjf/Full-Size-Render.avif",
   "https://i.postimg.cc/9w4rwJ6t/Image-20231204-222511-016-(1).jpg",
