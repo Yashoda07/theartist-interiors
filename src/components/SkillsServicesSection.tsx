@@ -9,7 +9,7 @@ const services = [
     title: "Interior Designing",
     tagline: "Spaces tailored to your life",
     accent: "from-[hsl(38,60%,55%)] to-[hsl(28,45%,45%)]",
-    category: "Living Room",
+    category: "All",
     summary: "End-to-end design solutions tailored to your lifestyle — space planning, concept, and material selection.",
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: "3D Visualization",
     tagline: "See it before it's built",
     accent: "from-[hsl(28,45%,45%)] to-[hsl(20,40%,42%)]",
-    category: "3D Renders",
+    category: "3D Visualization",
     summary: "High-quality photorealistic renders so you can visualize spaces before any execution begins.",
   },
   {
@@ -63,7 +63,7 @@ const SkillsServicesSection = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16 items-stretch">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 mb-16 items-stretch">
           {services.map((s, i) => {
             const Icon = s.icon;
             return (

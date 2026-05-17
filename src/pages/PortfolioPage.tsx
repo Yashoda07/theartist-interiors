@@ -1,14 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { Instagram, FileText } from "lucide-react";
+import { Instagram, FileText, X, ArrowUp, ZoomIn, ZoomOut } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
 import AnimatedSection from "@/components/AnimatedSection";
 
-type Project = { src: string; title: string; category: string; type?: "image" | "video" };
+type Project = { src: string; title: string; category: string };
 
-const livingRoom: Project[] = [
+const livingRoomBase = [
+  "https://i.postimg.cc/1gz5rNzH/entrance1.png",
+  "https://i.postimg.cc/FfKsVJKM/entrance2.jpg",
   "https://i.postimg.cc/qh4snVw1/IMG-7397.avif",
   "https://i.postimg.cc/fJ9Vwqjf/Full-Size-Render.avif",
   "https://i.postimg.cc/9w4rwJ6t/Image-20231204-222511-016-(1).jpg",
@@ -19,13 +21,17 @@ const livingRoom: Project[] = [
   "https://i.postimg.cc/jw3DjGFy/IMG-6104.avif",
   "https://i.postimg.cc/62b8QDm1/IMG-6138.avif",
   "https://i.postimg.cc/gnXZx2dr/IMG-6174-(1).avif",
-  "https://i.postimg.cc/grBhcZ9z/IMG-7408.avif",
   "https://i.postimg.cc/wywmmt7g/IMG-7413.avif",
   "https://i.postimg.cc/6707k7VS/IMG-7431.avif",
   "https://i.postimg.cc/xJ1kn0t8/IMG-8354.avif",
   "https://i.postimg.cc/nCjDXhZK/IMG-8375.avif",
   "https://i.postimg.cc/8FDJXdvc/IMG-8418.avif",
-].map((src, i) => ({ src, title: `Living Room ${String(i + 1).padStart(2, "0")}`, category: "Living Room" }));
+];
+const livingRoom: Project[] = livingRoomBase.map((src, i) => ({
+  src,
+  title: `Living Room ${String(i + 1).padStart(2, "0")}`,
+  category: "Living Room",
+}));
 
 const bedroom: Project[] = [
   "https://i.postimg.cc/w35BZYw9/IMG-20260506-WA0021.jpg",
@@ -64,36 +70,124 @@ const fullHome: Project[] = [
   "https://i.postimg.cc/jnqBM1xh/IMG-7634.avif",
 ].map((src, i) => ({ src, title: `Full Home ${String(i + 1).padStart(2, "0")}`, category: "Full Home" }));
 
-const renders3d: Project[] = [
-  { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Visualization" },
-  ...Array.from({ length: 19 }, (_, i) => ({
-    src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
-    title: `3D Visualization ${String(i + 2).padStart(2, "0")}`,
-    category: "3D Visualization",
-  })),
+// Existing renders archive
+const renders3d: Project[] = Array.from({ length: 19 }, (_, i) => ({
+  src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
+  title: `3D Visualization ${String(i + 1).padStart(2, "0")}`,
+  category: "3D Visualization",
+}));
+
+// New 3D Concepts section — slightly different category band/background tone
+const concepts3d: Project[] = [
+  { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/1gz5rNzH/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/FfKsVJKM/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/KkRjxgS4/living1.jpg", title: "Living Concept 01", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/XGpq4yS8/living2.jpg", title: "Living Concept 02", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/k6BGqt3p/living3.jpg", title: "Living Concept 03", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/vgcTb6FS/living4.jpg", title: "Living Concept 04", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/9Rr0Cq5k/living5.jpg", title: "Living Concept 05", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/TLFwwYf0/living6.jpg", title: "Living Concept 06", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/mzJDD2Bd/living7.jpg", title: "Living Concept 07", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/YvRsYdjg/bedroom1.jpg", title: "Bedroom Concept 01", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/fVCrm8kp/bedroom2.jpg", title: "Bedroom Concept 02", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/BjpVHmtd/bedroom4.jpg", title: "Bedroom Concept 03", category: "3D Concepts" },
+  { src: "https://i.postimg.cc/sMmN7TvF/bedroom5.jpg", title: "Bedroom Concept 04", category: "3D Concepts" },
 ];
 
-// 2D Floor Planning placeholders (using CAD-like sample images)
 const floorPlans: Project[] = [
-  { src: "https://images.unsplash.com/photo-1582647509711-c8aa8eb7c7a4?w=1200&q=80", title: "2D Layout 01", category: "2D Floor Planning" },
-  { src: "https://images.unsplash.com/photo-1503174971373-b1f69850bded?w=1200&q=80", title: "2D Layout 02", category: "2D Floor Planning" },
-  { src: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&q=80", title: "2D Layout 03", category: "2D Floor Planning" },
-  { src: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80", title: "2D Layout 04", category: "2D Floor Planning" },
+  "https://i.postimg.cc/8fvMtvjG/1-FURNITURE-PLAN-1-pdf.png",
+  "https://i.postimg.cc/sGW7wWvW/2-FURNITURE-PLAN-LABELLING-1-pdf.png",
+  "https://i.postimg.cc/WtqG2BS8/3-PLAN-5-pdf.png",
+  "https://i.postimg.cc/H8MXBMVb/4-FURNITURE-LAYOUT-pdf.png",
+  "https://i.postimg.cc/V50qYx4K/5-PLAN-4-pdf.png",
+  "https://i.postimg.cc/14VG9kMd/6-FLOOR-PLAN-pdf.png",
+  "https://i.postimg.cc/SjY6yBVB/7-FURNITURE-PLAN-LABELLING-pdf.png",
+  "https://i.postimg.cc/F1ky9MGw/8-FURNITURE-PLAN-2-pdf.png",
+  "https://i.postimg.cc/z3HCJs01/9-PLAN-6-pdf.png",
+  "https://i.postimg.cc/kDRQn0fC/EXSITING-LAYOUT-pdf.png",
+].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Planning" }));
+
+const brandChartImages = [
+  "https://i.postimg.cc/Sj1Js4mw/1.png",
+  "https://i.postimg.cc/bdVsJPz8/2.png",
+  "https://i.postimg.cc/WtYh3V22/3.png",
+  "https://i.postimg.cc/pycpTv2v/4.png",
+  "https://i.postimg.cc/Z0sCRmTJ/5.png",
+  "https://i.postimg.cc/HjvVxmpW/6.png",
+  "https://i.postimg.cc/147ftS9g/7.png",
+  "https://i.postimg.cc/7btf64xG/8.png",
+  "https://i.postimg.cc/WtYh3V2q/9.png",
+  "https://i.postimg.cc/RqpNFmMn/10.png",
+  "https://i.postimg.cc/4n2mdGJc/11.png",
 ];
 
-const projects: Project[] = [...livingRoom, ...bedroom, ...kitchen, ...fullHome, ...renders3d, ...floorPlans];
-const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Planning"];
+const projects: Project[] = [
+  ...livingRoom,
+  ...bedroom,
+  ...kitchen,
+  ...fullHome,
+  ...renders3d,
+  ...concepts3d,
+  ...floorPlans,
+];
+const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "3D Concepts", "2D Floor Planning"];
 
 const PortfolioPage = () => {
   const location = useLocation();
   const [active, setActive] = useState("All");
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
+  const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null);
+  const [zoom, setZoom] = useState(1);
+  const [brandOpen, setBrandOpen] = useState(false);
+  const [showTop, setShowTop] = useState(false);
+  const savedScroll = useRef(0);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const cat = params.get("category");
     if (cat && categories.includes(cat)) setActive(cat);
+    else setActive("All");
   }, [location.search]);
+
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const openLightbox = (p: Project) => {
+    savedScroll.current = window.scrollY;
+    setZoom(1);
+    setLightbox({ src: p.src, title: p.title });
+    document.body.style.overflow = "hidden";
+  };
+  const closeLightbox = () => {
+    setLightbox(null);
+    document.body.style.overflow = "";
+    window.scrollTo({ top: savedScroll.current, behavior: "auto" });
+  };
+  const openBrand = () => {
+    savedScroll.current = window.scrollY;
+    setBrandOpen(true);
+    document.body.style.overflow = "hidden";
+  };
+  const closeBrand = () => {
+    setBrandOpen(false);
+    document.body.style.overflow = "";
+    window.scrollTo({ top: savedScroll.current, behavior: "auto" });
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      if (lightbox) closeLightbox();
+      else if (brandOpen) closeBrand();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox, brandOpen]);
 
   const filtered = (active === "All" ? projects : projects.filter((p) => p.category === active))
     .filter((p) => !hidden[p.src]);
@@ -130,25 +224,34 @@ const PortfolioPage = () => {
           </AnimatedSection>
 
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5 [column-fill:_balance]">
-            {filtered.map((p, i) => (
-              <div
-                key={p.src}
-                className="mb-4 md:mb-5 break-inside-avoid group cursor-pointer overflow-hidden rounded-lg bg-muted shadow-sm hover:shadow-xl transition-all duration-500 active:scale-[0.99]"
-                style={{ contentVisibility: "auto", containIntrinsicSize: "1px 360px" }}
-              >
-                <img
-                  src={p.src}
-                  alt={p.title}
-                  loading={i < 3 ? "eager" : "lazy"}
-                  decoding="async"
-                  onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
-                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="p-3">
-                  <h3 className="font-display text-lg text-foreground">{p.title}</h3>
+            {filtered.map((p, i) => {
+              const isConcept = p.category === "3D Concepts";
+              const isFloor = p.category === "2D Floor Planning";
+              return (
+                <div
+                  key={p.src + i}
+                  onClick={() => openLightbox(p)}
+                  className={`mb-4 md:mb-5 break-inside-avoid group cursor-zoom-in overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all duration-500 active:scale-[0.99] ${
+                    isConcept ? "bg-[hsl(30,18%,86%)] ring-1 ring-accent/20" : "bg-muted"
+                  }`}
+                  style={{ contentVisibility: "auto", containIntrinsicSize: "1px 360px" }}
+                >
+                  <img
+                    src={p.src}
+                    alt={p.title}
+                    loading={i < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
+                    className={`w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03] ${
+                      isFloor ? "bg-white" : ""
+                    }`}
+                  />
+                  <div className={`p-3 ${isConcept ? "bg-[hsl(30,22%,82%)]" : ""}`}>
+                    <h3 className="font-display text-lg text-foreground">{p.title}</h3>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -167,23 +270,21 @@ const PortfolioPage = () => {
             Instagram
           </a>
 
-          <a
-            href="https://pleasant-jade-dnjhl61ojo.edgeone.app/BRAND_CHART%20(1).pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Brand Chart PDF"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-foreground text-background text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent transition-all duration-300 active:scale-95 shadow-md"
+          <button
+            onClick={openBrand}
+            aria-label="Open Brand Chart"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
           >
             <FileText className="w-5 h-5" />
             Brand Chart
-          </a>
+          </button>
 
           <a
             href="https://www.pinterest.com/theartistinteriors/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Pinterest"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-background text-foreground border border-foreground/30 text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-all duration-300 active:scale-95 shadow-sm"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.993 3.995-.282 1.193.599 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.084.345-.091.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.163-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
             Pinterest
@@ -193,6 +294,98 @@ const PortfolioPage = () => {
 
       <Footer />
       <FloatingContactIcons />
+
+      {/* Back-to-top button */}
+      {showTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Back to top"
+          className="fixed bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-foreground/90 text-background backdrop-blur hover:bg-accent transition-all duration-300 active:scale-95 shadow-lg flex items-center justify-center"
+        >
+          <ArrowUp className="w-5 h-5" />
+        </button>
+      )}
+
+      {/* Image Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
+          onClick={closeLightbox}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+            aria-label="Close"
+            className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div className="absolute top-4 left-4 flex gap-2 z-10">
+            <button
+              onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.min(z + 0.25, 4)); }}
+              aria-label="Zoom in"
+              className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md"
+            >
+              <ZoomIn className="w-5 h-5" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.max(z - 0.25, 1)); }}
+              aria-label="Zoom out"
+              className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md"
+            >
+              <ZoomOut className="w-5 h-5" />
+            </button>
+          </div>
+          <div
+            className="max-w-[95vw] max-h-[90vh] overflow-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightbox.src}
+              alt={lightbox.title}
+              style={{ transform: `scale(${zoom})`, transformOrigin: "center center", transition: "transform 0.25s ease" }}
+              className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain select-none cursor-zoom-in"
+              onDoubleClick={() => setZoom((z) => (z >= 2 ? 1 : 2))}
+              onClick={() => setZoom((z) => (z >= 2 ? 1 : z + 0.5))}
+              draggable={false}
+            />
+          </div>
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-xs uppercase tracking-widest">
+            {lightbox.title} · Tap to zoom
+          </p>
+        </div>
+      )}
+
+      {/* Brand Chart Modal — scrollable presentation */}
+      {brandOpen && (
+        <div
+          className="fixed inset-0 z-[200] bg-background/70 backdrop-blur-xl animate-fade-in"
+          onClick={closeBrand}
+        >
+          <button
+            onClick={(e) => { e.stopPropagation(); closeBrand(); }}
+            aria-label="Close brand chart"
+            className="fixed top-4 right-4 z-10 w-11 h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div
+            className="h-full w-full overflow-y-auto py-10 px-4 md:px-8 flex flex-col items-center gap-6 scroll-smooth"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <p className="text-label text-foreground/70 mb-2">Brand Chart</p>
+            {brandChartImages.map((src, idx) => (
+              <img
+                key={src}
+                src={src}
+                alt={`Brand chart slide ${idx + 1}`}
+                loading={idx < 2 ? "eager" : "lazy"}
+                decoding="async"
+                className="w-full max-w-3xl rounded-md shadow-2xl bg-white"
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </main>
   );
 };
