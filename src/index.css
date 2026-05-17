@@ -172,13 +172,21 @@
   }
 
   .marquee-track {
-    animation: marquee 22s linear infinite;
+    animation: marquee 38s linear infinite;
     will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  @media (min-width: 768px) {
+    .marquee-track { animation-duration: 45s; }
   }
   .marquee-track:hover { animation-play-state: paused; }
 
   @keyframes marquee {
-    from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(-50%, 0, 0); }
+    0%   { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
   }
+
+  /* Crisp image rendering across the site — no blur from browser scaling */
+  img { image-rendering: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 }
