@@ -14,7 +14,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/jjrW8TZc/Untitled-design2.png",
   "https://i.postimg.cc/mrd2M16b/Untitled-design111.png",
   "https://i.postimg.cc/15m1rjGn/Untitled-design3.png",
-  "https://i.postimg.cc/NjnrqVBd/Untitled-design115.png"
+  "https://i.postimg.cc/NjnrqVBd/Untitled-design115.png",
   "https://i.postimg.cc/hP5Gfdwk/Untitled-design116.png",
   "https://i.postimg.cc/jjQKQwgf/Untitled-design117.png",
   "https://i.postimg.cc/QCKymv85/Untitled-design118.png",
@@ -27,6 +27,15 @@ const livingRoomBase = [
   "https://i.postimg.cc/9fdRVd5v/entrance1.png",
   "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
   "https://i.postimg.cc/Sx9d2ynr/Untitled-design4.png",
+  "https://i.postimg.cc/hf6Vs7Ms/IMG-20260506-WA0022.jpg",
+  "https://i.postimg.cc/SJMny17c/IMG-3880.avif",
+  "https://i.postimg.cc/hfdXSZb7/IMG-3943.avif",
+  "https://i.postimg.cc/jw3DjGFy/IMG-6104.avif",
+  "https://i.postimg.cc/wywmmt7g/IMG-7413.avif",
+  "https://i.postimg.cc/6707k7VS/IMG-7431.avif",
+  "https://i.postimg.cc/xJ1kn0t8/IMG-8354.avif",
+  "https://i.postimg.cc/nCjDXhZK/IMG-8375.avif",
+  "https://i.postimg.cc/8FDJXdvc/IMG-8418.avif",
 ];
 const livingRoom: Project[] = livingRoomBase.map((src, i) => ({
   src,
