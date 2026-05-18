@@ -29,7 +29,6 @@ const livingRoomBase = [
 ];
 const livingRoom: Project[] = livingRoomBase.map((src, i) => ({
   src,
-  title: "",
   category: "Living Room",
 }));
 
@@ -46,7 +45,7 @@ const bedroom: Project[] = [
   "https://i.postimg.cc/WqssTt5v/IMG-8329.avif",
   "https://i.postimg.cc/CBGw3bHQ/IMG-8330.avif",
   "https://i.postimg.cc/SYVksqPC/IMG-8424.avif",
-].map((src, i) => ({ src, title: `Bedroom ${String(i + 1).padStart(2, "0")}`, category: "Bedroom" }));
+].map((src, i) => ({ src, category: "Bedroom" }));
 
 const kitchen: Project[] = [
   "https://i.postimg.cc/HJRGsztd/IMG-4341.avif",
@@ -58,7 +57,7 @@ const kitchen: Project[] = [
   "https://i.postimg.cc/ZCSSdfz3/IMG-6226.avif",
   "https://i.postimg.cc/Czggqvpj/IMG-7343.avif",
   "https://i.postimg.cc/BjZfhX61/IMG-7386.avif",
-].map((src, i) => ({ src, title: `Kitchen ${String(i + 1).padStart(2, "0")}`, category: "Kitchen" }));
+].map((src, i) => ({ src, category: "Kitchen" }));
 
 const fullHome: Project[] = [
   "https://i.postimg.cc/7bxvP53m/Full-Size-Render-(1).avif",
@@ -68,12 +67,11 @@ const fullHome: Project[] = [
   "https://i.postimg.cc/5XZdfpgx/IMG-7478.avif",
   "https://i.postimg.cc/pykwmPC3/IMG-7629.avif",
   "https://i.postimg.cc/jnqBM1xh/IMG-7634.avif",
-].map((src, i) => ({ src, title: `Full Home ${String(i + 1).padStart(2, "0")}`, category: "Full Home" }));
+].map((src, i) => ({ src, category: "Full Home" }));
 
 // Existing renders archive
 const renders3d: Project[] = Array.from({ length: 19 }, (_, i) => ({
   src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
-  title: `3D Visualization ${String(i + 1).padStart(2, "0")}`,
   category: "3D Visualization",
 }));
 
@@ -107,7 +105,7 @@ const floorPlans: Project[] = [
   "https://i.postimg.cc/pd6ht4xK/8-FURNITURE-PLAN-2.png",
   "https://i.postimg.cc/dQd7z5f3/9-PLAN-6.png",
   "https://i.postimg.cc/3NHw8Hqp/EXSITING-LAYOUT.png",
-].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Planning" }));
+].map((src, i) => ({ src, category: "2D Floor Planning" }));
 
 const brandChartImages = [
   "https://i.postimg.cc/3JYptrVJ/1.png",
