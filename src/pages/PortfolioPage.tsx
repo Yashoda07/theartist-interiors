@@ -9,18 +9,18 @@ import AnimatedSection from "@/components/AnimatedSection";
 type Project = { src: string; title: string; category: string };
 
 const livingRoomBase = [
+  "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png",
   "https://i.postimg.cc/9fdRVd5v/entrance1.png",
   "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
   "https://i.postimg.cc/qh4snVw1/IMG-7397.avif",
   "https://i.postimg.cc/fJ9Vwqjf/Full-Size-Render.avif",
-  "https://i.postimg.cc/9w4rwJ6t/Image-20231204-222511-016-(1).jpg",
+  "https://i.postimg.cc/mrd2M16b/Untitled-design111.png",
   "https://i.postimg.cc/hf6Vs7Ms/IMG-20260506-WA0022.jpg",
   "https://i.postimg.cc/SJMny17c/IMG-3880.avif",
   "https://i.postimg.cc/hfdXSZb7/IMG-3943.avif",
   "https://i.postimg.cc/N9jyBgp9/IMG-4011.avif",
   "https://i.postimg.cc/jw3DjGFy/IMG-6104.avif",
   "https://i.postimg.cc/Sx9d2ynr/Untitled-design4.png",
-  "https://i.postimg.cc/gnXZx2dr/IMG-6174-(1).avif",
   "https://i.postimg.cc/wywmmt7g/IMG-7413.avif",
   "https://i.postimg.cc/6707k7VS/IMG-7431.avif",
   "https://i.postimg.cc/xJ1kn0t8/IMG-8354.avif",
@@ -29,7 +29,7 @@ const livingRoomBase = [
 ];
 const livingRoom: Project[] = livingRoomBase.map((src, i) => ({
   src,
-  title: `Living Room ${String(i + 1).padStart(2, "0")}`,
+  title: "",
   category: "Living Room",
 }));
 
