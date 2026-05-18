@@ -17,7 +17,7 @@ const items: Item[] = [
   { src: "https://i.postimg.cc/MHd6Y2vJ/Untitled-design7.png", title: "Illuminated Display Kitchen", category: "Kitchen" },
   { src: "https://i.postimg.cc/5tRkLPxr/Untitled-design9.png", title: "Premium Residence Interior", category: "Full Home" },
   { src: "https://i.postimg.cc/Y9BY5g8M/Untitled-design10.png", title: "Residence Transformation", category: "Full Home" },
-  { src: "https://i.postimg.cc/Y9BY5g8M/Untitled-design10.png", title: "Elegant Entrance Door", category: "Living Room" },
+  { src: "https://i.postimg.cc/SQgbDpyW/Untitled-design11.png", title: "Elegant Entrance Door", category: "Living Room" },
 ];
 
 const PortfolioSection = () => {
