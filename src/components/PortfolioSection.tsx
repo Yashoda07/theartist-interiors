@@ -6,17 +6,18 @@ import AnimatedSection from "./AnimatedSection";
 type Item = { src: string; title: string; category: string };
 
 const items: Item[] = [
-  { src: "https://i.postimg.cc/dDRRq1s0/IMG-6287-(1).avif", title: "Bedroom Suite", category: "Bedroom" },
-  { src: "https://i.postimg.cc/xqGdhV6L/IMG-8312.jpg", title: "Master Bedroom", category: "Bedroom" },
-  { src: "https://i.postimg.cc/SYVksqPC/IMG-8424.avif", title: "Bedroom Refresh", category: "Bedroom" },
-  { src: "https://i.postimg.cc/fJ9Vwqjf/Full-Size-Render.avif", title: "Living Render", category: "Living Room" },
-  { src: "https://i.postimg.cc/62b8QDm1/IMG-6138.avif", title: "Lounge Concept", category: "Living Room" },
-  { src: "https://i.postimg.cc/6707k7VS/IMG-7431.avif", title: "Modern Kitchen", category: "Kitchen" },
-  { src: "https://i.postimg.cc/67gs5chN/IMG-4354-(1).avif", title: "Modular Kitchen", category: "Kitchen" },
-  { src: "https://i.postimg.cc/NyShfDxv/IMG-4627.avif", title: "Kitchen Island", category: "Kitchen" },
-  { src: "https://i.postimg.cc/BjZfhX61/IMG-7386.avif", title: "Open Kitchen", category: "Kitchen" },
-  { src: "https://i.postimg.cc/gXWCZJfn/IMG-7452.avif", title: "Full Home Project", category: "Full Home" },
-  { src: "https://i.postimg.cc/pykwmPC3/IMG-7629.avif", title: "Residence Transformation", category: "Full Home" },
+  { src: "https://i.postimg.cc/tCZwkG1M/Untitled-design8.png", title: "Curved Accent Bedroom", category: "Bedroom" },
+  { src: "https://i.postimg.cc/qvNgBRZZ/Untitled-design.png", title: "Warm Ambient Bedroom", category: "Bedroom" },
+  { src: "https://i.postimg.cc/jq1p0SPD/Untitled-design1.png", title: "Sculpted Cove Bedroom", category: "Bedroom" },
+  { src: "https://i.postimg.cc/15m1rjGn/Untitled-design3.png", title: "Contemporary Family Lounge", category: "Living Room" },
+  { src: "https://i.postimg.cc/Sx9d2ynr/Untitled-design4.png", title: "Contemporary Dining Lounge", category: "Living Room" },
+  { src: "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png", title: "Media Wall & TV Unit", category: "Living Room" },
+  { src: "https://i.postimg.cc/T18gXb9K/Untitled-design6.png", title: "Minimal Parallel Kitchen", category: "Kitchen" },
+  { src: "https://i.postimg.cc/jjrW8TZc/Untitled-design2.png", title: "Luxury Living Room", category: "Living Room" },
+  { src: "https://i.postimg.cc/MHd6Y2vJ/Untitled-design7.png", title: "Illuminated Display Kitchen", category: "Kitchen" },
+  { src: "https://i.postimg.cc/5tRkLPxr/Untitled-design9.png", title: "Premium Residence Interior", category: "Full Home" },
+  { src: "https://i.postimg.cc/Y9BY5g8M/Untitled-design10.png", title: "Residence Transformation", category: "Full Home" },
+  { src: "https://i.postimg.cc/Y9BY5g8M/Untitled-design10.png", title: "Elegant Entrance Door", category: "Living Room" },
 ];
 
 const PortfolioSection = () => {
