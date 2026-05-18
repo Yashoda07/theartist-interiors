@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
 import AnimatedSection from "@/components/AnimatedSection";
 
-type Project = { src: string; title: string; category: string };
+type Project = { src: string; title?: string; category: string };
 
 const livingRoomBase = [
   "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png",
