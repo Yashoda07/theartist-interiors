@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
 import AnimatedSection from "@/components/AnimatedSection";
 
-type Project = { src: string; title: string; category: string };
+type Project = { src: string; title?: string; category: string };
 
 const livingRoomBase = [
   "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png",
@@ -22,7 +22,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/ZKcMcP4t/Untitled-design120.png",
   "https://i.postimg.cc/wx5fq5tw/Untitled-design121.png",
   "https://i.postimg.cc/PJKQm4ZS/Untitled-design122.png",
-  "https://i.postimg.cc/85RG4FZM/Untitled-design113.png"
+  "https://i.postimg.cc/85RG4FZM/Untitled-design113.png",
   "https://i.postimg.cc/15NHjppv/Untitled-design114.png",
   "https://i.postimg.cc/9fdRVd5v/entrance1.png",
   "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
@@ -37,7 +37,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/nCjDXhZK/IMG-8375.avif",
   "https://i.postimg.cc/8FDJXdvc/IMG-8418.avif",
 ];
-const livingRoom: Project[] = livingRoomBase.map((src, i) => ({ src, title: Living Room ${String(i + 1).padStart(2, "0")}, category: "Living Room", }));
+const livingRoom: Project[] = livingRoomBase.map((src, i) => ({ src, title: `Living Room ${String(i + 1).padStart(2, "0")}`, category: "Living Room" }));
 
 const bedroom: Project[] = [
   "https://i.postimg.cc/w35BZYw9/IMG-20260506-WA0021.jpg",
