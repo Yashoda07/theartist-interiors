@@ -10,15 +10,16 @@ type Project = { src: string; title: string; category: string };
 
 const livingRoomBase = [
   "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png",
-  "https://i.postimg.cc/9fdRVd5v/entrance1.png",
-  "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
-  "https://i.postimg.cc/qh4snVw1/IMG-7397.avif",
-  "https://i.postimg.cc/fJ9Vwqjf/Full-Size-Render.avif",
+  "https://i.postimg.cc/8PD52GvX/Untitled-design112.png",
+  "https://i.postimg.cc/jjrW8TZc/Untitled-design2.png",
   "https://i.postimg.cc/mrd2M16b/Untitled-design111.png",
   "https://i.postimg.cc/hf6Vs7Ms/IMG-20260506-WA0022.jpg",
   "https://i.postimg.cc/SJMny17c/IMG-3880.avif",
+  "https://i.postimg.cc/85RG4FZM/Untitled-design113.png"
   "https://i.postimg.cc/hfdXSZb7/IMG-3943.avif",
-  "https://i.postimg.cc/N9jyBgp9/IMG-4011.avif",
+  "https://i.postimg.cc/15NHjppv/Untitled-design114.png",
+  "https://i.postimg.cc/9fdRVd5v/entrance1.png",
+  "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg",
   "https://i.postimg.cc/jw3DjGFy/IMG-6104.avif",
   "https://i.postimg.cc/Sx9d2ynr/Untitled-design4.png",
   "https://i.postimg.cc/wywmmt7g/IMG-7413.avif",
