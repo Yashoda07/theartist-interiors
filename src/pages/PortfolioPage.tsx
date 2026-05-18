@@ -37,7 +37,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/nCjDXhZK/IMG-8375.avif",
   "https://i.postimg.cc/8FDJXdvc/IMG-8418.avif",
 ];
-const livingRoom: Project[] = livingRoomBase.map((src, i) => ({ src, title: Living Room ${String(i + 1).padStart(2, "0")}, category: "Living Room", }));
+const livingRoom: Project[] = livingRoomBase.map((src, i) => ({ src, title: `Living Room ${String(i + 1).padStart(2, "0")}`, category: "Living Room" }));
 
 const bedroom: Project[] = [
   "https://i.postimg.cc/w35BZYw9/IMG-20260506-WA0021.jpg",
