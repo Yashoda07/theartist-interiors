@@ -6,7 +6,7 @@ import AnimatedSection from "./AnimatedSection";
 type Item = { src: string; title: string; category: string };
 
 const items: Item[] = [
-  { src: "https://i.postimg.cc/tCZwkG1M/Untitled-design8.png", title: "Curved Accent Bedroom", category: "Bedroom" },
+  { src: "https://i.postimg.cc/1XSpYWhV/Untitled-designb.png", title: "Curved Accent Bedroom", category: "Bedroom" },
   { src: "https://i.postimg.cc/qvNgBRZZ/Untitled-design.png", title: "Warm Ambient Bedroom", category: "Bedroom" },
   { src: "https://i.postimg.cc/jq1p0SPD/Untitled-design1.png", title: "Sculpted Cove Bedroom", category: "Bedroom" },
   { src: "https://i.postimg.cc/15m1rjGn/Untitled-design3.png", title: "Contemporary Family Lounge", category: "Living Room" },
