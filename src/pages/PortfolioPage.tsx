@@ -38,11 +38,12 @@ const bedroom: Project[] = [
   "https://i.postimg.cc/BQHxGfQY/Untitled-designbbbbb.png",
   "https://i.postimg.cc/rmGkkpbv/Untitled-designb6.png",
   "https://i.postimg.cc/0jc1zB9n/Untitled-designb7.png",
-  "https://i.postimg.cc/SKp1pGhX/Untitled-designb8.png",
   "https://i.postimg.cc/7ZB1KMZn/Untitled-designb9.png",
+  "https://i.postimg.cc/SKp1pGhX/Untitled-designb8.png",
   "https://i.postimg.cc/v8LVPLqw/Untitled-designb10.png",
   "https://i.postimg.cc/x8TTpH80/Untitled-designb11.png",
   "https://i.postimg.cc/bwf4zP0J/Untitled-designb12.png",
+  "https://i.postimg.cc/kGyrzXGj/Untitled-designb13.png",
 ].map((src, i) => ({ src, category: "Bedroom" }));
 
 const kitchen: Project[] = [
@@ -51,7 +52,6 @@ const kitchen: Project[] = [
   "https://i.postimg.cc/NM1v80km/kitchen3.png",
   "https://i.postimg.cc/VkcM4ZwB/kitchen4.png",
   "https://i.postimg.cc/PqS68pc6/kitchen5.png",
-  "https://i.postimg.cc/brxkk4J4/kitchen6.png",
   "https://i.postimg.cc/cLr6NVWs/kitchen7.png",
   "https://i.postimg.cc/13wh6Hcd/kitchen8.png",
   "https://i.postimg.cc/05BLB3VG/kitchen9.png",
