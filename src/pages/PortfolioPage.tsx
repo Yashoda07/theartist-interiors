@@ -43,31 +43,19 @@ const bedroom: Project[] = [
   "https://i.postimg.cc/v8LVPLqw/Untitled-designb10.png",
   "https://i.postimg.cc/x8TTpH80/Untitled-designb11.png",
   "https://i.postimg.cc/bwf4zP0J/Untitled-designb12.png",
-  
-  "https://i.postimg.cc/w35BZYw9/IMG-20260506-WA0021.jpg",
-  "https://i.postimg.cc/VdYq58vz/IMG-3789-(1).avif",
-  "https://i.postimg.cc/V5PBQMcq/IMG-3797.avif",
-  "https://i.postimg.cc/3WQC5pHv/IMG-6274.avif",
-  "https://i.postimg.cc/dDRRq1s0/IMG-6287-(1).avif",
-  "https://i.postimg.cc/4Y04Vfxj/IMG-6328.avif",
-  "https://i.postimg.cc/PC7fYXqj/IMG-6350.avif",
-  "https://i.postimg.cc/WqV1z51L/IMG-6374.avif",
-  "https://i.postimg.cc/xqGdhV6L/IMG-8312.jpg",
-  "https://i.postimg.cc/WqssTt5v/IMG-8329.avif",
-  "https://i.postimg.cc/CBGw3bHQ/IMG-8330.avif",
-  "https://i.postimg.cc/SYVksqPC/IMG-8424.avif",
 ].map((src, i) => ({ src, category: "Bedroom" }));
 
 const kitchen: Project[] = [
-  "https://i.postimg.cc/HJRGsztd/IMG-4341.avif",
-  "https://i.postimg.cc/WFqvMC4m/IMG-4344.avif",
-  "https://i.postimg.cc/67gs5chN/IMG-4354-(1).avif",
-  "https://i.postimg.cc/PC6s0TpQ/IMG-4361.avif",
-  "https://i.postimg.cc/bshht6fD/IMG-4364.avif",
-  "https://i.postimg.cc/NyShfDxv/IMG-4627.avif",
-  "https://i.postimg.cc/ZCSSdfz3/IMG-6226.avif",
-  "https://i.postimg.cc/Czggqvpj/IMG-7343.avif",
-  "https://i.postimg.cc/BjZfhX61/IMG-7386.avif",
+  "https://i.postimg.cc/CMQzrPGB/kitchen1.png",
+  "https://i.postimg.cc/s2x2J5Br/kitchen2.png",
+  "https://i.postimg.cc/NM1v80km/kitchen3.png",
+  "https://i.postimg.cc/VkcM4ZwB/kitchen4.png",
+  "https://i.postimg.cc/PqS68pc6/kitchen5.png",
+  "https://i.postimg.cc/brxkk4J4/kitchen6.png",
+  "https://i.postimg.cc/cLr6NVWs/kitchen7.png",
+  "https://i.postimg.cc/13wh6Hcd/kitchen8.png",
+  "https://i.postimg.cc/05BLB3VG/kitchen9.png",
+  "https://i.postimg.cc/YSXHqSzR/kitchen10.png",
 ].map((src, i) => ({ src, category: "Kitchen" }));
 
 const fullHome: Project[] = [
