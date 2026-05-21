@@ -17,7 +17,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/NjnrqVBd/Untitled-design115.png",
   "https://i.postimg.cc/hP5Gfdwk/Untitled-design116.png",
   "https://i.postimg.cc/jjQKQwgf/Untitled-design117.png",
-  "https://i.postimg.cc/QCKymv85/Untitled-design118.png",
+  "https://i.postimg.cc/jdbKqBrN/living118.png",
   "https://i.postimg.cc/BnJGZQQb/Untitled-design119.png",
   "https://i.postimg.cc/ZKcMcP4t/Untitled-design120.png",
   "https://i.postimg.cc/wx5fq5tw/Untitled-design121.png",
@@ -59,13 +59,12 @@ const kitchen: Project[] = [
 ].map((src, i) => ({ src, category: "Kitchen" }));
 
 const fullHome: Project[] = [
-  "https://i.postimg.cc/7bxvP53m/Full-Size-Render-(1).avif",
-  "https://i.postimg.cc/hQ4N2YDM/IMG-7422.avif",
-  "https://i.postimg.cc/jw4GQTb7/IMG-7424.avif",
-  "https://i.postimg.cc/gXWCZJfn/IMG-7452.avif",
-  "https://i.postimg.cc/5XZdfpgx/IMG-7478.avif",
-  "https://i.postimg.cc/pykwmPC3/IMG-7629.avif",
-  "https://i.postimg.cc/jnqBM1xh/IMG-7634.avif",
+  "https://i.postimg.cc/SxYwWrqS/fh5.png",
+  "https://i.postimg.cc/nV6KXYdK/fh2.png",
+  "https://i.postimg.cc/wTGCyPKz/fh3.png",
+  "https://i.postimg.cc/02BTM3g9/fh4.png",
+  "https://i.postimg.cc/WpQmd69G/fh1.png",
+  "https://i.postimg.cc/15m1rjGn/Untitled-design3.png",
 ].map((src, i) => ({ src, category: "Full Home" }));
 
 // Existing renders archive
@@ -101,7 +100,6 @@ const floorPlans: Project[] = [
   "https://i.postimg.cc/Z5JyP6VV/5-PLAN-4.png",
   "https://i.postimg.cc/GhwD2WDx/6-FLOOR-PLAN.png",
   "https://i.postimg.cc/SR8zdrBg/7-FURNITURE-PLAN-LABELLING.png",
-  "https://i.postimg.cc/pd6ht4xK/8-FURNITURE-PLAN-2.png",
   "https://i.postimg.cc/dQd7z5f3/9-PLAN-6.png",
   "https://i.postimg.cc/3NHw8Hqp/EXSITING-LAYOUT.png",
 ].map((src, i) => ({ src, category: "2D Floor Planning" }));
