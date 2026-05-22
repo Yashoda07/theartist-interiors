@@ -75,6 +75,28 @@ const renders3d: Project[] = Array.from({ length: 19 }, (_, i) => ({
 
 // New 3D Concepts section — slightly different category band/background tone
 const concepts3d: Project[] = [
+  "https://i.postimg.cc/yxWMfw5y/3D1.png",
+  "https://i.postimg.cc/tJ7KrLwj/3D2.png",
+  "https://i.postimg.cc/Rh8j2gxq/3D3.png",
+  "https://i.postimg.cc/v8NF1Zxm/3D4.png",
+  "https://i.postimg.cc/SNBBr1GP/3D5.png",
+  "https://i.postimg.cc/1zPLxg2w/3D6.png",
+  "https://i.postimg.cc/76Zd6FxH/3D7.png",
+  "https://i.postimg.cc/mkcn37zn/3D8.png",
+  "https://i.postimg.cc/gjw7y3Lw/3D9.png",
+  "https://i.postimg.cc/kMZzJYLJ/3D10.png",
+  "https://i.postimg.cc/yxVmsKBL/3D11.png",
+  "https://i.postimg.cc/6qYdQPpp/3D12.png",
+  "https://i.postimg.cc/XN8KxrkY/3D13.png",
+  "https://i.postimg.cc/HskwNT69/3D14.png",
+  "https://i.postimg.cc/MK372g42/3D15.png",
+  "https://i.postimg.cc/mg07hCB9/3D16.png",
+  "https://i.postimg.cc/cJww3CJd/3D17.png",
+  "https://i.postimg.cc/3RZGLqp4/3D18.png",
+  "https://i.postimg.cc/cHc3DzYb/3D19.png",
+  "https://i.postimg.cc/VvLC2FWP/3DLAST.png",
+  "https://i.postimg.cc/pT0T5Mzk/3DLast-Last.png",
+  
   { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
   { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
   { src: "https://i.postimg.cc/9fdRVd5v/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
