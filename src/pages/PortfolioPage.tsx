@@ -69,8 +69,8 @@ const fullHome: Project[] = [
 
 // Existing renders archive
 const renders3d: Project[] = [
-  ...Array.from({ length: 19 }, (_, i) => ({
-    src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
+  ...Object.values(import.meta.glob("../assets/renders/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>).map((src) => ({
+    src,
     category: "3D Visualization",
   })),
   ...[
