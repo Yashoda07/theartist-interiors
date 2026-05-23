@@ -77,18 +77,18 @@ const renders3d: Project[] = [
 // New 3D Concepts section — slightly different category band/background tone
 // const concepts3d: Project[] = [
 
-  {
-    src: "https://i.postimg.cc/yxWMfw5y/3D1.png",
-    category: "3D Visualization",
-  },
-  {
-    src: "https://i.postimg.cc/tJ7KrLwj/3D2.png",
-    category: "3D Visualization",
-  },
-  {
-    src: "https://i.postimg.cc/Rh8j2gxq/3D3.png",
-    category: "3D Visualization",
-  },
+  // {
+  //   src: "https://i.postimg.cc/yxWMfw5y/3D1.png",
+  //   category: "3D Visualization",
+  // },
+  // {
+  //   src: "https://i.postimg.cc/tJ7KrLwj/3D2.png",
+  //   category: "3D Visualization",
+  // },
+  // {
+  //   src: "https://i.postimg.cc/Rh8j2gxq/3D3.png",
+  //   category: "3D Visualization",
+  // },
   
   "https://i.postimg.cc/yxWMfw5y/3D1.png",
   "https://i.postimg.cc/tJ7KrLwj/3D2.png",
