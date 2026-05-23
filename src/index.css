@@ -172,13 +172,13 @@
   }
 
   .marquee-track {
-    animation: marquee 38s linear infinite;
+    animation: marquee 45s linear infinite;
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
   }
   @media (min-width: 768px) {
-    .marquee-track { animation-duration: 45s; }
+    .marquee-track { animation-duration: 55s; }
   }
   .marquee-track:hover { animation-play-state: paused; }
 
