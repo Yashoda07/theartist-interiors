@@ -127,7 +127,7 @@
   .section-spacing {
     /* Match Experience section spacing for consistent breathing room across all sections.
        scroll-padding-top already accounts for the fixed header so sections align just below it. */
-    @apply py-16 md:py-20 scroll-mt-20;
+    @apply py-16 md:py-20 scroll-mt-16 md:scroll-mt-20;
   }
 
   .text-display-xl {
