@@ -76,6 +76,19 @@ const renders3d: Project[] = [
 
 // New 3D Concepts section — slightly different category band/background tone
 // const concepts3d: Project[] = [
+
+  {
+    src: "https://i.postimg.cc/yxWMfw5y/3D1.png",
+    category: "3D Visualization",
+  },
+  {
+    src: "https://i.postimg.cc/tJ7KrLwj/3D2.png",
+    category: "3D Visualization",
+  },
+  {
+    src: "https://i.postimg.cc/Rh8j2gxq/3D3.png",
+    category: "3D Visualization",
+  },
   
   "https://i.postimg.cc/yxWMfw5y/3D1.png",
   "https://i.postimg.cc/tJ7KrLwj/3D2.png",
@@ -162,10 +175,9 @@ const projects: Project[] = [
   ...kitchen,
   ...fullHome,
   ...renders3d,
-  ...concepts3d,
   ...floorPlans,
 ];
-const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "3D Concepts", "2D Floor Planning"];
+const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Planning"];
 
 const PortfolioPage = () => {
   const location = useLocation();
