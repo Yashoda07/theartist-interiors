@@ -210,12 +210,15 @@ const PortfolioPage = () => {
             </h2>
           </AnimatedSection>
 
-          <AnimatedSection delay={0.2} className="flex flex-wrap gap-3 mb-12">
+          <AnimatedSection
+            delay={0.2}
+            className="grid grid-cols-3 md:grid-cols-3 xl:grid-cols-6 gap-0 mb-12 border border-border overflow-hidden rounded-md bg-card"
+          >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`text-label px-5 py-2 border transition-all duration-300 active:scale-95 ${
+                className={`text-label w-full px-4 py-4 border-r border-b xl:border-b-0 border-border transition-all duration-300 active:scale-95 text-center ${
                   active === cat
                     ? "border-foreground bg-foreground text-background"
                     : "border-border text-foreground/70 hover:border-accent hover:text-accent"
