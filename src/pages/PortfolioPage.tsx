@@ -68,13 +68,15 @@ const fullHome: Project[] = [
 ].map((src, i) => ({ src, category: "Full Home" }));
 
 // Existing renders archive
-const renders3d: Project[] = Array.from({ length: 19 }, (_, i) => ({
+const renders3d: Project[] = [
+  Array.from({ length: 19 }, (_, i) => ({
   src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
   category: "3D Visualization",
-}));
+})),
 
 // New 3D Concepts section — slightly different category band/background tone
-const concepts3d: Project[] = [
+// const concepts3d: Project[] = [
+  
   "https://i.postimg.cc/yxWMfw5y/3D1.png",
   "https://i.postimg.cc/tJ7KrLwj/3D2.png",
   "https://i.postimg.cc/Rh8j2gxq/3D3.png",
@@ -97,21 +99,21 @@ const concepts3d: Project[] = [
   "https://i.postimg.cc/VvLC2FWP/3DLAST.png",
   "https://i.postimg.cc/pT0T5Mzk/3DLast-Last.png",
   
-  { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/9fdRVd5v/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/KkRjxgS4/living1.jpg", title: "Living Concept 01", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/XGpq4yS8/living2.jpg", title: "Living Concept 02", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/k6BGqt3p/living3.jpg", title: "Living Concept 03", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/vgcTb6FS/living4.jpg", title: "Living Concept 04", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/9Rr0Cq5k/living5.jpg", title: "Living Concept 05", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/TLFwwYf0/living6.jpg", title: "Living Concept 06", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/mzJDD2Bd/living7.jpg", title: "Living Concept 07", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/YvRsYdjg/bedroom1.jpg", title: "Bedroom Concept 01", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/fVCrm8kp/bedroom2.jpg", title: "Bedroom Concept 02", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/BjpVHmtd/bedroom4.jpg", title: "Bedroom Concept 03", category: "3D Concepts" },
-  { src: "https://i.postimg.cc/sMmN7TvF/bedroom5.jpg", title: "Bedroom Concept 04", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/9fdRVd5v/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/KkRjxgS4/living1.jpg", title: "Living Concept 01", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/XGpq4yS8/living2.jpg", title: "Living Concept 02", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/k6BGqt3p/living3.jpg", title: "Living Concept 03", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/vgcTb6FS/living4.jpg", title: "Living Concept 04", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/9Rr0Cq5k/living5.jpg", title: "Living Concept 05", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/TLFwwYf0/living6.jpg", title: "Living Concept 06", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/mzJDD2Bd/living7.jpg", title: "Living Concept 07", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/YvRsYdjg/bedroom1.jpg", title: "Bedroom Concept 01", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/fVCrm8kp/bedroom2.jpg", title: "Bedroom Concept 02", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/BjpVHmtd/bedroom4.jpg", title: "Bedroom Concept 03", category: "3D Concepts" },
+  // { src: "https://i.postimg.cc/sMmN7TvF/bedroom5.jpg", title: "Bedroom Concept 04", category: "3D Concepts" },
 ];
 
 const floorPlans: Project[] = [
