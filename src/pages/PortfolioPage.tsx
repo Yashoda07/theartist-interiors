@@ -69,10 +69,6 @@ const fullHome: Project[] = [
 
 // Existing renders archive
 const renders3d: Project[] = [
-  ...Object.values(import.meta.glob("../assets/renders/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>).map((src) => ({
-    src,
-    category: "3D Visualization",
-  })),
   ...[
     "https://i.postimg.cc/yxWMfw5y/3D1.png",
     "https://i.postimg.cc/tJ7KrLwj/3D2.png",
@@ -96,6 +92,10 @@ const renders3d: Project[] = [
     "https://i.postimg.cc/VvLC2FWP/3DLAST.png",
     "https://i.postimg.cc/pT0T5Mzk/3DLast-Last.png",
   ].map((src) => ({ src, category: "3D Visualization" })),
+  ...Object.values(import.meta.glob("../assets/renders/*.jpg", { eager: true, query: "?url", import: "default" }) as Record<string, string>).map((src) => ({
+    src,
+    category: "3D Visualization",
+  })),
 ];
 
 const floorPlans: Project[] = [
