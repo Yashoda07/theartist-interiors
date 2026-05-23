@@ -134,7 +134,7 @@ const projects: Project[] = [
   ...renders3d,
   ...floorPlans,
 ];
-const categories = ["Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Planning"];
+const categories = ["Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Plans"];
 
 const PortfolioPage = () => {
   const location = useLocation();
@@ -212,22 +212,40 @@ const PortfolioPage = () => {
 
           <AnimatedSection
             delay={0.2}
-            className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 mb-8 md:mb-12 border border-border rounded-lg overflow-hidden bg-card"
+            className="grid grid-cols-3 mb-8 md:mb-12 border border-border rounded-lg overflow-hidden bg-card"
           >
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActive(cat)}
-                className={`text-[10px] sm:text-xs md:text-sm xl:text-label 
-                  px-2 sm:px-3 md:px-4 
-                  py-3 sm:py-4 
-                  min-h-[52px] md:min-h-[60px]
-                  flex items-center justify-center text-center leading-tight
-                  border-border border-r border-b xl:border-b-0
-                  transition-all duration-300 active:scale-95 whitespace-normal ${
+                className={`relative
+                h-[58px] sm:h-[62px] md:h-[66px]
+                px-2 sm:px-3 md:px-4
+                flex items-center justify-center
+                text-center
+                
+                text-[9px]
+                sm:text-[10px]
+                md:text-xs
+                xl:text-sm
+                
+                font-medium uppercase
+                
+                tracking-[0.18em]
+                md:tracking-[0.22em]
+                
+                leading-[1.25]
+                
+                border-r border-b border-border
+                nth-[3n]:border-r-0
+                xl:border-b-0
+                
+                transition-all duration-300
+                
+                ${
                   active === cat
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-border text-foreground/70 hover:border-accent hover:text-accent"
+                    ? "bg-[#2a1d14] text-white"
+                    : "bg-card text-foreground/75 hover:bg-secondary hover:text-accent"
                 }`}
               >
                 {cat}
