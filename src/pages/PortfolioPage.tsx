@@ -84,7 +84,7 @@ const renders3d: Project[] = [
     "https://i.postimg.cc/6qYdQPpp/3D12.png",
     "https://i.postimg.cc/XN8KxrkY/3D13.png",
     "https://i.postimg.cc/HskwNT69/3D14.png",
-    "https://i.postimg.cc/MK372g42/3D15.png",
+    // "https://i.postimg.cc/MK372g42/3D15.png",
     "https://i.postimg.cc/mg07hCB9/3D16.png",
     "https://i.postimg.cc/cJww3CJd/3D17.png",
     "https://i.postimg.cc/3RZGLqp4/3D18.png",
