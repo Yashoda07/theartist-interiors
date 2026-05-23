@@ -69,68 +69,36 @@ const fullHome: Project[] = [
 
 // Existing renders archive
 const renders3d: Project[] = [
-  Array.from({ length: 19 }, (_, i) => ({
-  src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
-  category: "3D Visualization",
-})),
-
-// New 3D Concepts section — slightly different category band/background tone
-// const concepts3d: Project[] = [
-
-  // {
-  //   src: "https://i.postimg.cc/yxWMfw5y/3D1.png",
-  //   category: "3D Visualization",
-  // },
-  // {
-  //   src: "https://i.postimg.cc/tJ7KrLwj/3D2.png",
-  //   category: "3D Visualization",
-  // },
-  // {
-  //   src: "https://i.postimg.cc/Rh8j2gxq/3D3.png",
-  //   category: "3D Visualization",
-  // },
-  
-  "https://i.postimg.cc/yxWMfw5y/3D1.png",
-  "https://i.postimg.cc/tJ7KrLwj/3D2.png",
-  "https://i.postimg.cc/Rh8j2gxq/3D3.png",
-  "https://i.postimg.cc/v8NF1Zxm/3D4.png",
-  "https://i.postimg.cc/SNBBr1GP/3D5.png",
-  "https://i.postimg.cc/1zPLxg2w/3D6.png",
-  "https://i.postimg.cc/76Zd6FxH/3D7.png",
-  "https://i.postimg.cc/mkcn37zn/3D8.png",
-  "https://i.postimg.cc/gjw7y3Lw/3D9.png",
-  "https://i.postimg.cc/kMZzJYLJ/3D10.png",
-  "https://i.postimg.cc/yxVmsKBL/3D11.png",
-  "https://i.postimg.cc/6qYdQPpp/3D12.png",
-  "https://i.postimg.cc/XN8KxrkY/3D13.png",
-  "https://i.postimg.cc/HskwNT69/3D14.png",
-  "https://i.postimg.cc/MK372g42/3D15.png",
-  "https://i.postimg.cc/mg07hCB9/3D16.png",
-  "https://i.postimg.cc/cJww3CJd/3D17.png",
-  "https://i.postimg.cc/3RZGLqp4/3D18.png",
-  "https://i.postimg.cc/cHc3DzYb/3D19.png",
-  "https://i.postimg.cc/VvLC2FWP/3DLAST.png",
-  "https://i.postimg.cc/pT0T5Mzk/3DLast-Last.png",
-  
-  // { src: "https://i.postimg.cc/Gtv8w5Kx/IMG-20250325-WA0014.jpg", title: "3D Concept 01", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/XqhWhYLT/Untitled-design.png", title: "3D Concept 02", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/9fdRVd5v/entrance1.png", title: "Entrance Concept 01", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/7L3GD3rZ/entrance2.jpg", title: "Entrance Concept 02", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/KkRjxgS4/living1.jpg", title: "Living Concept 01", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/XGpq4yS8/living2.jpg", title: "Living Concept 02", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/k6BGqt3p/living3.jpg", title: "Living Concept 03", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/vgcTb6FS/living4.jpg", title: "Living Concept 04", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/9Rr0Cq5k/living5.jpg", title: "Living Concept 05", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/TLFwwYf0/living6.jpg", title: "Living Concept 06", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/mzJDD2Bd/living7.jpg", title: "Living Concept 07", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/YvRsYdjg/bedroom1.jpg", title: "Bedroom Concept 01", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/fVCrm8kp/bedroom2.jpg", title: "Bedroom Concept 02", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/BjpVHmtd/bedroom4.jpg", title: "Bedroom Concept 03", category: "3D Concepts" },
-  // { src: "https://i.postimg.cc/sMmN7TvF/bedroom5.jpg", title: "Bedroom Concept 04", category: "3D Concepts" },
+  ...Array.from({ length: 19 }, (_, i) => ({
+    src: new URL(`../assets/renders/render-${i + 1}.jpg`, import.meta.url).href,
+    category: "3D Visualization",
+  })),
+  ...[
+    "https://i.postimg.cc/yxWMfw5y/3D1.png",
+    "https://i.postimg.cc/tJ7KrLwj/3D2.png",
+    "https://i.postimg.cc/Rh8j2gxq/3D3.png",
+    "https://i.postimg.cc/v8NF1Zxm/3D4.png",
+    "https://i.postimg.cc/SNBBr1GP/3D5.png",
+    "https://i.postimg.cc/1zPLxg2w/3D6.png",
+    "https://i.postimg.cc/76Zd6FxH/3D7.png",
+    "https://i.postimg.cc/mkcn37zn/3D8.png",
+    "https://i.postimg.cc/gjw7y3Lw/3D9.png",
+    "https://i.postimg.cc/kMZzJYLJ/3D10.png",
+    "https://i.postimg.cc/yxVmsKBL/3D11.png",
+    "https://i.postimg.cc/6qYdQPpp/3D12.png",
+    "https://i.postimg.cc/XN8KxrkY/3D13.png",
+    "https://i.postimg.cc/HskwNT69/3D14.png",
+    "https://i.postimg.cc/MK372g42/3D15.png",
+    "https://i.postimg.cc/mg07hCB9/3D16.png",
+    "https://i.postimg.cc/cJww3CJd/3D17.png",
+    "https://i.postimg.cc/3RZGLqp4/3D18.png",
+    "https://i.postimg.cc/cHc3DzYb/3D19.png",
+    "https://i.postimg.cc/VvLC2FWP/3DLAST.png",
+    "https://i.postimg.cc/pT0T5Mzk/3DLast-Last.png",
+  ].map((src) => ({ src, category: "3D Visualization" })),
 ];
 
 const floorPlans: Project[] = [
-<<<<<<< HEAD
   "https://i.postimg.cc/RhsdCQmW/1-FURNITURE-PLAN-1-pdf.png",
   "https://i.postimg.cc/sGW7wWvW/2-FURNITURE-PLAN-LABELLING-1-pdf.png",
   "https://i.postimg.cc/WtqG2BS8/3-PLAN-5-pdf.png",
@@ -142,18 +110,7 @@ const floorPlans: Project[] = [
   "https://i.postimg.cc/z3HCJs01/9-PLAN-6-pdf.png",
   "https://i.postimg.cc/kDRQn0fC/EXSITING-LAYOUT-pdf.png",
 ].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Planning" }));
-=======
-  "https://i.postimg.cc/yNqyzDPg/1-FURNITURE-PLAN-1-png.png",
-  "https://i.postimg.cc/zDdwGt75/2-FURNITURE-PLAN-LABELLING-1-png.png",
-  "https://i.postimg.cc/XNDFbZNS/3-PLAN-5-png.png",
-  "https://i.postimg.cc/Kz8kXbd4/4-FURNITURE-LAYOUT.png",
-  "https://i.postimg.cc/Z5JyP6VV/5-PLAN-4.png",
-  "https://i.postimg.cc/GhwD2WDx/6-FLOOR-PLAN.png",
-  "https://i.postimg.cc/SR8zdrBg/7-FURNITURE-PLAN-LABELLING.png",
-  "https://i.postimg.cc/dQd7z5f3/9-PLAN-6.png",
-  "https://i.postimg.cc/3NHw8Hqp/EXSITING-LAYOUT.png",
-].map((src, i) => ({ src, category: "2D Floor Planning" }));
->>>>>>> fbf6137318ecfdd05581b1059b9b6bacc7cd5d8d
+
 
 const brandChartImages = [
   "https://i.postimg.cc/3JYptrVJ/1.png",
