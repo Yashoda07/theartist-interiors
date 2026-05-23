@@ -134,11 +134,11 @@ const projects: Project[] = [
   ...renders3d,
   ...floorPlans,
 ];
-const categories = ["All", "Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Planning"];
+const categories = ["Living Room", "Bedroom", "Kitchen", "Full Home", "3D Visualization", "2D Floor Planning"];
 
 const PortfolioPage = () => {
   const location = useLocation();
-  const [active, setActive] = useState("All");
+  const [active, setActive] = useState("3D Vizualization");
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
   const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null);
   const [zoom, setZoom] = useState(1);
@@ -150,7 +150,7 @@ const PortfolioPage = () => {
     const params = new URLSearchParams(location.search);
     const cat = params.get("category");
     if (cat && categories.includes(cat)) setActive(cat);
-    else setActive("All");
+    else setActive("3D Visualization");
   }, [location.search]);
 
   useEffect(() => {
@@ -191,8 +191,9 @@ const PortfolioPage = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [lightbox, brandOpen]);
 
-  const filtered = (active === "All" ? projects : projects.filter((p) => p.category === active))
-    .filter((p) => !hidden[p.src]);
+  const filtered = projects
+  .filter((p) => p.category === active)
+  .filter((p) => !hidden[p.src]);
 
   return (
     <main className="overflow-x-hidden">
