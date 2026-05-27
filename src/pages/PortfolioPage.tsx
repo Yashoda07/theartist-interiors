@@ -310,9 +310,13 @@ const PortfolioPage = () => {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
-          className="fixed bottom-6 left-6 z-40 w-11 h-11 rounded-full bg-foreground/90 text-background backdrop-blur hover:bg-accent transition-all duration-300 active:scale-95 shadow-lg flex items-center justify-center"
+          className="group fixed bottom-6 left-6 z-40 flex items-center gap-2 overflow-hidden rounded-full bg-foreground/90 text-background backdrop-blur shadow-lg transition-all duration-300 hover:bg-accent active:scale-95 px-3 py-3"
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-5 h-5 shrink-0" />
+
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 group-hover:max-w-[120px] group-hover:opacity-100">
+            Go to Top
+          </span>
         </button>
       )}
 
