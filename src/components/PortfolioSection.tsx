@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
+import ImageLightbox from "./ImageLightbox";
 
 type Item = { src: string; title: string; category: string };
 
@@ -22,6 +23,7 @@ const items: Item[] = [
 
 const PortfolioSection = () => {
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
+  const [lightbox, setLightbox] = useState<Item | null>(null);
 
   return (
     <section id="portfolio" className="section-padding section-spacing bg-card">
@@ -44,13 +46,15 @@ const PortfolioSection = () => {
               transition={{ duration: 0.4, delay: (i % 3) * 0.04 }}
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
-              className="mb-4 md:mb-5 break-inside-avoid group cursor-pointer overflow-hidden rounded-lg bg-muted shadow-sm hover:shadow-xl transition-shadow duration-500"
+              onClick={() => setLightbox(p)}
+              className="mb-4 md:mb-5 break-inside-avoid group cursor-zoom-in overflow-hidden rounded-lg bg-muted shadow-sm hover:shadow-xl transition-shadow duration-500"
             >
               <img
                 src={p.src}
                 alt={p.title}
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
+                fetchPriority={i < 2 ? "high" : "auto"}
                 onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
                 className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]"
               />
@@ -70,6 +74,12 @@ const PortfolioSection = () => {
           </Link>
         </AnimatedSection>
       </div>
+
+      <ImageLightbox
+        src={lightbox?.src ?? null}
+        alt={lightbox?.title}
+        onClose={() => setLightbox(null)}
+      />
     </section>
   );
 };
