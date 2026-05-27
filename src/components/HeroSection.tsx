@@ -76,7 +76,7 @@ const HeroSection = () => {
       >
         We Design
         <br />
-        <span className="text-[hsl(35,65%,58%)] font-semibold drop-shadow-sm">
+        <span className="text-[hsl(26, 57%, 56%)] font-semibold drop-shadow-sm">
           your Desires
         </span>
       </motion.h1>
