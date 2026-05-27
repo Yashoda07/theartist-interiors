@@ -303,7 +303,7 @@ const PortfolioPage = () => {
       </div>
 
       <Footer />
-      <FloatingContactIcons />
+      {/* <FloatingContactIcons /> */}
 
       {/* Back-to-top button */}
       {showTop && (
