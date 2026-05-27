@@ -314,9 +314,7 @@ const PortfolioPage = () => {
         >
           <ArrowUp className="w-5 h-5 shrink-0" />
 
-          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 group-hover:max-w-[120px] group-hover:opacity-100">
-            Go to Top
-          </span>
+          <span className="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium opacity-0 transition-all duration-300 group-hover:max-w-[120px] group-hover:opacity-100">Go to Top</span>
         </button>
       )}
 
