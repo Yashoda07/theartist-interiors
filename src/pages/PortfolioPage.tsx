@@ -108,7 +108,7 @@ const floorPlans: Project[] = [
   "https://i.postimg.cc/J7FfkcsK/7-FURNITURE-PLAN-LABELLING.png",
   "https://i.postimg.cc/W1Lx9N6q/8-FURNITURE-PLAN-2.png",
   "https://i.postimg.cc/QMjw3fyP/9-PLAN-6.png",
-].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Planning" }));
+].map((src, i) => ({ src, title: `Floor Plan ${String(i + 1).padStart(2, "0")}`, category: "2D Floor Plans" }));
 
 
 const brandChartImages = [
