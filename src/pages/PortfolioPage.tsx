@@ -289,16 +289,6 @@ const PortfolioPage = () => {
       {/* Social Band — Instagram → Brand Chart → Pinterest */}
       <div className="bg-secondary border-y border-border py-7">
         <div className="section-padding max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 flex-wrap">
-          <a
-            href="https://www.instagram.com/theartistinteriors/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-foreground text-background text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent transition-all duration-300 active:scale-95 shadow-md"
-          >
-            <Instagram className="w-5 h-5" />
-            Instagram
-          </a>
 
           <button
             onClick={openBrand}
@@ -309,16 +299,6 @@ const PortfolioPage = () => {
             Brand Chart
           </button>
 
-          <a
-            href="https://www.pinterest.com/theartistinteriors/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Pinterest"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-background text-foreground border border-foreground/30 text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-all duration-300 active:scale-95 shadow-sm"
-          >
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.024 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.993 3.995-.282 1.193.599 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.084.345-.091.375-.293 1.199-.334 1.363-.053.225-.174.271-.402.163-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z"/></svg>
-            Pinterest
-          </a>
         </div>
       </div>
 
