@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import { Instagram, FileText, X, ArrowUp, ZoomIn, ZoomOut } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingContactIcons from "@/components/FloatingContactIcons";
+// import FloatingContactIcons from "@/components/FloatingContactIcons";
 import AnimatedSection from "@/components/AnimatedSection";
 
 type Project = { src: string; title?: string; category: string };

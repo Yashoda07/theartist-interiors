@@ -37,7 +37,7 @@ const Index = () => {
       <PortfolioSection />
       <TestimonialsSection />
       <Footer />
-      <FloatingContactIcons />
+      {/* <FloatingContactIcons /> */}
     </main>
   );
 };
