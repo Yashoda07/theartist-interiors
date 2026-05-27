@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-// import { Phone, MessageCircle, Mail } from "lucide-react";
+import { Phone, MessageCircle, Mail } from "lucide-react";
 
 const icons = [
   { icon: Phone, label: "Call", href: "tel:+919987967465", iconColor: "text-accent" },
@@ -26,4 +26,4 @@ const FloatingContactIcons = () => (
   </div>
 );
 
-// export default FloatingContactIcons;
+export default FloatingContactIcons;
