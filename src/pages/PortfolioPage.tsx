@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import { Instagram, FileText, X, ArrowUp, ZoomIn, ZoomOut } from "lucide-react";
+import { Instagram, FileText, X, ArrowUp } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-// import FloatingContactIcons from "@/components/FloatingContactIcons";
 import AnimatedSection from "@/components/AnimatedSection";
+import ImageLightbox from "@/components/ImageLightbox";
 
 type Project = { src: string; title?: string; category: string };
 
@@ -140,7 +140,6 @@ const PortfolioPage = () => {
   const [active, setActive] = useState("3D Vizualization");
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
   const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null);
-  const [zoom, setZoom] = useState(1);
   const [brandOpen, setBrandOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const savedScroll = useRef(0);
@@ -160,13 +159,10 @@ const PortfolioPage = () => {
 
   const openLightbox = (p: Project) => {
     savedScroll.current = window.scrollY;
-    setZoom(1);
-    setLightbox({ src: p.src, title: p.title });
-    document.body.style.overflow = "hidden";
+    setLightbox({ src: p.src, title: p.title || "" });
   };
   const closeLightbox = () => {
     setLightbox(null);
-    document.body.style.overflow = "";
     window.scrollTo({ top: savedScroll.current, behavior: "auto" });
   };
   const openBrand = () => {
@@ -183,12 +179,11 @@ const PortfolioPage = () => {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== "Escape") return;
-      if (lightbox) closeLightbox();
-      else if (brandOpen) closeBrand();
+      if (brandOpen) closeBrand();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [lightbox, brandOpen]);
+  }, [brandOpen]);
 
   const filtered = projects
   .filter((p) => p.category === active)
@@ -317,54 +312,12 @@ const PortfolioPage = () => {
         </button>
       )}
 
-      {/* Image Lightbox */}
-      {lightbox && (
-        <div
-          className="fixed inset-0 z-[200] bg-black/85 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in"
-          onClick={closeLightbox}
-        >
-          <button
-            onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
-            aria-label="Close"
-            className="absolute top-4 right-4 w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
-          <div className="absolute top-4 left-4 flex gap-2 z-10">
-            <button
-              onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.min(z + 0.25, 4)); }}
-              aria-label="Zoom in"
-              className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md"
-            >
-              <ZoomIn className="w-5 h-5" />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); setZoom((z) => Math.max(z - 0.25, 1)); }}
-              aria-label="Zoom out"
-              className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center backdrop-blur-md"
-            >
-              <ZoomOut className="w-5 h-5" />
-            </button>
-          </div>
-          <div
-            className="max-w-[95vw] max-h-[90vh] overflow-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <img
-              src={lightbox.src}
-              alt={lightbox.title}
-              style={{ transform: `scale(${zoom})`, transformOrigin: "center center", transition: "transform 0.25s ease" }}
-              className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain select-none cursor-zoom-in"
-              onDoubleClick={() => setZoom((z) => (z >= 2 ? 1 : 2))}
-              onClick={() => setZoom((z) => (z >= 2 ? 1 : z + 0.5))}
-              draggable={false}
-            />
-          </div>
-          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-xs uppercase tracking-widest">
-            {lightbox.title} · Tap to zoom
-          </p>
-        </div>
-      )}
+      {/* Image Lightbox with pinch/zoom/pan */}
+      <ImageLightbox
+        src={lightbox?.src ?? null}
+        alt={lightbox?.title}
+        onClose={closeLightbox}
+      />
 
       {/* Brand Chart Modal — scrollable presentation */}
       {brandOpen && (
