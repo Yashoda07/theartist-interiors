@@ -65,7 +65,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
         minScale={1}
         maxScale={6}
         doubleClick={{ mode: "toggle", step: 1 }}
-        wheel={{ step: 0.05, smoothStep: 0.005 }}
+        wheel={{ step: 0.05 }}
         pinch={{ step: 5 }}
         panning={{ velocityDisabled: false }}
         centerOnInit
