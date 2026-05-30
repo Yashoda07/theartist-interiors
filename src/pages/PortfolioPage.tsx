@@ -129,7 +129,6 @@ const PortfolioPage = () => {
   const [active, setActive] = useState("3D Vizualization");
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
   const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null);
-  const [brandOpen, setBrandOpen] = useState(false);
   const [showTop, setShowTop] = useState(false);
   const savedScroll = useRef(0);
 
@@ -154,25 +153,6 @@ const PortfolioPage = () => {
     setLightbox(null);
     window.scrollTo({ top: savedScroll.current, behavior: "auto" });
   };
-  const openBrand = () => {
-    savedScroll.current = window.scrollY;
-    setBrandOpen(true);
-    document.body.style.overflow = "hidden";
-  };
-  const closeBrand = () => {
-    setBrandOpen(false);
-    document.body.style.overflow = "";
-    window.scrollTo({ top: savedScroll.current, behavior: "auto" });
-  };
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      if (brandOpen) closeBrand();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [brandOpen]);
 
   const filtered = projects
   .filter((p) => p.category === active)
