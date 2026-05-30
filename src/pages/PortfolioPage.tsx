@@ -269,21 +269,8 @@ const PortfolioPage = () => {
         </div>
       </section>
 
-      {/* Social Band — Instagram → Brand Chart → Pinterest */}
-      <div className="bg-secondary border-y border-border py-7">
-        <div className="section-padding max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-8 flex-wrap">
 
-          <button
-            onClick={openBrand}
-            aria-label="Open Brand Chart"
-            className="inline-flex items-center gap-2 px-7 py-3 bg-accent text-accent-foreground text-xs md:text-sm font-medium uppercase tracking-[0.15em] hover:bg-accent/90 transition-all duration-300 active:scale-95 shadow-md"
-          >
-            <FileText className="w-5 h-5" />
-            Brand Chart
-          </button>
 
-        </div>
-      </div>
 
       <Footer />
       {/* <FloatingContactIcons /> */}
