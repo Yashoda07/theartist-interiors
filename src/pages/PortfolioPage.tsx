@@ -288,44 +288,26 @@ const PortfolioPage = () => {
         </button>
       )}
 
-      {/* Image Lightbox with pinch/zoom/pan */}
+      {/* Image Lightbox with pinch/zoom/pan + swipe/arrow nav */}
       <ImageLightbox
         src={lightbox?.src ?? null}
         alt={lightbox?.title}
         onClose={closeLightbox}
+        hasNav
+        onPrev={() => {
+          const idx = filtered.findIndex((p) => p.src === lightbox?.src);
+          if (idx < 0) return;
+          const next = filtered[(idx - 1 + filtered.length) % filtered.length];
+          setLightbox({ src: next.src, title: next.title || "" });
+        }}
+        onNext={() => {
+          const idx = filtered.findIndex((p) => p.src === lightbox?.src);
+          if (idx < 0) return;
+          const next = filtered[(idx + 1) % filtered.length];
+          setLightbox({ src: next.src, title: next.title || "" });
+        }}
       />
 
-      {/* Brand Chart Modal — scrollable presentation */}
-      {brandOpen && (
-        <div
-          className="fixed inset-0 z-[200] bg-background/70 backdrop-blur-xl animate-fade-in"
-          onClick={closeBrand}
-        >
-          <button
-            onClick={(e) => { e.stopPropagation(); closeBrand(); }}
-            aria-label="Close brand chart"
-            className="fixed top-4 right-4 z-10 w-11 h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
-          >
-            <X className="w-5 h-5" />
-          </button>
-          <div
-            className="h-full w-full overflow-y-auto py-10 px-4 md:px-8 flex flex-col items-center gap-6 scroll-smooth"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <p className="text-label text-foreground/70 mb-2">Brand Chart</p>
-            {brandChartImages.map((src, idx) => (
-              <img
-                key={src}
-                src={src}
-                alt={`Brand chart slide ${idx + 1}`}
-                loading={idx < 2 ? "eager" : "lazy"}
-                decoding="async"
-                className="w-full max-w-3xl rounded-md shadow-2xl bg-white"
-              />
-            ))}
-          </div>
-        </div>
-      )}
     </main>
   );
 };
