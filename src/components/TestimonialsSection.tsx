@@ -11,9 +11,9 @@ const beforeBedroom = "https://images.unsplash.com/photo-1505691938895-1758d7feb
 const beforeKitchen = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=70";
 
 // Client-supplied "after" images
-const afterLiving = "https://i.postimg.cc/Ss2kHYd7/IMG-7452.avif";
-const afterBedroom = "https://i.postimg.cc/HLwzp6Ls/IMG-6275.avif";
-const afterKitchen = "https://i.postimg.cc/3wv62jxh/IMG-4366.avif";
+const afterLiving = "https://i.postimg.cc/Y9p0m3rM/IMG-20260522-124156.jpg";
+const afterBedroom = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
+const afterKitchen = "https://i.postimg.cc/xjZmBwjJ/kitchen-after.png";
 
 type Transformation = {
   name: string;
