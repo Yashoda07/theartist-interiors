@@ -101,7 +101,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[110] bg-background/70 backdrop-blur-xl flex flex-col items-center justify-center gap-7 overflow-y-auto py-20"
+            className="fixed inset-0 z-[110] bg-background flex flex-col items-center justify-center gap-7 overflow-y-auto py-20"
           >
             <button
               onClick={() => setMobileOpen(false)}

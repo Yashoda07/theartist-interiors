@@ -113,7 +113,7 @@ const SkillsServicesSection = () => {
               {marqueeSkills.map((skill, i) => (
                 <span
                   key={i}
-                  className="text-sm md:text-base font-semibold uppercase tracking-[0.2em] text-foreground/70 mr-8 md:mr-16 whitespace-nowrap"
+                  className="text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold uppercase tracking-[0.18em] md:tracking-[0.2em] text-foreground/70 mr-6 sm:mr-8 md:mr-14 whitespace-nowrap"
                 >
                   • {skill}
                 </span>

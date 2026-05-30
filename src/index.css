@@ -100,13 +100,9 @@
   /* Hero is the page top — no offset needed */
   section#home { scroll-margin-top: 0; }
 
-  /* Skip rendering offscreen sections on small devices for smoother scroll */
-  @media (max-width: 1024px) {
-    section[id]:not(#home):not(#about) {
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 800px;
-    }
-  }
+  /* NOTE: removed content-visibility on sections — it was inflating
+     phantom heights and causing anchor links (e.g. #testimonials) to
+     scroll to the wrong section. */
 
   /* Respect users who prefer reduced motion — disables heavy animations */
   @media (prefers-reduced-motion: reduce) {

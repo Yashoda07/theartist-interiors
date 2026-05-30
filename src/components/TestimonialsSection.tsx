@@ -110,7 +110,7 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="section-padding section-spacing">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl lg:max-w-4xl mx-auto">
         <AnimatedSection>
           <p className="text-label mb-4">Testimonials</p>
           <div className="gold-line mb-6" />
