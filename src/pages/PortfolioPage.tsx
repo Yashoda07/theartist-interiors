@@ -111,19 +111,8 @@ const floorPlans: Project[] = [
 ].map((src, i) => ({ src, category: "2D Floor Plans" }));
 
 
-const brandChartImages = [
-  "https://i.postimg.cc/3JYptrVJ/1.png",
-  "https://i.postimg.cc/7Yw7KPdC/2.png",
-  "https://i.postimg.cc/J4MJp7vB/3.png",
-  "https://i.postimg.cc/ZK43wY2W/4.png",
-  "https://i.postimg.cc/SNk8gQ3Y/5.png",
-  "https://i.postimg.cc/RV4fgCyt/6.png",
-  "https://i.postimg.cc/FsNcTF8x/7.png",
-  "https://i.postimg.cc/J4MJp7vq/8.png",
-  "https://i.postimg.cc/c40YF12h/9.png",
-  "https://i.postimg.cc/SNk8gQ3V/10.png",
-  "https://i.postimg.cc/PrTZSf9S/11.png",
-];
+
+
 
 const projects: Project[] = [
   ...livingRoom,
