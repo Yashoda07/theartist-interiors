@@ -20,15 +20,12 @@ const PageFallback = () => (
 );
 
 const Prefetcher = () => {
-  // Warm up secondary route bundles on idle so back-navigation is instant.
+  // Warm secondary route bundles immediately so back/forward navigation is instant
+  // and the Suspense fallback never flashes on already-visited routes.
   useEffect(() => {
-    const idle = (cb: () => void) =>
-      "requestIdleCallback" in window
-        ? (window as any).requestIdleCallback(cb, { timeout: 2000 })
-        : setTimeout(cb, 1500);
-    idle(() => {
-      import("./pages/PortfolioPage.tsx");
-    });
+    // Kick off the chunk fetch on first paint, not idle, to minimise the
+    // "loading happens twice" effect users notice on the Portfolio page.
+    import("./pages/PortfolioPage.tsx");
   }, []);
   return null;
 };
