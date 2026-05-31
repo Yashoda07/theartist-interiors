@@ -185,3 +185,59 @@
   /* Crisp image rendering across the site — no blur from browser scaling */
   img { image-rendering: auto; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 }
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeMove 22s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-right: 2.5rem;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  color: hsl(var(--foreground) / 0.7);
+}
+
+/* Tablet */
+@media (min-width: 640px) {
+  .marquee-item {
+    font-size: 12px;
+    margin-right: 3rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .marquee-item {
+    font-size: 15px;
+    margin-right: 4rem;
+  }
+
+  .marquee-track {
+    animation-duration: 30s;
+  }
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
