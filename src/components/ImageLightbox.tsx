@@ -148,7 +148,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                   style={{ touchAction: "none" }}
                 /> */}
 
-                <AnimatePresence mode="wait">
+                {/* <AnimatePresence mode="wait">
                   <motion.img
                     key={src}
                     src={src ?? ""}
@@ -170,6 +170,38 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                       ease: "easeInOut",
                     }}
                     className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
+                  />
+                </AnimatePresence> */}
+
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={lightbox.src}
+                    src={lightbox.src}
+                    alt={lightbox.title}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.96,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 1.04,
+                    }}
+                    transition={{
+                      duration: 0.28,
+                      ease: "easeInOut",
+                    }}
+                    style={{
+                      transform: `scale(${zoom})`,
+                      transformOrigin: "center center",
+                    }}
+                    className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain select-none cursor-zoom-in"
+                    onDoubleClick={() => setZoom((z) => (z >= 2 ? 1 : 2))}
+                    onClick={() => setZoom((z) => (z >= 2 ? 1 : z + 0.5))}
+                    draggable={false}
                   />
                 </AnimatePresence>
               </div>
