@@ -56,7 +56,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
 
   return (
     <div
-      className="fixed inset-0 z-[200] bg-black/90 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-[200] bg-background/70 backdrop-blur-xl animate-fade-in"
       onClick={onClose}
     >
       <TransformWrapper
