@@ -216,7 +216,7 @@ const PortfolioPage = () => {
             ))}
           </AnimatedSection>
 
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5 [column-fill:_balance]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
             {filtered.map((p, i) => {
               const isConcept = p.category === "3D Concepts";
               const isFloor = p.category === "2D Floor Planning";
@@ -235,7 +235,7 @@ const PortfolioPage = () => {
                     loading={i < 3 ? "eager" : "lazy"}
                     decoding="async"
                     onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
-                    className={`w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03] ${
+                    className={`w-full aspect-[4/5] object-cover block transition-transform duration-700 group-hover:scale-[1.03] ${
                       isFloor ? "bg-white" : ""
                     }`}
                   />
