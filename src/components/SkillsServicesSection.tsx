@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
 import { Palette, Box, LayoutGrid, ArrowUpRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
@@ -104,13 +103,13 @@ const SkillsServicesSection = () => {
           })}
         </div>
 
-        {/* Moving skills band — RAF-based, seamless on all devices */}
+        {/* Moving skills band — pure CSS marquee, works everywhere */}
         <AnimatedSection delay={0.2}>
           <div className="relative bg-card border-y border-border py-5 overflow-hidden">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10" />
-            <Marquee gradient={false} speed={45} pauseOnHover autoFill>
-              {marqueeSkills.map((skill, i) => (
+            <div className="flex marquee-track w-max">
+              {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
                 <span
                   key={i}
                   className="text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold uppercase tracking-[0.18em] md:tracking-[0.2em] text-foreground/70 mr-6 sm:mr-8 md:mr-14 whitespace-nowrap"
@@ -118,7 +117,7 @@ const SkillsServicesSection = () => {
                   • {skill}
                 </span>
               ))}
-            </Marquee>
+            </div>
           </div>
         </AnimatedSection>
       </div>

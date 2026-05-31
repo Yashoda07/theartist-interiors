@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FileText, X } from "lucide-react";
@@ -40,12 +40,24 @@ const PortfolioSection = () => {
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const [brandOpen, setBrandOpen] = useState(false);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const visibleItems = items.filter((p) => !hidden[p.src]);
   const current = lightboxIdx !== null ? visibleItems[lightboxIdx] : null;
 
   const goPrev = () => setLightboxIdx((i) => (i === null ? null : (i - 1 + visibleItems.length) % visibleItems.length));
   const goNext = () => setLightboxIdx((i) => (i === null ? null : (i + 1) % visibleItems.length));
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "0px", threshold: 0.05 }
+    );
+    obs.observe(sectionRef.current);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     if (brandOpen) {
@@ -58,7 +70,7 @@ const PortfolioSection = () => {
   }, [brandOpen]);
 
   return (
-    <section id="portfolio" className="relative section-padding section-spacing bg-card">
+    <section ref={sectionRef} id="portfolio" className="relative section-padding section-spacing bg-card">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <p className="text-label mb-4">Portfolio</p>
@@ -107,20 +119,22 @@ const PortfolioSection = () => {
         </AnimatedSection>
       </div>
 
-      {/* Floating Brand Chart button */}
-      <motion.button
-        onClick={() => setBrandOpen(true)}
-        aria-label="Open Brand Chart"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        whileHover={{ y: -3, scale: 1.03 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-accent-foreground shadow-2xl ring-1 ring-accent/30 backdrop-blur-md text-xs md:text-sm font-semibold uppercase tracking-[0.18em] hover:bg-accent/90 transition-colors"
-      >
-        <FileText className="w-4 h-4 md:w-5 md:h-5" />
-        <span>Brand Chart</span>
-      </motion.button>
+      {/* Floating Brand Chart button — only visible while Portfolio section is in view */}
+      {inView && (
+        <motion.button
+          onClick={() => setBrandOpen(true)}
+          aria-label="Open Brand Chart"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 20 }}
+          whileHover={{ y: -3, scale: 1.03 }}
+          whileTap={{ scale: 0.95 }}
+          className="fixed bottom-6 right-6 z-40 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-accent text-accent-foreground shadow-2xl ring-1 ring-accent/30 backdrop-blur-md text-xs md:text-sm font-semibold uppercase tracking-[0.18em] hover:bg-accent/90 transition-colors"
+        >
+          <FileText className="w-4 h-4 md:w-5 md:h-5" />
+          <span>Brand Chart</span>
+        </motion.button>
+      )}
 
       <ImageLightbox
         src={current?.src ?? null}
