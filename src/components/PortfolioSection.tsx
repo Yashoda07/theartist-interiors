@@ -70,7 +70,7 @@ const PortfolioSection = () => {
   }, [brandOpen]);
 
   return (
-    <section id="portfolio" className="relative section-padding section-spacing bg-card">
+    <section ref={sectionRef} id="portfolio" className="relative section-padding section-spacing bg-card">
       <div className="max-w-7xl mx-auto">
         <AnimatedSection>
           <p className="text-label mb-4">Portfolio</p>
