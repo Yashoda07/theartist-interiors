@@ -104,7 +104,7 @@ const SkillsServicesSection = () => {
         </div>
 
         {/* Moving skills band — pure CSS marquee, works everywhere */}
-        <AnimatedSection delay={0.2}>
+        {/* <AnimatedSection delay={0.2}>
           <div className="relative bg-card border-y border-border py-5 overflow-hidden">
             <div className="pointer-events-none absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10" />
             <div className="pointer-events-none absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10" />
@@ -119,7 +119,32 @@ const SkillsServicesSection = () => {
               ))}
             </div>
           </div>
+        </AnimatedSection> */}
+
+        <AnimatedSection delay={0.2}>
+          <div className="relative bg-card border-y border-border py-4 md:py-5 overflow-hidden">
+            
+            {/* Fade edges */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-10 md:w-20 bg-gradient-to-r from-background to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-10 md:w-20 bg-gradient-to-l from-background to-transparent z-10" />
+        
+            {/* Marquee */}
+            <div className="marquee-wrapper">
+              <div className="marquee-track">
+                {[...marqueeSkills, ...marqueeSkills].map((skill, i) => (
+                  <span
+                    key={i}
+                    className="marquee-item"
+                  >
+                    • {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+        
+          </div>
         </AnimatedSection>
+        
       </div>
     </section>
   );
