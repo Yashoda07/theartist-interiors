@@ -80,7 +80,7 @@ const PortfolioSection = () => {
           </h2>
         </AnimatedSection>
 
-        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-5 [column-fill:_balance]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {visibleItems.map((p, i) => (
             <motion.div
               key={p.src}
@@ -91,7 +91,7 @@ const PortfolioSection = () => {
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => setLightboxIdx(i)}
-              className="mb-4 md:mb-5 break-inside-avoid group cursor-zoom-in overflow-hidden rounded-lg bg-muted shadow-sm hover:shadow-xl transition-shadow duration-500"
+              className="group cursor-zoom-in overflow-hidden rounded-lg bg-muted shadow-sm hover:shadow-xl transition-all duration-500"
             >
               <img
                 src={p.src}
@@ -100,7 +100,7 @@ const PortfolioSection = () => {
                 decoding="async"
                 fetchPriority={i < 2 ? "high" : "auto"}
                 onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
-                className="w-full h-auto block transition-transform duration-700 group-hover:scale-[1.03]"
+                className="w-full aspect-[4/5] object-cover block transition-transform duration-700 group-hover:scale-[1.03]"
               />
               <div className="p-3">
                 <h3 className="font-display text-lg text-foreground">{p.title}</h3>
