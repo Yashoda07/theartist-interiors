@@ -175,12 +175,12 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
 
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={lightbox.src}
-                    src={lightbox.src}
-                    alt={lightbox.title}
+                    key={src}
+                    src={src ?? ""}
+                    alt={alt ?? ""}
                     initial={{
                       opacity: 0,
-                      scale: 0.96,
+                      scale: 0.985,
                     }}
                     animate={{
                       opacity: 1,
