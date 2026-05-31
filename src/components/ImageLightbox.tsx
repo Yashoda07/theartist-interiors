@@ -80,21 +80,21 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
               <button
                 onClick={() => zoomIn(0.2)}
                 aria-label="Zoom in"
-                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center shadow-lg transition-colors"
+                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
               >
                 <ZoomIn className="w-5 h-5" />
               </button>
               <button
                 onClick={() => zoomOut(0.2)}
                 aria-label="Zoom out"
-                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center shadow-lg transition-colors"
+                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
               >
                 <ZoomOut className="w-5 h-5" />
               </button>
               <button
                 onClick={() => resetTransform()}
                 aria-label="Reset zoom"
-                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center shadow-lg transition-colors"
+                className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
               >
                 <RotateCcw className="w-5 h-5" />
               </button>
@@ -104,7 +104,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
             <button
               onClick={(e) => { e.stopPropagation(); onClose(); }}
               aria-label="Close"
-              className="absolute top-3 right-3 z-10 w-10 h-10 md:w-11 md:h-11 rounded-full bg-white text-black hover:bg-white/90 flex items-center justify-center shadow-lg transition-colors"
+              className="absolute top-3 right-3 z-10 w-11 h-11 rounded-full bg-foreground text-background hover:bg-accent flex items-center justify-center shadow-lg transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
@@ -114,7 +114,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
               <button
                 onClick={(e) => { e.stopPropagation(); onPrev(); }}
                 aria-label="Previous image"
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 items-center justify-center shadow-lg transition-colors"
+                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-foreground text-background hover:bg-accent items-center justify-center shadow-lg transition-colors"
               >
                 <ChevronLeft className="w-6 h-6" />
               </button>
@@ -123,7 +123,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
               <button
                 onClick={(e) => { e.stopPropagation(); onNext(); }}
                 aria-label="Next image"
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-black hover:bg-white/90 items-center justify-center shadow-lg transition-colors"
+                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-foreground text-background hover:bg-accent items-center justify-center shadow-lg transition-colors"
               >
                 <ChevronRight className="w-6 h-6" />
               </button>
