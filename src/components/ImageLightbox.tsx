@@ -115,18 +115,18 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
               <button
                 onClick={(e) => { e.stopPropagation(); onPrev(); }}
                 aria-label="Previous image"
-                className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-foreground text-background hover:bg-accent items-center justify-center shadow-lg transition-colors"
+                className="flex absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-12 md:h-12 rounded-full bg-foreground/90 text-background hover:bg-accent items-center justify-center shadow-lg transition-all duration-300"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-4 h-4 md:w-6 md:h-6" />
               </button>
             )}
             {hasNav && onNext && (
               <button
                 onClick={(e) => { e.stopPropagation(); onNext(); }}
                 aria-label="Next image"
-                className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-foreground text-background hover:bg-accent items-center justify-center shadow-lg transition-colors"
+                className="flex absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-12 md:h-12 rounded-full bg-foreground/90 text-background hover:bg-accent items-center justify-center shadow-lg transition-all duration-300"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
               </button>
             )}
 
