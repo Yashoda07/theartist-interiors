@@ -148,7 +148,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                   style={{ touchAction: "none" }}
                 /> */}
 
-                {/* <AnimatePresence mode="wait">
+               <AnimatePresence mode="wait">
                   <motion.img
                     key={src}
                     src={src ?? ""}
@@ -171,9 +171,9 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                     }}
                     className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
                   />
-                </AnimatePresence> */}
+                </AnimatePresence> 
 
-                <AnimatePresence mode="wait">
+                {/* <AnimatePresence mode="wait">
                   <motion.img
                     key={src}
                     src={src ?? ""}
@@ -203,7 +203,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                     onClick={() => setZoom((z) => (z >= 2 ? 1 : z + 0.5))}
                     draggable={false}
                   />
-                </AnimatePresence>
+                </AnimatePresence> */}
               </div>
             </TransformComponent>
 
