@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X, ZoomIn, ZoomOut, RotateCcw, ChevronLeft, ChevronRight } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ImageLightboxProps {
   src: string | null;
@@ -139,13 +140,38 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
                 onTouchStart={onTouchStart}
                 onTouchEnd={onTouchEnd}
               >
-                <img
+                {/* <img
                   src={src}
                   alt={alt || ""}
                   draggable={false}
                   className="max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain select-none"
                   style={{ touchAction: "none" }}
-                />
+                /> */}
+
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={src}
+                    src={src ?? ""}
+                    alt={alt ?? ""}
+                    initial={{
+                      opacity: 0,
+                      scale: 0.985,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                    }}
+                    exit={{
+                      opacity: 0,
+                      scale: 1.02,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: "easeInOut",
+                    }}
+                    className="block max-w-[95vw] max-h-[90vh] w-auto h-auto object-contain"
+                  />
+                </AnimatePresence>
               </div>
             </TransformComponent>
 
