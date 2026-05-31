@@ -40,12 +40,24 @@ const PortfolioSection = () => {
   const [hidden, setHidden] = useState<Record<string, boolean>>({});
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
   const [brandOpen, setBrandOpen] = useState(false);
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLElement | null>(null);
 
   const visibleItems = items.filter((p) => !hidden[p.src]);
   const current = lightboxIdx !== null ? visibleItems[lightboxIdx] : null;
 
   const goPrev = () => setLightboxIdx((i) => (i === null ? null : (i - 1 + visibleItems.length) % visibleItems.length));
   const goNext = () => setLightboxIdx((i) => (i === null ? null : (i + 1) % visibleItems.length));
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { rootMargin: "0px", threshold: 0.05 }
+    );
+    obs.observe(sectionRef.current);
+    return () => obs.disconnect();
+  }, []);
 
   useEffect(() => {
     if (brandOpen) {
