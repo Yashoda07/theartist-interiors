@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Marquee from "react-fast-marquee";
 import { Palette, Box, LayoutGrid, ArrowUpRight, Sparkles } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import AnimatedSection from "./AnimatedSection";
