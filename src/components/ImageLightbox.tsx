@@ -149,7 +149,7 @@ const ImageLightbox = ({ src, alt, onClose, onPrev, onNext, hasNav }: ImageLight
               </div>
             </TransformComponent>
 
-            <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 text-white/80 text-[10px] md:text-xs uppercase tracking-widest text-center px-4">
+            <p className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 text-foreground/70 text-[10px] md:text-xs uppercase tracking-widest text-center px-4">
               {hasNav ? "Swipe / arrows to navigate · pinch / scroll to zoom" : "Pinch / scroll to zoom · drag to pan"}
             </p>
           </>
