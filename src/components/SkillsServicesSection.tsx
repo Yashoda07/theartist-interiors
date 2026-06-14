@@ -122,17 +122,39 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
     setPaused(false);
   };
 
+  // Swipe handling
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+    pause();
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current == null || touchStartY.current == null) { resume(); return; }
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      setIndex((i) => (dx < 0 ? (i + 1) % services.length : (i - 1 + services.length) % services.length));
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+    resume();
+  };
+
   const s = services[index];
 
   return (
     <div
-      className="relative"
-      onPointerDown={pause}
-      onPointerUp={resume}
-      onPointerLeave={resume}
-      onPointerCancel={resume}
+      className="relative max-w-xl mx-auto"
+      onMouseDown={pause}
+      onMouseUp={resume}
+      onMouseLeave={resume}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      onTouchCancel={() => { touchStartX.current = null; resume(); }}
     >
-      <div className="relative min-h-[420px]">
+      <div className="relative min-h-[440px] sm:min-h-[400px] md:min-h-[380px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -146,6 +168,7 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
           </motion.div>
         </AnimatePresence>
       </div>
+
 
       {/* Progress bar */}
       <div className="mt-4 h-1 w-full bg-border rounded-full overflow-hidden">
