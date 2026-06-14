@@ -11,7 +11,7 @@ const beforeBedroom = "https://images.unsplash.com/photo-1505691938895-1758d7feb
 const beforeKitchen = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=70";
 
 // Client-supplied "after" images
-const afterLiving = "https://i.postimg.cc/FsbM4ndn/living-after.png";
+const afterLiving = "https://i.postimg.cc/Ss0djkw4/living-after.png";
 const afterBedroom = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
 const afterKitchen = "https://i.postimg.cc/xjZmBwjJ/kitchen-after.png";
 
