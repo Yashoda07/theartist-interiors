@@ -75,9 +75,10 @@ const PortfolioSection = () => {
         <AnimatedSection>
           <p className="text-label mb-4">Portfolio</p>
           <div className="gold-line mb-6" />
-          <h2 className="text-display-lg text-foreground mb-12">
+          <h2 className="text-display-lg text-foreground mb-4">
             Selected <span className="text-accent">Projects</span>
           </h2>
+          <div className="gold-line mb-12" />
         </AnimatedSection>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
