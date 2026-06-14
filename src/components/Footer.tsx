@@ -15,9 +15,9 @@ const contacts = [
 const socials = [
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/theartistinteriors/" },
   { icon: Pinterest, label: "Pinterest", href: "https://www.pinterest.com/theartistinteriors/" },
-  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@aadarsh.chaubeyy" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@theartist.interiors" },
   { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/share/1EuNU4ngEP/" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/aadarsh-chaubey-b005b2402/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/theartistinteriors" },
   { icon: AtSign, label: "Threads", href: "https://www.threads.com/@theartistinteriors" },
 ];
 
