@@ -78,6 +78,9 @@ const PortfolioSection = () => {
           <h2 className="text-display-lg text-foreground mb-4">
             Selected <span className="text-accent">Projects</span>
           </h2>
+          <p className="text-body text-foreground/70 mb-6 italic">
+            Explore Our Latest Interior Transformations
+          </p>
           <div className="gold-line mb-12" />
         </AnimatedSection>
 
