@@ -146,7 +146,8 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
 
   return (
     <div
-      className="relative max-w-xl mx-auto"
+      className="relative max-w-md sm:max-w-sm md:max-w-md mx-auto"
+
       onMouseDown={pause}
       onMouseUp={resume}
       onMouseLeave={resume}
