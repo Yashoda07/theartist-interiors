@@ -24,8 +24,8 @@ const socials = [
 const Footer = () => (
   <footer id="contact-footer" className="section-padding pt-16 pb-10 border-t border-border bg-card">
     <div className="max-w-7xl mx-auto">
-      <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-10">
-        <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 mb-10">
+        <div className="lg:col-span-1">
           <div className="font-display text-2xl text-foreground mb-3">
             The Artist <span className="font-medium text-accent">Interiors</span>
           </div>
@@ -34,7 +34,7 @@ const Footer = () => (
           </p>
         </div>
 
-        <div>
+        <div className="md:order-3 lg:order-2">
           <p className="text-label mb-4">Get in Touch</p>
           <ul className="space-y-3">
             {contacts.map((c) => (
@@ -53,9 +53,9 @@ const Footer = () => (
           </ul>
         </div>
 
-        <div>
+        <div className="md:order-2 lg:order-3">
           <p className="text-label mb-4">Follow Along</p>
-          <div className="grid grid-cols-3 gap-3 mb-6 max-w-xs">
+          <div className="grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-6 max-w-xs">
             {socials.map((s) => (
               <a
                 key={s.label}

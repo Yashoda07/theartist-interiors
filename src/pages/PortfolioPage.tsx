@@ -168,9 +168,12 @@ const PortfolioPage = () => {
           <AnimatedSection>
             <p className="text-label mb-4">Portfolio</p>
             <div className="gold-line mb-6" />
-            <h2 className="text-display-lg text-foreground mb-12">
+            <h2 className="text-display-lg text-foreground mb-4">
               Our <span className="italic text-accent">Projects</span>
             </h2>
+            <p className="text-body text-foreground/70 mb-12 italic">
+              Explore Our Latest Interior Transformations
+            </p>
           </AnimatedSection>
 
           <AnimatedSection

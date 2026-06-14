@@ -10,7 +10,7 @@ const services = [
     title: "Interior Designing",
     tagline: "Spaces tailored to your life",
     accent: "from-[hsl(38,60%,55%)] to-[hsl(28,45%,45%)]",
-    category: "All",
+    category: "Full Home",
     summary: "End-to-end design solutions tailored to your lifestyle — space planning, concept, and material selection.",
   },
   {
@@ -26,7 +26,7 @@ const services = [
     title: "Floor Planning",
     tagline: "Smart layouts, optimized flow",
     accent: "from-[hsl(25,55%,45%)] to-[hsl(20,40%,42%)]",
-    category: "2D Floor Planning",
+    category: "2D Floor Plans",
     summary: "Functional zoning, optimized circulation, and detailed dimensioned layouts tailored to your family.",
   },
 ];
@@ -52,7 +52,7 @@ const ServiceCard = ({ s, onClick }: { s: typeof services[number]; onClick: () =
       className="relative w-full h-full text-left border rounded-2xl overflow-hidden group bg-card border-border shadow-sm hover:shadow-xl hover:border-accent/40 transition-all duration-300"
     >
       <div className={`h-2 bg-gradient-to-r ${s.accent}`} />
-      <div className="relative p-7 md:p-8 flex flex-col h-full">
+      <div className="relative p-5 sm:p-6 md:p-7 flex flex-col h-full">
         <div className="flex items-start justify-between mb-5">
           <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.accent} flex items-center justify-center shadow-md transition-transform duration-500 group-hover:rotate-3 group-hover:scale-105`}>
             <Icon className="w-7 h-7 text-white" />
@@ -146,7 +146,8 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
 
   return (
     <div
-      className="relative max-w-xl mx-auto"
+      className="relative max-w-md sm:max-w-sm md:max-w-md mx-auto"
+
       onMouseDown={pause}
       onMouseUp={resume}
       onMouseLeave={resume}
@@ -154,7 +155,7 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
       onTouchEnd={onTouchEnd}
       onTouchCancel={() => { touchStartX.current = null; resume(); }}
     >
-      <div className="relative min-h-[440px] sm:min-h-[400px] md:min-h-[380px]">
+      <div className="relative min-h-[340px] sm:min-h-[320px] md:min-h-[340px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
