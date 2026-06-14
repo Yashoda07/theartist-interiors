@@ -10,7 +10,7 @@ const services = [
     title: "Interior Designing",
     tagline: "Spaces tailored to your life",
     accent: "from-[hsl(38,60%,55%)] to-[hsl(28,45%,45%)]",
-    category: "All",
+    category: "Full Home",
     summary: "End-to-end design solutions tailored to your lifestyle — space planning, concept, and material selection.",
   },
   {
@@ -26,7 +26,7 @@ const services = [
     title: "Floor Planning",
     tagline: "Smart layouts, optimized flow",
     accent: "from-[hsl(25,55%,45%)] to-[hsl(20,40%,42%)]",
-    category: "2D Floor Planning",
+    category: "2D Floor Plans",
     summary: "Functional zoning, optimized circulation, and detailed dimensioned layouts tailored to your family.",
   },
 ];
