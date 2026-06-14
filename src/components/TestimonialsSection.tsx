@@ -8,7 +8,7 @@ import projectKitchen from "@/assets/project-kitchen.jpg";
 // Raw "before" placeholders — generic stock shots of unfinished spaces
 const beforeLiving = "https://i.postimg.cc/264sSH9Q/living-before.png";
 const beforeBedroom = "https://i.postimg.cc/13rMXky6/bedroom-before.png";
-const beforeKitchen = "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=70";
+const beforeKitchen = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
 
 // Client-supplied "after" images
 const afterLiving = "https://i.postimg.cc/Ss0djkw4/living-after.png";
