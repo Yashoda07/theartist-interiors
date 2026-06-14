@@ -155,7 +155,7 @@ const MobileSlider = ({ onOpen }: { onOpen: (cat: string) => void }) => {
       onTouchEnd={onTouchEnd}
       onTouchCancel={() => { touchStartX.current = null; resume(); }}
     >
-      <div className="relative min-h-[440px] sm:min-h-[400px] md:min-h-[380px]">
+      <div className="relative min-h-[340px] sm:min-h-[320px] md:min-h-[340px]">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
