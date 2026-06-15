@@ -190,15 +190,12 @@ const TestimonialsSection = () => {
                 </div>
               ) : (
                 <div className="relative aspect-video bg-black">
-                  <video
+                  <iframe
                     key={(current as Feedback).video}
                     src={(current as Feedback).video}
-                    poster={(current as Feedback).poster}
-                    autoPlay
-                    loop
-                    muted={muted}
-                    playsInline
                     className="w-full h-full object-cover"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
                   />
                   <button
                     onClick={() => setMuted((m) => !m)}
