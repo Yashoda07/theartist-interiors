@@ -76,7 +76,7 @@ const feedbacks: Feedback[] = [
     highlight: "Photorealistic, fast turnarounds",
     summary:
       "Working with The Artist Interiors remotely was seamless. The 3D renders were photorealistic and revisions delivered incredibly fast.",
-    video: "https://drive.google.com/uc?export=download&id=1Ein-9pFyrKx0Ba_sYEgSrhzNZdiQhMDa",
+    video: "https://www.youtube.com/embed/_ajwM-pKnng",
     poster: projectLiving1,
   },
   {
