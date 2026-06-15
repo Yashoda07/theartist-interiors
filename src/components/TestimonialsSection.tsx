@@ -76,7 +76,7 @@ const feedbacks: Feedback[] = [
     highlight: "Photorealistic, fast turnarounds",
     summary:
       "Working with The Artist Interiors remotely was seamless. The 3D renders were photorealistic and revisions delivered incredibly fast.",
-    video: "https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4",
+    video: "https://drive.google.com/uc?export=download&id=1Ein-9pFyrKx0Ba_sYEgSrhzNZdiQhMDa",
     poster: projectLiving1,
   },
   {
@@ -86,7 +86,7 @@ const feedbacks: Feedback[] = [
     highlight: "Truly understood our lifestyle",
     summary:
       "Beyond aesthetics — they understood how we cook, host and live. The kitchen feels like it was made just for us.",
-    video: "https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4",
+    video: "https://drive.google.com/uc?export=download&id=1Ein-9pFyrKx0Ba_sYEgSrhzNZdiQhMDa",
     poster: projectKitchen,
   },
 ];
