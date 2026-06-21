@@ -20,7 +20,7 @@ const experiences = [
   },
   {
     period: "Sep 2022 – Dec 2022",
-    title: "Junior Interior Designer",
+    title: "Jr. Interior Designer",
     company: "Transatlantic LTD",
     responsibilities: [
       "Assisted senior designers on large-scale projects",
