@@ -69,7 +69,7 @@ const Navbar = () => {
       >
         <div className="section-padding flex items-center justify-between h-14 md:h-20 gap-4">
           <a href="/" onClick={handleLogoClick} className="flex items-center cursor-pointer shrink-0" aria-label="The Artist Interiors — back to top">
-            <img src={logo} alt="The Artist Interiors" className="h-10 md:h-16 w-auto" />
+            <img src={logo} alt="The Artist Interiors — Mumbai interior design studio logo" className="h-10 md:h-16 w-auto" />
           </a>
 
           <div className="hidden xl:flex items-center gap-5 whitespace-nowrap">
