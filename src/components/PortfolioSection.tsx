@@ -96,7 +96,7 @@ const PortfolioSection = () => {
             >
               <img
                 src={p.src}
-                alt={p.title}
+                alt={`${p.title} — ${p.category} interior design project by The Artist Interiors`}
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
                 fetchPriority={i < 2 ? "high" : "auto"}
