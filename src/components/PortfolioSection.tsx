@@ -168,7 +168,7 @@ const PortfolioSection = () => {
               <img
                 key={src}
                 src={src}
-                alt={`Brand chart slide ${idx + 1}`}
+                alt={`The Artist Interiors brand chart — page ${idx + 1} of ${brandChartImages.length}`}
                 loading={idx < 2 ? "eager" : "lazy"}
                 decoding="async"
                 className="w-full max-w-3xl rounded-md shadow-2xl bg-white"
