@@ -177,7 +177,7 @@ const TestimonialsSection = () => {
                   <div className="relative aspect-[4/3]">
                     <img
                       src={(current as Transformation).before}
-                      alt="Before"
+                      alt={`${(current as Transformation).title} — before interior renovation by The Artist Interiors`}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <span className="absolute top-3 left-3 px-3 py-1 bg-foreground/80 text-background text-xs font-semibold uppercase tracking-wider rounded">
