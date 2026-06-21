@@ -92,6 +92,8 @@ const feedbacks: Feedback[] = [
 ];
 
 const TestimonialsSection = () => {
+  // NOTE: "Client Feedback" (video testimonials) section is temporarily disabled.
+  // To re-enable later: restore the toggle UI below and allow setMode("feedback").
   const [mode, setMode] = useState<"transform" | "feedback">("transform");
   const [index, setIndex] = useState(0);
   const [muted, setMuted] = useState(true);
@@ -103,10 +105,13 @@ const TestimonialsSection = () => {
     setIndex((i) => (i + delta + list.length) % list.length);
   };
 
+  // Kept for future use when client-feedback videos are re-enabled.
   const switchMode = (m: "transform" | "feedback") => {
     setMode(m);
     setIndex(0);
   };
+  void switchMode;
+
 
   return (
     <section id="testimonials" className="section-padding section-spacing">
