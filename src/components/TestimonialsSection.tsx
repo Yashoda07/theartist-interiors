@@ -37,7 +37,7 @@ type Feedback = {
 
 const transformations: Transformation[] = [
   {
-    name: "Priya Sharma",
+    name: "Manali Khaire",
     location: "Thane",
     title: "Lodha Crown — 2BHK Makeover",
     highlight: "Our dream home, designed and delivered",
@@ -47,8 +47,8 @@ const transformations: Transformation[] = [
     after: afterLiving,
   },
   {
-    name: "Rahul & Anjali Mehta",
-    location: "Thane",
+    name: "Neelam and Naveen Chaubey",
+    location: "Ambarnath",
     title: "Raymond Realty — 3BHK Makeover",
     highlight: "A home that truly feels like us",
     feedback:
@@ -57,8 +57,8 @@ const transformations: Transformation[] = [
     after: afterBedroom,
   },
   {
-    name: "Aarti Kapoor",
-    location: "Dombivali",
+    name: "Umesh Warde",
+    location: "Thane",
     title: "Complete Interior Solution — Private Residence",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
@@ -67,8 +67,8 @@ const transformations: Transformation[] = [
     after: afterKitchen,
   },
   {
-    name: "Aarti Kapoor",
-    location: "Dombivali",
+    name: "Jaya and Naresh Nagdev",
+    location: "Kalyan",
     title: "Complete Interior Solution — Private Residence",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
@@ -77,8 +77,8 @@ const transformations: Transformation[] = [
     after: afterKitchen,
   },
   {
-    name: "Aarti Kapoor",
-    location: "Dombivali",
+    name: "Krishna Yadav",
+    location: "Badlapur",
     title: "Complete Interior Solution — Private Residence",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
