@@ -58,7 +58,7 @@ const transformations: Transformation[] = [
   },
   {
     name: "Aarti Kapoor",
-    location: "Andheri",
+    location: "Dombivali",
     title: "Complete Interior Solution — Private Residence",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
