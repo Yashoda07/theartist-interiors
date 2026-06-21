@@ -69,9 +69,10 @@ const ServiceCard = ({ s, onClick }: { s: typeof services[number]; onClick: () =
         <p className="text-base text-foreground/75 leading-relaxed flex-1">
           {s.summary}
         </p>
-        <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-accent">
+        <span className="mt-5 mb-3 sm:mb-4 lg:mb-0 inline-flex items-center gap-1.5 text-sm font-semibold uppercase tracking-wider text-accent">
           Tap to See Projects →
         </span>
+
       </div>
     </button>
   );
