@@ -178,6 +178,8 @@ const TestimonialsSection = () => {
                     <img
                       src={(current as Transformation).before}
                       alt={`${(current as Transformation).title} — before interior renovation by The Artist Interiors`}
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <span className="absolute top-3 left-3 px-3 py-1 bg-foreground/80 text-background text-xs font-semibold uppercase tracking-wider rounded">
@@ -188,6 +190,8 @@ const TestimonialsSection = () => {
                     <img
                       src={(current as Transformation).after}
                       alt={`${(current as Transformation).title} — after interior renovation by The Artist Interiors`}
+                      loading="lazy"
+                      decoding="async"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <span className="absolute top-3 left-3 px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-wider rounded">

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
-import profileImage from "@/assets/aadarsh-profile.jpg";
+import profileImage from "@/assets/aadarsh-profile.webp";
 import logoImage from "@/assets/logo.png";
 
 const AboutSection = () => {
