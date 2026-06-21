@@ -38,19 +38,19 @@ type Feedback = {
 const transformations: Transformation[] = [
   {
     name: "Priya Sharma",
-    location: "Mumbai",
-    title: "Lodha Crown — 3BHK Makeover",
-    highlight: "From dated to timeless in 8 weeks",
+    location: "Thane",
+    title: "Lodha Crown — 2BHK Makeover",
+    highlight: "Our dream home, designed and delivered",
     feedback:
-      "Aadarsh transformed our apartment into a dream home. His 3D visualization helped us see the final result before any work began. Absolutely professional and detail-oriented.",
+      "Aadarsh and Samiksha transformed our apartment into a dream home. Their 3D visualization helped us see the final result before any work began. Absolutely professional and detail-oriented.",
     before: beforeLiving,
     after: afterLiving,
   },
   {
     name: "Rahul & Anjali Mehta",
     location: "Thane",
-    title: "Raymond Realty — Master Bedroom",
-    highlight: "Every deadline met, quality exceeded",
+    title: "Raymond Realty — 3BHK Makeover",
+    highlight: "A home that truly feels like us",
     feedback:
       "The attention to detail and communication throughout the project was exceptional. Every deadline was met and the quality exceeded our expectations.",
     before: beforeBedroom,
@@ -59,10 +59,10 @@ const transformations: Transformation[] = [
   {
     name: "Aarti Kapoor",
     location: "Andheri",
-    title: "Modular Kitchen — Private Residence",
-    highlight: "Personality in every corner",
+    title: "Complete Interior Solution — Private Residence",
+    highlight: "They understood our needs and delivered beautifully",
     feedback:
-      "They turned our blank canvas into a warm, layered home. The team was patient, creative, and remarkably efficient.",
+      "Their Design and Execution maximized our space while matching our lifestyle perfectly. Highly Recommend.",
     before: beforeKitchen,
     after: afterKitchen,
   },
