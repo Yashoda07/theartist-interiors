@@ -234,7 +234,7 @@ const PortfolioPage = () => {
                 >
                   <img
                     src={p.src}
-                    alt={p.title}
+                    alt={`${p.title} — ${p.category} interior design project by The Artist Interiors`}
                     loading={i < 3 ? "eager" : "lazy"}
                     decoding="async"
                     onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
