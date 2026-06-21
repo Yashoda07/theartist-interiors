@@ -139,7 +139,7 @@ const PortfolioSection = () => {
 
       <ImageLightbox
         src={current?.src ?? null}
-        alt={current?.title}
+        alt={current?.title ? `${current.title} — enlarged view` : "Portfolio image enlarged view"}
         onClose={() => setLightboxIdx(null)}
         hasNav
         onPrev={goPrev}
