@@ -127,7 +127,7 @@ const TestimonialsSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Toggle */}
+        {/* Toggle — TEMPORARILY DISABLED. Uncomment to re-enable "Client Feedback" videos.
         <div className="inline-flex p-1 bg-card border border-border rounded-full mb-10">
           {[
             { id: "transform" as const, label: "Transformation & Reviews" },
@@ -151,10 +151,12 @@ const TestimonialsSection = () => {
             </button>
           ))}
         </div>
+        */}
 
         {/* Card */}
         <div className="relative">
           <AnimatePresence mode="wait">
+
             <motion.div
               key={`${mode}-${index}`}
               initial={{ opacity: 0, x: 30 }}
