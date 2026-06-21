@@ -96,7 +96,7 @@ const PortfolioSection = () => {
             >
               <img
                 src={p.src}
-                alt={p.title}
+                alt={`${p.title} — ${p.category} interior design project by The Artist Interiors`}
                 loading={i < 2 ? "eager" : "lazy"}
                 decoding="async"
                 fetchPriority={i < 2 ? "high" : "auto"}
@@ -139,7 +139,7 @@ const PortfolioSection = () => {
 
       <ImageLightbox
         src={current?.src ?? null}
-        alt={current?.title}
+        alt={current?.title ? `${current.title} — enlarged view` : "Portfolio image enlarged view"}
         onClose={() => setLightboxIdx(null)}
         hasNav
         onPrev={goPrev}
@@ -168,7 +168,7 @@ const PortfolioSection = () => {
               <img
                 key={src}
                 src={src}
-                alt={`Brand chart slide ${idx + 1}`}
+                alt={`The Artist Interiors brand chart — page ${idx + 1} of ${brandChartImages.length}`}
                 loading={idx < 2 ? "eager" : "lazy"}
                 decoding="async"
                 className="w-full max-w-3xl rounded-md shadow-2xl bg-white"

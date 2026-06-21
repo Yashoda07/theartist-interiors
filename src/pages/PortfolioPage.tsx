@@ -234,7 +234,7 @@ const PortfolioPage = () => {
                 >
                   <img
                     src={p.src}
-                    alt={p.title}
+                    alt={`${p.title} — ${p.category} interior design project by The Artist Interiors`}
                     loading={i < 3 ? "eager" : "lazy"}
                     decoding="async"
                     onError={() => setHidden((h) => ({ ...h, [p.src]: true }))}
@@ -274,7 +274,7 @@ const PortfolioPage = () => {
       {/* Image Lightbox with pinch/zoom/pan + swipe/arrow nav */}
       <ImageLightbox
         src={lightbox?.src ?? null}
-        alt={lightbox?.title}
+        alt={lightbox?.title ? `${lightbox.title} — enlarged view` : "Portfolio image enlarged view"}
         onClose={closeLightbox}
         hasNav
         onPrev={() => {

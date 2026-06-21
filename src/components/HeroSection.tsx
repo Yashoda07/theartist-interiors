@@ -32,7 +32,7 @@ const HeroSection = () => {
           preload="auto"
           poster={heroImage}
           onCanPlay={() => setVideoReady(true)}
-          className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
+          className={`w-full h-full object-cover lg:object-contain lg:bg-black transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
         >
           <source
             src="/herosectionbgvideo.mp4"

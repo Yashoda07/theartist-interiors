@@ -92,6 +92,8 @@ const feedbacks: Feedback[] = [
 ];
 
 const TestimonialsSection = () => {
+  // NOTE: "Client Feedback" (video testimonials) section is temporarily disabled.
+  // To re-enable later: restore the toggle UI below and allow setMode("feedback").
   const [mode, setMode] = useState<"transform" | "feedback">("transform");
   const [index, setIndex] = useState(0);
   const [muted, setMuted] = useState(true);
@@ -103,10 +105,13 @@ const TestimonialsSection = () => {
     setIndex((i) => (i + delta + list.length) % list.length);
   };
 
+  // Kept for future use when client-feedback videos are re-enabled.
   const switchMode = (m: "transform" | "feedback") => {
     setMode(m);
     setIndex(0);
   };
+  void switchMode;
+
 
   return (
     <section id="testimonials" className="section-padding section-spacing">
@@ -122,7 +127,7 @@ const TestimonialsSection = () => {
           </p>
         </AnimatedSection>
 
-        {/* Toggle */}
+        {/* Toggle — TEMPORARILY DISABLED. Uncomment to re-enable "Client Feedback" videos.
         <div className="inline-flex p-1 bg-card border border-border rounded-full mb-10">
           {[
             { id: "transform" as const, label: "Transformation & Reviews" },
@@ -146,10 +151,12 @@ const TestimonialsSection = () => {
             </button>
           ))}
         </div>
+        */}
 
         {/* Card */}
         <div className="relative">
           <AnimatePresence mode="wait">
+
             <motion.div
               key={`${mode}-${index}`}
               initial={{ opacity: 0, x: 30 }}
@@ -170,7 +177,7 @@ const TestimonialsSection = () => {
                   <div className="relative aspect-[4/3]">
                     <img
                       src={(current as Transformation).before}
-                      alt="Before"
+                      alt={`${(current as Transformation).title} — before interior renovation by The Artist Interiors`}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <span className="absolute top-3 left-3 px-3 py-1 bg-foreground/80 text-background text-xs font-semibold uppercase tracking-wider rounded">
@@ -180,7 +187,7 @@ const TestimonialsSection = () => {
                   <div className="relative aspect-[4/3]">
                     <img
                       src={(current as Transformation).after}
-                      alt="After"
+                      alt={`${(current as Transformation).title} — after interior renovation by The Artist Interiors`}
                       className="absolute inset-0 w-full h-full object-cover"
                     />
                     <span className="absolute top-3 left-3 px-3 py-1 bg-accent text-accent-foreground text-xs font-semibold uppercase tracking-wider rounded">
