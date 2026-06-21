@@ -9,13 +9,7 @@ const HeroSection = () => {
   // Enable video on every screen — respect reduced motion & data-saver only.
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const slowConnection =
-      typeof navigator !== "undefined" &&
-      (navigator as any).connection?.saveData === true;
-    if (!reducedMotion && !slowConnection) {
-      setEnableVideo(true);
-    }
+    setEnableVideo(true);
   }, []);
 
   return (
