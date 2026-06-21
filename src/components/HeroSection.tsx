@@ -29,7 +29,7 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           poster={heroImage}
           onCanPlay={() => setVideoReady(true)}
           className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
