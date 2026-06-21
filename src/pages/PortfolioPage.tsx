@@ -274,7 +274,7 @@ const PortfolioPage = () => {
       {/* Image Lightbox with pinch/zoom/pan + swipe/arrow nav */}
       <ImageLightbox
         src={lightbox?.src ?? null}
-        alt={lightbox?.title}
+        alt={lightbox?.title ? `${lightbox.title} — enlarged view` : "Portfolio image enlarged view"}
         onClose={closeLightbox}
         hasNav
         onPrev={() => {
