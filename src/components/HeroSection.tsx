@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import heroImage from "@/assets/hero-interior.jpg";
+import heroImage from "@/assets/hero-interior.webp";
 
 const HeroSection = () => {
   const [videoReady, setVideoReady] = useState(false);
