@@ -35,17 +35,13 @@ const HeroSection = () => {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           poster={heroImage}
           onCanPlay={() => setVideoReady(true)}
           className={`w-full h-full object-cover transition-opacity duration-700 ${videoReady ? "opacity-100" : "opacity-0"}`}
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-a-luxury-living-room-with-a-fireplace-3071/1080p.mp4"
-            type="video/mp4"
-          />
-          <source
-            src="https://videos.pexels.com/video-files/7578544/7578544-uhd_2560_1440_30fps.mp4"
+            src="/herosectionbgvideo.mp4"
             type="video/mp4"
           />
         </video>
