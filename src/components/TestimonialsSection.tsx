@@ -13,7 +13,7 @@ const beforeKitchen = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
 // Client-supplied "after" images
 const afterLiving = "https://i.postimg.cc/Ss0djkw4/living-after.png";
 const afterBedroom = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
-const afterKitchen = "https://i.postimg.cc/xjZmBwjJ/kitchen-after.png";
+const afterKitchen = "https://i.postimg.cc/q7d9PHSP/IMG-20260618-084826.jpg";
 
 type Transformation = {
   name: string;
