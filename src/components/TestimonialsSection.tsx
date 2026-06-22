@@ -51,9 +51,9 @@ const transformations: Transformation[] = [
     after: afterLiving,
   },
   {
-    name: "Neelam and Naveen Chaubey",
-    location: "Ambarnath",
-    title: "Raymond Realty — 3BHK Makeover",
+    name: "Sudhir Chavan",
+    location: "Thane",
+    title: "Raymond Realty",
     highlight: "A home that truly feels like us",
     feedback:
       "The attention to detail and communication throughout the project was exceptional. Every deadline was met and the quality exceeded our expectations.",
