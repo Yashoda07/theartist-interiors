@@ -9,11 +9,15 @@ import projectKitchen from "@/assets/project-kitchen.jpg";
 const beforeLiving = "https://i.postimg.cc/264sSH9Q/living-before.png";
 const beforeBedroom = "https://i.postimg.cc/13rMXky6/bedroom-before.png";
 const beforeKitchen = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
+const beforeExtra1 = "https://i.postimg.cc/264sSH9Q/living-before.png";
+const beforeExtra1 = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
 
 // Client-supplied "after" images
 const afterLiving = "https://i.postimg.cc/Ss0djkw4/living-after.png";
 const afterBedroom = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
 const afterKitchen = "https://i.postimg.cc/q7d9PHSP/IMG-20260618-084826.jpg";
+const afterExtra1 = "https://i.postimg.cc/9M01SxX5/img2.png";
+const afterExtra1 = "https://i.postimg.cc/WbNmfW9R/IMG-20260622-233127.jpg";
 
 type Transformation = {
   name: string;
@@ -73,8 +77,8 @@ const transformations: Transformation[] = [
     highlight: "They understood our needs and delivered beautifully",
     feedback:
       "Their Design and Execution maximized our space while matching our lifestyle perfectly. Highly Recommend.",
-    before: beforeKitchen,
-    after: afterKitchen,
+    before: beforeExtra1,
+    after: afterExtra1,
   },
   {
     name: "Krishna Yadav",
@@ -83,8 +87,8 @@ const transformations: Transformation[] = [
     highlight: "They understood our needs and delivered beautifully",
     feedback:
       "Their Design and Execution maximized our space while matching our lifestyle perfectly. Highly Recommend.",
-    before: beforeKitchen,
-    after: afterKitchen,
+    before: beforeExtra2,
+    after: afterExtra2,
   },
 ];
 
