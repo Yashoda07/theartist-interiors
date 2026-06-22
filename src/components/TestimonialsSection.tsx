@@ -147,7 +147,7 @@ const TestimonialsSection = () => {
             Client <span className="text-accent">Stories</span>
           </h2>
           <p className="text-base md:text-lg text-foreground/70 mb-10">
-            Verified results from real clients.
+            A glimpse into the experiences we create.
           </p>
         </AnimatedSection>
 
