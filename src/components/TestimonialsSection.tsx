@@ -43,7 +43,7 @@ const transformations: Transformation[] = [
   {
     name: "Sudhir Chavan",
     location: "Thane",
-    title: "Raymond Realty",
+    title: "Raymond Realty - Residential Interior Design",
     highlight: "Our dream home, designed and delivered",
     feedback:
       "Aadarsh and Samiksha transformed our apartment into a dream home. Their 3D visualization helped us see the final result before any work began. Absolutely professional and detail-oriented. Our House now feels like Home!",
@@ -53,7 +53,7 @@ const transformations: Transformation[] = [
   {
     name: "Vijeeth Vasudevan",
     location: "Thane",
-    title: "Lodha, Upper Thane",
+    title: "Lodha, Upper Thane - Modern Living Room",
     highlight: "A home that truly feels like us",
     feedback:
       "The attention to detail and communication throughout the project was exceptional. Every deadline was met and the quality exceeded our expectations. Best Interior solutions in Mumbai all at one place, highly recommend!",
@@ -63,30 +63,30 @@ const transformations: Transformation[] = [
   {
     name: "Sagar Jadhav",
     location: "Dombivali",
-    title: "Lodha Panacea",
+    title: "Lodha Panacea - Luxury Living Room",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
-      "Their Design and Execution maximized our space while matching our lifestyle perfectly. Great Services, Highly Recommend",
+      "Their Design and Execution maximized our space while matching our lifestyle perfectly. Great Services, Highly Recommend. Outstanding residential interior design experience."",
     before: beforeKitchen,
     after: afterKitchen,
   },
   {
     name: "Nikita and Maxan D'Souza",
     location: "Mira Road",
-    title: "From House To Home",
+    title: "From House To Home - Modern Home Interiors",
     highlight: "Premium quality and professional service.",
     feedback:
-      "Professional interior designers who truly understand client requirements. The 3D designs matched the final execution perfectly.",
+      "Professional interior designers in Mumbai who truly understand client requirements and Great execution with premium quality materials. The 3D designs matched the final execution perfectly.",
     before: beforeExtra1,
     after: afterExtra1,
   },
   {
     name: "Santosh Jadhav",
     location: "Thane",
-    title: "Raymond Realty",
+    title: "Raymond Realty - Modular Kitchen",
     highlight: "Beautiful home interiors within our budget.",
     feedback:
-      "The team's expertise in residential interior design helped us create a stylish home while staying within our budget.",
+      "The team's expertise in residential interior design helped us create a stylish home while staying within our budget. They transformed our empty house into a dream home.",
     before: beforeExtra2,
     after: afterExtra2,
   },
