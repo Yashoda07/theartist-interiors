@@ -7,8 +7,8 @@ import projectKitchen from "@/assets/project-kitchen.jpg";
 
 // Raw "before" placeholders
 const beforeLiving = "https://i.postimg.cc/13rMXky6/bedroom-before.png";
-const beforeBedroom = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
-const beforeKitchen = "https://i.postimg.cc/mk7XvTY5/image3-before.png";
+const beforeBedroom = "https://i.postimg.cc/mk7XvTY5/image3-before.png";
+const beforeKitchen = "";
 const beforeExtra1 = "https://i.postimg.cc/L59jNR8w/img1-before.png";
 const beforeExtra2 = "https://i.postimg.cc/QMc5DVBn/img2-before.png";
 
