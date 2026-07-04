@@ -6,16 +6,16 @@ import projectLiving1 from "@/assets/project-living1.jpg";
 import projectKitchen from "@/assets/project-kitchen.jpg";
 
 // Raw "before" placeholders
-const beforeBedroom = "https://i.postimg.cc/13rMXky6/bedroom-before.png";
-const beforeKitchen = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
-const beforeLiving = "https://i.postimg.cc/mk7XvTY5/image3-before.png";
+const beforeLiving = "https://i.postimg.cc/13rMXky6/bedroom-before.png";
+const beforeBedroom = "https://i.postimg.cc/VLDx2DNk/kitchen-before.jpg";
+const beforeKitchen = "https://i.postimg.cc/mk7XvTY5/image3-before.png";
 const beforeExtra1 = "https://i.postimg.cc/L59jNR8w/img1-before.png";
 const beforeExtra2 = "https://i.postimg.cc/QMc5DVBn/img2-before.png";
 
 // Client-supplied "after" images
-const afterBedroom = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
-const afterKitchen = "https://i.postimg.cc/q7d9PHSP/IMG-20260618-084826.jpg";
-const afterLiving = "https://i.postimg.cc/Ss0djkw4/living-after.png";
+const afterLiving = "https://i.postimg.cc/gk5Kqw6J/bedroom-after.png";
+const afterBedroom = "https://i.postimg.cc/q7d9PHSP/IMG-20260618-084826.jpg";
+const afterKitchen = "https://i.postimg.cc/Ss0djkw4/living-after.png";
 const afterExtra1 = "https://i.postimg.cc/Px9P8jwG/img2.png";
 const afterExtra2 = "https://i.postimg.cc/wTdBKF5M/kitchen7.png";
 
