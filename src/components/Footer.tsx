@@ -30,7 +30,7 @@ const Footer = () => (
             The Artist <span className="font-medium text-accent">Interiors</span>
           </div>
           <p className="text-base text-foreground/70 leading-relaxed max-w-xs">
-            Interior Design, 3D Visualization & Floor Planning — serving Mumbai and clients worldwide.
+            Interior Design, 3D Visualization & Floor Planning — serving Mumbai & Pune and clients worldwide.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ const Footer = () => (
             ))}
           </div>
           <p className="text-sm text-foreground/60">
-            Mumbai, India · Available for projects globally
+            Mumbai & Pune, India · Available for projects globally
           </p>
         </div>
       </div>

@@ -49,7 +49,7 @@ const experiences = [
     responsibilities: [
       "Lead end-to-end residential interior design projects",
       "3D visualization services for global clients",
-      "Site execution and project management in Mumbai",
+      "Site execution and project management in Mumbai & Pune",
       "Client relationship & business development",
     ],
     Icon: Award,
