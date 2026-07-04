@@ -93,7 +93,7 @@ const AboutSection = () => {
               With expertise spanning interior design, 3D visualization, and end-to-end site execution, I bridge the gap between creative vision and flawless delivery. My strength lies in clear communication — making sure every client's desire is understood and every contractor stays aligned.
             </p>
             <p>
-              I'm a quick learner with deep adaptability, and I continue to push boundaries in residential design across Mumbai and beyond.
+              I'm a quick learner with deep adaptability, and I continue to push boundaries in residential design across Mumbai, Pune and beyond.
             </p>
           </div>
           <div className="clear-both" />

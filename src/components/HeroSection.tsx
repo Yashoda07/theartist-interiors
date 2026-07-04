@@ -118,7 +118,7 @@ const HeroSection = () => {
       transition={{ delay: 1.2, duration: 0.8 }}
       className="absolute bottom-4 right-4 md:bottom-8 md:right-12 lg:right-20 z-10 text-[11px] md:text-xs lg:text-sm text-white/85 max-w-[200px] md:max-w-xs text-right leading-snug md:leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]"
     >
-      5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai.
+      5+ years crafting extraordinary spaces — Interior Design, 3D Visualization & Site Execution. Serving clients globally (3D) and locally in Mumbai & Pune.
     </motion.p>
   </section>
   );
