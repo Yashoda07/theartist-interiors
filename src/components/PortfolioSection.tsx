@@ -11,7 +11,7 @@ const items: Item[] = [
   { src: "https://i.postimg.cc/1XSpYWhV/Untitled-designb.png", title: "Curved Accent Bedroom", category: "Bedroom" },
   { src: "https://i.postimg.cc/qvNgBRZZ/Untitled-design.png", title: "Warm Ambient Bedroom", category: "Bedroom" },
   { src: "https://i.postimg.cc/jq1p0SPD/Untitled-design1.png", title: "Sculpted Cove Bedroom", category: "Bedroom" },
-  { src: "https://i.postimg.cc/6QtrJT4n/Untitled-design3.png", title: "Contemporary Family Lounge", category: "Living Room" },
+  { src: "https://i.postimg.cc/Dw80MXgX/design3.png", title: "Contemporary Family Lounge", category: "Living Room" },
   { src: "https://i.postimg.cc/Sx9d2ynr/Untitled-design4.png", title: "Contemporary Dining Lounge", category: "Living Room" },
   { src: "https://i.postimg.cc/9F7Z1Lc4/Untitled-design5.png", title: "Media Wall & TV Unit", category: "Living Room" },
   { src: "https://i.postimg.cc/T18gXb9K/Untitled-design6.png", title: "Minimal Parallel Kitchen", category: "Kitchen" },
