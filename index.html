@@ -48,7 +48,14 @@
         "logo": "https://theartistinteriors.in/logo.png",
         "founder": { "@type": "Person", "name": "Aadarsh Chaubey" },
         "description": "Interior Design Studio specialized in Interior Designing & 3D Visualization.",
-        "sameAs": []
+        "sameAs": [
+          "https://www.instagram.com/theartistinteriors",
+          "https://www.linkedin.com/company/theartistinteriors",
+          "https://www.pinterest.com/theartist_interiors"
+          "https://www.facebook.com/share/1EuNU4ngEP/",
+          "https://www.youtube.com/@theartist.interiors",
+          "https://www.threads.net/@theartistinteriors"
+        ]
       }
     </script>
 
@@ -68,6 +75,65 @@
           "addressRegion": "Maharashtra",
           "addressCountry": "IN"
         }
+      }
+    </script>
+
+    <!-- Service schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Interior Design Services",
+        "serviceType": "Interior Design",
+        "provider": {
+          "@type": "Organization",
+          "name": "The Artist Interiors",
+          "url": "https://theartistinteriors.in"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "India"
+        },
+        "description": "Residential and commercial interior design, 3D visualization, space planning, turnkey interior solutions and custom furniture design.",
+        "url": "https://theartistinteriors.in"
+      }
+    </script>
+
+    <!-- Portfolio / Collection Page Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Interior Design Portfolio",
+        "url": "https://theartistinteriors.in/portfolio",
+        "description": "Portfolio showcasing residential and commercial interior design projects by The Artist Interiors, including living rooms, bedrooms, kitchens, dining spaces, offices and more.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "The Artist Interiors",
+          "url": "https://theartistinteriors.in"
+        }
+      }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://theartistinteriors.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio",
+            "item": "https://theartistinteriors.in/portfolio"
+          }
+        ]
       }
     </script>
 
