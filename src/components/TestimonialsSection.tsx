@@ -66,7 +66,7 @@ const transformations: Transformation[] = [
     title: "Lodha Panacea - Luxury Living Room",
     highlight: "They understood our needs and delivered beautifully",
     feedback:
-      "Their Design and Execution maximized our space while matching our lifestyle perfectly. Great Services, Highly Recommend. Outstanding residential interior design experience."",
+      "Their Design and Execution maximized our space while matching our lifestyle perfectly. Great Services, Highly Recommend. Outstanding residential interior design experience.",
     before: beforeKitchen,
     after: afterKitchen,
   },
