@@ -9,6 +9,7 @@ import PortfolioSection from "@/components/PortfolioSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import FloatingContactIcons from "@/components/FloatingContactIcons";
+import SEO from "@/components/SEO";
 
 const Index = () => {
   const location = useLocation();
@@ -29,6 +30,11 @@ const Index = () => {
 
   return (
     <main className="overflow-x-hidden">
+      <SEO
+        title="The Artist Interiors — Interior Design & 3D Visualization Studio | Mumbai & Pune"
+        description="The Artist Interiors by Aadarsh Chaubey — interior design, 3D visualization and site execution for premium homes across Mumbai, Pune and clients worldwide."
+        path="/"
+      />
       <Navbar />
       <HeroSection />
       <AboutSection />
