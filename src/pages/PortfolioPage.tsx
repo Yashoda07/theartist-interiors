@@ -14,7 +14,7 @@ const livingRoomBase = [
   "https://i.postimg.cc/8PD52GvX/Untitled-design112.png",
   "https://i.postimg.cc/jjrW8TZc/Untitled-design2.png",
   "https://i.postimg.cc/mrd2M16b/Untitled-design111.png",
-  "https://i.postimg.cc/15m1rjGn/Untitled-design3.png",
+  "https://i.postimg.cc/6QtrJT4n/Untitled-design3.png",
   "https://i.postimg.cc/NjnrqVBd/Untitled-design115.png",
   "https://i.postimg.cc/hP5Gfdwk/Untitled-design116.png",
   "https://i.postimg.cc/jjQKQwgf/Untitled-design117.png",
