@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 import ImageLightbox from "@/components/ImageLightbox";
+import SEO from "@/components/SEO";
 
 type Project = { src: string; title?: string; category: string };
 
@@ -160,6 +161,11 @@ const PortfolioPage = () => {
 
   return (
     <main className="overflow-x-hidden">
+      <SEO
+        title="Portfolio — Interior Design Projects | The Artist Interiors"
+        description="Browse residential interior design and 3D visualization projects by The Artist Interiors — living rooms, bedrooms, kitchens, full-home makeovers across Mumbai & Pune."
+        path="/portfolio"
+      />
       <Navbar />
       <div className="pt-14 md:pt-20" />
 
