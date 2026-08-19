@@ -1,4 +1,4 @@
-# The Artist Interiors — Business Portfolio & Lead Generation Website
+# The Artist Interiors - Business Portfolio & Lead Generation Website
 
 > A production-ready, responsive portfolio website developed for **The Artist Interiors**, an interior design and turnkey execution business.
 
