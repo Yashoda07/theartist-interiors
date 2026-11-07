@@ -32,14 +32,16 @@ const livingRoomBase = [
 const livingRoom: Project[] = livingRoomBase.map((src, i) => ({ src, category: "Living Room" }));
 
 const bedroom: Project[] = [
-  "https://i.postimg.cc/ZRLJpp9N/5-20261005-200340-0004.png",
   "https://i.postimg.cc/DfjTh218/2-20261005-200339-0001.png",
   "https://i.postimg.cc/W35Qsnqj/3-20261005-200339-0002.png",
   "https://i.postimg.cc/5yjDyC8W/4-20261005-200340-0003.png",
+  "https://i.postimg.cc/ZRLJpp9N/5-20261005-200340-0004.png",
   "https://i.postimg.cc/RFyP63Mv/bedroom1.png",
   "https://i.postimg.cc/6Qzg352t/bedroom2.png",
   "https://i.postimg.cc/k4KjSJDx/bedroom3.png",
   "https://i.postimg.cc/4yGWbD9Z/bedroom4.png",
+  "https://i.postimg.cc/fRMj27y5/bedroom5.png",
+  "https://i.postimg.cc/D0qL5mKB/bedroom6.png",
   "https://i.postimg.cc/1XSpYWhV/Untitled-designb.png",
   "https://i.postimg.cc/QxQX3fLh/Untitled-designbb.png",
   "https://i.postimg.cc/ZnLDfBg8/Untitled-designbbb.png",
