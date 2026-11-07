@@ -44,17 +44,18 @@ const bedroom: Project[] = [
   "https://i.postimg.cc/fRMj27y5/bedroom5.png",
   "https://i.postimg.cc/1XSpYWhV/Untitled-designb.png",
   "https://i.postimg.cc/QxQX3fLh/Untitled-designbb.png",
-  "https://i.postimg.cc/7ZB1KMZn/Untitled-designb9.png",
   "https://i.postimg.cc/BQHxGfQY/Untitled-designbbbbb.png",
+  "https://i.postimg.cc/7ZB1KMZn/Untitled-designb9.png",
+  "https://i.postimg.cc/kGyrzXGj/Untitled-designb13.png",
+  "https://i.postimg.cc/cH0RF9NX/Untitled-designbbbb.png",
+  "https://i.postimg.cc/x8TTpH80/Untitled-designb11.png",
+  "https://i.postimg.cc/rmGkkpbv/Untitled-designb6.png",
+  "https://i.postimg.cc/bwf4zP0J/Untitled-designb12.png",
   "https://i.postimg.cc/v8LVPLqw/Untitled-designb10.png",
   "https://i.postimg.cc/ZnLDfBg8/Untitled-designbbb.png",
-  "https://i.postimg.cc/cH0RF9NX/Untitled-designbbbb.png",
-  "https://i.postimg.cc/rmGkkpbv/Untitled-designb6.png",
   "https://i.postimg.cc/0jc1zB9n/Untitled-designb7.png",
   "https://i.postimg.cc/SKp1pGhX/Untitled-designb8.png",
-  "https://i.postimg.cc/x8TTpH80/Untitled-designb11.png",
-  "https://i.postimg.cc/bwf4zP0J/Untitled-designb12.png",
-  "https://i.postimg.cc/kGyrzXGj/Untitled-designb13.png",
+  
 ].map((src, i) => ({ src, category: "Bedroom" }));
 
 const kitchen: Project[] = [
