@@ -33,12 +33,14 @@ const services = [
 
 const marqueeSkills = [
   "Space Planning",
-  "Creative Thinking",
-  "Strategic Communication",
-  "Problem Solving",
   "Material Selection",
+  "Color Consultation",
   "Client Management",
+  "Budgeting & Cost Estimation",
   "Project Coordination",
+  "Creative Thinking",
+  "Effective Communication",
+  "Problem Solving",
   "Trend Forecasting",
 ];
 
