@@ -68,6 +68,8 @@ const kitchen: Project[] = [
 ].map((src, i) => ({ src, category: "Kitchen" }));
 
 const fullHome: Project[] = [
+  "https://i.postimg.cc/fb6kYmT0/hero-section-bg.png",
+  "https://i.postimg.cc/D0WT6Yjw/hero-Section-BG.png",
   "https://i.postimg.cc/SxYwWrqS/fh5.png",
   "https://i.postimg.cc/nV6KXYdK/fh2.png",
   "https://i.postimg.cc/wTGCyPKz/fh3.png",
