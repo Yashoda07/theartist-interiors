@@ -70,6 +70,8 @@ const kitchen: Project[] = [
 const fullHome: Project[] = [
   "https://i.postimg.cc/fb6kYmT0/hero-section-bg.png",
   "https://i.postimg.cc/D0WT6Yjw/hero-Section-BG.png",
+  "https://i.postimg.cc/G3PVwRDx/full-home-3.png",
+  "https://i.postimg.cc/zvn14Rr4/full-home-4.png",
   "https://i.postimg.cc/SxYwWrqS/fh5.png",
   "https://i.postimg.cc/nV6KXYdK/fh2.png",
   "https://i.postimg.cc/wTGCyPKz/fh3.png",
